@@ -3,13 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 fav_room = db.Table('fav_room',
-            db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
+            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True),
             db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True)
             )
 
 fav_item = db.Table('fav_item',
-            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True),
-            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
+            db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
+            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True)
             )
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,12 +19,12 @@ class User(db.Model):
 
     user_rooms = db.relationship("Room",
                                 secondary=fav_room,
-                                back_populates="user_room",
+                                back_populates="faved_rooms",
                                 )
                     
     user_items = db.relationship("Item",
                                 secondary=fav_item,
-                                back_populates="user_rooms",
+                                back_populates="faved_items",
                                 )
 
     def __repr__(self):
@@ -70,7 +70,7 @@ class Room(db.Model):
                                 secondary=meta_room,
                                 back_populates="room_description")
 
-    favorited_rooms = db.relationship("User",
+    faved_rooms = db.relationship("User",
                                 secondary=fav_room,
                                 back_populates="user_rooms")
 
@@ -95,17 +95,17 @@ class Item(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
     rooms = db.relationship("Room",
-                            secondary=item_room,
-                            back_populates="items")
+        secondary=item_room,
+        back_populates="items")
 
     meta_tags = db.relationship("Meta",
-                                secondary=meta_item,
-                                back_populates="item_description")
+        secondary=meta_item,
+        back_populates="item_description")
 
 
-    favorited_items = db.relationship("User",
-                                secondary=fav_room,
-                                back_populates="user_itmes")
+    faved_items = db.relationship("User",
+        secondary=fav_item,
+        back_populates="user_items")
 
 
     def __repr__(self):
