@@ -2,19 +2,30 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+fav_room = db.Table('fav_room',
+            db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
+            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True)
+            )
 
-# association table 
-# association_table = db.Table('association',
-#     db.Column("sister_id", db.Integer, ForeignKey("sister.id"), primary_key=True),
-#     db.Column("brother_id", db.Integer, ForeignKey("brother.id"), primary_key=True)
-# )
-
+fav_item = db.Table('fav_item',
+            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True),
+            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
+            )
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
+    user_rooms = db.relationship("Room",
+                                secondary=fav_room,
+                                back_populates="user_room",
+                                )
+                    
+    user_items = db.relationship("Item",
+                                secondary=fav_item,
+                                back_populates="user_rooms",
+                                )
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -26,18 +37,24 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-fav_room = db.Table('fav_room',
-    db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
-    db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True))
 
-fav_item = db.Table('fav_item',
-    db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True),
-    db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True))
+
 
 item_room = db.Table('item_room',
-    db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
-    db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
-)
+            db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
+            db.Column("room_id", db.Integer, db.ForeignKey( "room.id"), primary_key=True)
+            )
+
+meta_room = db.Table('meta_room',
+            db.Column("meta_id", db.Integer, db.ForeignKey("meta.id"), primary_key=True),
+            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
+            )
+
+meta_item = db.Table('meta_item',
+            db.Column("item_id", db.Integer, db.ForeignKey( "item.id"), primary_key=True),
+            db.Column("meta_id", db.Integer, db.ForeignKey( "meta.id"), primary_key=True)
+            )
+
 
 class Room(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,16 +62,21 @@ class Room(db.Model):
     pic_url = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
 
-
-# This error
     items = db.relationship("Item",
-                    secondary= item_room,
-                    back_populates="Room") 
+                            secondary=item_room,
+                            back_populates="rooms")
+
+    meta_tags = db.relationship("Meta",
+                                secondary=meta_room,
+                                back_populates="room_description")
+
+    favorited_rooms = db.relationship("User",
+                                secondary=fav_room,
+                                back_populates="user_rooms")
 
     def __repr__(self):
         return self.name
-        
-        
+
     def serialize(self):
         return {
             "id": self.id,
@@ -62,6 +84,7 @@ class Room(db.Model):
             "pic_url": self.pic_url,
             "price": self.price,
         }
+
 
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -72,12 +95,22 @@ class Item(db.Model):
     price = db.Column(db.Integer, nullable=False)
 
     rooms = db.relationship("Room",
-                    secondary= item_room,
-                    back_populates="item") 
+                            secondary=item_room,
+                            back_populates="items")
+
+    meta_tags = db.relationship("Meta",
+                                secondary=meta_item,
+                                back_populates="item_description")
+
+
+    favorited_items = db.relationship("User",
+                                secondary=fav_room,
+                                back_populates="user_itmes")
+
 
     def __repr__(self):
         return self.name
-        
+
     def serialize(self):
         return {
             "id": self.id,
@@ -88,41 +121,28 @@ class Item(db.Model):
         }
 
 
-meta_room = db.Table('meta_room',
-    db.Column("meta_id", db.Integer, db.ForeignKey("meta.id"), primary_key=True),
-    db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
-)
-
-meta_item = db.Table('meta_item',
-    db.Column("item_id", db.Integer, db.ForeignKey("item.id"), primary_key=True),
-    db.Column("meta_id", db.Integer, db.ForeignKey("meta.id"), primary_key=True)
-)
-
-
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     style = db.Column(db.String(80), nullable=False)
     room_type = db.Column(db.String(80), nullable=False)
-    item_type = db.Column(db.String(80), nullable= False)
+    item_type = db.Column(db.String(80), nullable=False)
     age_group = db.Column(db.String(80), nullable=False)
-  
-     
-    Item = db.relationship("Item",
-                    secondary= meta_item,
-                    back_populates="item") 
-                
-    Room = db.relationship("Room",
-                    secondary= meta_room,
-                    back_populates="room") 
 
-   
+    item_description = db.relationship("Item",
+                                       secondary=meta_item,
+                                       back_populates="meta_tags")
+
+    room_description = db.relationship("Room",
+                                       secondary=meta_room,
+                                       back_populates="meta_tags")
 
     # This is how the artist will print in the console, just the name
+
     def __repr__(self):
         return self.name
 
-    # This is how the artist will look inside the API JSON responses 
+    # This is how the artist will look inside the API JSON responses
     def serialize(self):
         return {
             "id": self.id,
@@ -131,4 +151,3 @@ class Meta(db.Model):
             "room_type": self.room_type,
             "age_group": self.age_group,
         }
-

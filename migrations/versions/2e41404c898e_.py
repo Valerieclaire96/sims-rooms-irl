@@ -33,7 +33,7 @@ def upgrade():
     sa.Column('price', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('sims_item',
+    op.create_table('item',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=80), nullable=False),
     sa.Column('buy_url', sa.String(length=500), nullable=False),
@@ -57,25 +57,25 @@ def upgrade():
     sa.PrimaryKeyConstraint('user_id', 'room_id')
     )
     op.create_table('fav_room',
-    sa.Column('sims_item_id', sa.Integer(), nullable=False),
+    sa.Column('item_id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['sims_item_id'], ['sims_item.id'], ),
+    sa.ForeignKeyConstraint(['item_id'], ['item.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
-    sa.PrimaryKeyConstraint('sims_item_id', 'user_id')
+    sa.PrimaryKeyConstraint('item_id', 'user_id')
     )
     op.create_table('item_room',
-    sa.Column('sims_item_id', sa.Integer(), nullable=False),
+    sa.Column('item_id', sa.Integer(), nullable=False),
     sa.Column('room_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['room_id'], ['room.id'], ),
-    sa.ForeignKeyConstraint(['sims_item_id'], ['sims_item.id'], ),
-    sa.PrimaryKeyConstraint('sims_item_id', 'room_id')
+    sa.ForeignKeyConstraint(['item_id'], ['item.id'], ),
+    sa.PrimaryKeyConstraint('item_id', 'room_id')
     )
     op.create_table('meta_item',
-    sa.Column('sims_item_id', sa.Integer(), nullable=False),
+    sa.Column('item_id', sa.Integer(), nullable=False),
     sa.Column('meta_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['meta_id'], ['meta.id'], ),
-    sa.ForeignKeyConstraint(['sims_item_id'], ['sims_item.id'], ),
-    sa.PrimaryKeyConstraint('sims_item_id', 'meta_id')
+    sa.ForeignKeyConstraint(['item_id'], ['item.id'], ),
+    sa.PrimaryKeyConstraint('item_id', 'meta_id')
     )
     op.create_table('meta_room',
     sa.Column('meta_id', sa.Integer(), nullable=False),
@@ -95,7 +95,7 @@ def downgrade():
     op.drop_table('fav_room')
     op.drop_table('fav_item')
     op.drop_table('user')
-    op.drop_table('sims_item')
+    op.drop_table('item')
     op.drop_table('room')
     op.drop_table('meta')
     # ### end Alembic commands ###

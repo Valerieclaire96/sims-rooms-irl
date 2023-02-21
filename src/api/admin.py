@@ -13,7 +13,7 @@ def setup_admin(app):
     # Add your models here, for example this is how we add a the User model to the admin
     admin.add_view(ModelView(User, db.session))
     admin.add_view(ModelView(Room, db.session))
-    admin.add_view(ModelView(Sims_item, db.session))
+    admin.add_view(ModelView(Item, db.session))
     admin.add_view(ModelView(Meta, db.session))
 
     # You can duplicate that line to add mew models
