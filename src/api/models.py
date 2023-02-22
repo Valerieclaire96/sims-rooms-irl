@@ -154,9 +154,8 @@ class Meta(db.Model):
     style = db.Column(db.String(80), nullable=False)
     room_type = db.Column(db.String(80), nullable=False)
     object_type = db.Column(db.String(80), nullable=False)
-    # this shouldn't be mandatory just applies to some items and rooms
-    age_group = db.Column(db.String(80), nullable=False)
-
+    object_pack = db.Column(db.String(80), nullable=False)
+    
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from meta to Object in the defined in the Object table
@@ -183,5 +182,5 @@ class Meta(db.Model):
             "name": self.name,
             "style": self.style,
             "room_type": self.room_type,
-            "age_group": self.age_group,
+            "age_group": self.object_pack,
         }
