@@ -1,12 +1,23 @@
-import React from 'react'
-import VroomList from '../component/vroomList'
-import VroomRoomRoom from '../component/vroomRoomRoom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function VroomRoom() {
   return (
     <div>
-        <Route element={<VroomList />} path="/vroom_room/list" />
-        <Route element={<VroomRoomRoom />} path="/vroom_room/room" />
+      <button></button>
+      <div>
+        <img>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+        </img>
+      </div>
     </div>
-  )
+  );
 }

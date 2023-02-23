@@ -1,12 +1,23 @@
-import React from 'react'
-import UnicornList from '../component/unicornList'
-import UnicornRoom from '../component/unicornRoom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function UnicronDreams() {
   return (
     <div>
-        <Route element={<UnicornList />} path="/unicorn_dream/list" />
-        <Route element={<UnicornRoom />} path="/unicorn_dream/room" />
+      <button></button>
+      <div>
+        <img>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+        </img>
+      </div>
     </div>
-  )
+  );
 }

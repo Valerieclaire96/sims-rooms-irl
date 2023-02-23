@@ -13,19 +13,6 @@
   justify-content: center;
 }
 
-#carouselBtn {
-  border-radius: 50%;
-  background: grey;
-  height: 8px;
-  margin: 1px;
-  border: none;
-  display: inline-block;
-}
-
-/* how do I keep this on white the picture is displayed also need to have a timer set to the carosuel */
-#carouselBtn:active {
-  background: whitesmoke;
-}
 
 .carousel.container.slide {
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);

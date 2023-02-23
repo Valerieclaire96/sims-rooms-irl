@@ -1,12 +1,24 @@
 import React from 'react'
-import GeeksList from '../component/geeksList'
-import GeeksRoom from '../component/geeksRoom'
+import { Link } from "react-router-dom";
 
 export default function Geeks4sleep() {
   return (
-    <div>
-        <Route element={<GeeksList />} path="/geeks4sleep/list" />
-        <Route element={<GeeksRoom />} path="/geeks4sleep/room" />
-    </div>
+          <div>
+            <button></button>
+              <div>
+                <img>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                  <span className="roomBtn"></span>
+                </img>
+              </div>
+          </div>
+
   )
 }

@@ -1,12 +1,23 @@
-import React from 'react'
-import ScholarsList from '../component/scholarsList'
-import ScholarsRooms from '../component/scholarsRooms'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ScholarsStudy() {
   return (
     <div>
-      <Route element={<ScholarsList />} path="/scholars_study/list" />
-      <Route element={<ScholarsRooms />} path="/scholars_study/room" />
+      <button></button>
+      <div>
+        <img>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+        </img>
+      </div>
     </div>
-  )
+  );
 }

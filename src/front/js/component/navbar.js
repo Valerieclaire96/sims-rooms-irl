@@ -40,9 +40,9 @@ export const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <div class="search-bar">
-            <input type="text" class="textbox" placeholder="search" />
-            <div class="search-btn" href="#">
+          <div className="search-bar">
+            <input type="text" className="textbox" placeholder="search" />
+            <div className="search-btn" href="#">
               <p>
                 <img
                   className="searchGif"

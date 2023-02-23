@@ -1,12 +1,23 @@
-import React from 'react'
-import TweenageList from '../component/tweenageList'
-import TweenageRoom from '../component/tweenageRoom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TweenageDirtbag() {
   return (
     <div>
-        <Route element={<TweenageList />} path="/tweenage_dirtbag/list" />
-        <Route element={<TweenageRoom />} path="/tweenage_dirtbag/room" />
+      <button></button>
+      <div>
+        <img>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+          <span className="roomBtn"></span>
+        </img>
+      </div>
     </div>
-  )
+  );
 }
