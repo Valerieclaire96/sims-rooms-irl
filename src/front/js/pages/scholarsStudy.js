@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function ScholarsStudy() {
   return (
-    <div>
-      <button></button>
+    <div className="roomContainer">
+      <button className="roomBtn"><Link to={"/scholars_study/list"}></Link><i class="fa-solid fa-grip-vertical"></i></button>
       <div>
-        <img>
+        <img className="room image"src="https://i.imgur.com/jG5GOPdh.png"/>
           <span className="roomBtn"></span>
           <span className="roomBtn"></span>
           <span className="roomBtn"></span>
@@ -16,7 +16,6 @@ export default function ScholarsStudy() {
           <span className="roomBtn"></span>
           <span className="roomBtn"></span>
           <span className="roomBtn"></span>
-        </img>
       </div>
     </div>
   );

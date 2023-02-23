@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [click, setClick] = React.useState(false);
   console.log(click);
+  window.onscroll = function () {stickyNavbar()}
+  
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -58,7 +60,3 @@ export const Navbar = () => {
 };
 
 
-<div>
-  <img/>
-  <Link to="/">Name of room</Link>
-</div>

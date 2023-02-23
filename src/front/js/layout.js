@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 import  Login  from "./pages/login";
 import Categories from "./pages/categories";
 import Geeks4sleep from "./pages/geeks4sleep";
-import GeeksList from "./pages/geeksList";
+import GeeksList from "./component/geeksList";
 import ScholarsStudy from "./pages/scholarsStudy";
 import ScholarsList from "./component/scholarsList";
 import TweenageDirtbag from "./pages/tweenageDirtbag";
@@ -21,7 +21,6 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import GeeksList from "./component/geeksList";
 
 //create your first component
 const Layout = () => {
@@ -38,9 +37,9 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Geeks4sleep />} path="/geeks4sleep" />
-                        <Route element={<GeeksList />} path="/geeksList" />
+                        <Route element={<GeeksList />} path="geeks4sleep/list" />
                         <Route element={<ScholarsStudy />} path="/scholars_study" />
-                        <Route element={<ScholarsList />} path="/scholarsList" />
+                        <Route element={<ScholarsList />} path="/scholars_study/list" />
                         <Route element={<TweenageDirtbag />} path="/tweenage_dirtbag" />
                         <Route element={<TweenageList />} path="/tweenageList" />
                         <Route element={<UnicornDreams />} path="/unicorn_dream" />

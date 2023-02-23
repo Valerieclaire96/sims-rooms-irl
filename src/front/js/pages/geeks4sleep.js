@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Geeks4sleep() {
   return (
           <div>
-            <button></button>
+            <Link to={"geeks4sleep/geeksList"}></Link>
               <div>
                 <img>
                   <span className="roomBtn"></span>
