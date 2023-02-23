@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [click, setClick] = React.useState(false);
   console.log(click);
-  window.onscroll = function () {stickyNavbar()}
   
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">

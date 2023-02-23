@@ -1,45 +1,190 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ScholarsList() {
   return (
-    <div> <div className="roomCardContainer">
-    <div className="roomcard">
-      <img src="https://i.imgur.com/HBs0rHW.png" className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <button href="#" className="btn btn-primary">
-          Go somewhere
-        </button>
+    <div className="container">
+      <button title="Room View" className="listBtn">
+        <Link to={"/scholars_study"}>
+          <div className="fa-solid fa-border-all fa-2xl"></div>
+        </Link>
+      </button>
+      <h2 className="roomHeader">The Scholar's Study</h2>
+      <div className="roomCardContainer">
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 2 */}
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 3 */}
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 4 */}
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 5 */}
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* 6 */}
+        <div className="cardContainer">
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+          <div className="card">
+            <img
+              src="https://i.imgur.com/HBs0rHW.png"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <button href="#" className="btn btn-primary">
+                Go somewhere
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div className="roomcard">
-      <img src="https://i.imgur.com/i0yK226.png" className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <button href="#" className="btn btn-primary">
-          Go somewhere
-        </button>
-      </div>
-    </div>
-    <div className="roomcard">
-      <img src="https://i.imgur.com/N1qG0Fm.png" className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
-      </div>
-    </div>
-    <div className="roomcard">
-      <img src="https://i.imgur.com/p4leMsk.png" className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
-      </div>
-    </div>
-  </div>
-  </div>
-  )
+  );
 }
