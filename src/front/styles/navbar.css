@@ -1,3 +1,22 @@
+.navbar{
+  padding: 10px;
+  background: white;
+  height: 75px;
+  border-bottom: 1px solid gray;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.nav-item{
+  margin: 15px; 
+  color: white; 
+}
+
 .search-bar {
     margin:0;
     padding:0;
@@ -9,7 +28,7 @@
     left:50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    border: 1px black solid;
+    /* border: 1px black solid; */
     border-radius: 25%;
     transition-duration: 0.2s;
   }
@@ -19,10 +38,11 @@
     padding: 0;
     margin: 0;
     border: none;
+    border-radius:10px;
     line-height: 40px;
     font-size: 25px;
     height:45px;
-    background-color: transparent;
+    background-color: white;
     outline: none;
     height: 100%;
     float: left;
@@ -61,16 +81,16 @@
   }
   .search-bar:hover {
     border-radius: 10px;
+   
   }
   
   .search-bar:hover > .search-btn {
-    border-left: 1px black solid;
     /* border-radius: 5px; */
     transition-duration: 0.2s;
   }
   
   .search-btn:hover {
-    background-color: black;
+    background: transparent;
     border-radius: 0px 9px 9px 0px;
     transition-duration: 0.2s;
   }
@@ -82,4 +102,5 @@
   .searchGif{
     width: 40px;
     height: 50px;
+    background: transparent
   }
