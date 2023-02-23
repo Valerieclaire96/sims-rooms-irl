@@ -6,53 +6,53 @@
     on that page only (the ones not reused in other pages).
 */
 
-.homeContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#carouselBtn{
-    border-radius: 50%;
-    background: grey; 
-    height: 8px;
-    margin: 1px;
-    border: none; 
-    display: inline-block; 
+#carouselBtn {
+  border-radius: 50%;
+  background: grey;
+  height: 8px;
+  margin: 1px;
+  border: none;
+  display: inline-block;
 }
 
 /* how do I keep this on white the picture is displayed also need to have a timer set to the carosuel */
-#carouselBtn:active{
-    background: whitesmoke
+#carouselBtn:active {
+  background: whitesmoke;
 }
 
-.carousel.container.slide{
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.4); 
-    border-radius: 15px;
-    padding: 0;
+.carousel.container.slide {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 0;
 }
-.carousel-room{
-    height: 750px;
-    border-radius: 15px;
-}
-
-.homeCardContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin: 20px 0;
+.carousel-room {
+  height: 750px;
+  border-radius: 15px;
 }
 
-.homecard{
-    margin: 20px;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.4); 
-    color: rgba(0, 4, 255, 0.733);
+.homeCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 20px 0;
 }
 
-.card-img-top{
-    height: 300px;
+.homecard {
+  margin: 20px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  color: rgba(0, 4, 255, 0.733);
+}
+
+.card-img-top {
+  height: 300px;
 }
