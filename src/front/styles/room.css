@@ -29,4 +29,9 @@
     position: absolute;
 }
 
+.roomBtn:active,
+.fa-circke-dot:active{
+  color: black;
+}
+
 

@@ -49,7 +49,7 @@ const Layout = () => {
                         <Route element={<ZenDen />} path="/zen_den" />
                         <Route element={<ZenList />} path="/zenList" />
                         <Route element={<Categories />} path="/categories" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<img src="https://i.imgur.com/u01pV8K.png" alt="404:PAGE NOT FOUND"/>} path="*" />
                         
                     </Routes>
                     <Footer />

@@ -2,12 +2,24 @@
     background: none;
     outline: none;
     border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.studyBtn:focus{
+    color:black !important;
 }
 
 .studyOne{
     position: absolute;
     top: 440px;
     right: 142px;
+}
+
+.studyOnePopover{
+    position: absolute;
+    top: 421px;
+    right: 182px;
 }
 
 .studyTwo{

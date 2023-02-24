@@ -7,9 +7,6 @@
   align-items: center;
   justify-content: center;
 }
-.navbar {
-  padding: 10px;
-}
 
 .logo {
   height: 75px;
@@ -22,8 +19,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: linear-gradient(0deg, rgba(58,219,221,1) 35%, rgba(254,254,254,0.5074230375744048) 100%);
 }
-
 .cardContainerMain {
   display: flex;
   align-items: center;
