@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '/workspace/sims-rooms-irl/src/front/styles/signup.css';
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -17,7 +17,7 @@ class SignupForm extends React.Component {
     render(){
         return (
             <div className="SignupForm">
-                <h1>Sign Up</h1>
+                <h1 className="H1-Signup">Register</h1>
                 <label>Username:
                     <input type="text" name="username" onChange={(e) => this.handleChange('username', e.target.value)} />
                 </label>
