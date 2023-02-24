@@ -1,0 +1,38 @@
+.SignupForm {
+  background-color: #fbb0b0;
+  border-radius: 5px;
+  text-align: center;
+  color: #3c3c3c;
+  font-family: 'Courier New';
+  padding: 10px;
+
+ .h1-signup {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+  }
+
+  label {
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 100%;
+
+    input {
+      padding: 5px 15px;
+      width: 100%;
+      font-size: 1rem;
+      font-family: 'Courier New';
+      color: #000;
+    }
+  }
+
+  .primary-btn {
+    margin: 10px 0 0;
+    background-color: #0096ef;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+}
