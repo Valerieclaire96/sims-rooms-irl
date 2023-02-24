@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { createPopper } from '@popperjs/core/lib/popper-lite.js';
+import Popover from "@material-ui/core/Popover";
+import Button from "@material-ui/core/Button";
 
 export default function ScholarsStudy() {
-  const [popover, setPopover] = useState(false);
-  const [clicked, setClicked] = useState("d-none");
-  function togglePopover() {
-    setPopover(!popover);
-    if (popover === false) {
-      setClicked("d-none");
-    } else {
-      setClicked("d-block");
-    }
-  }
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
   return (
     <div className="container">
       <button title="List View" className="listBtn">
@@ -23,97 +17,301 @@ export default function ScholarsStudy() {
       <h2 className="roomHeader">The Scholar's Study</h2>
       <div className="roomBtnContainer">
         <img className="roomImg" src="https://i.imgur.com/jG5GOPdh.png" />
-        <span className="roomBtn">
-          <button
-            className="fa-regular fa-circle-dot fa-2xl studyBtn studyOne"
-            onClick={(e) => {
-              e.preventDefault();
-              console.log(e);
-            }}
-          >
-           <div
-            className={`bg-secondary studyOnePopover ${
-              focus ? "d-none" : "d-block"
-            }`}
-          >
-            <h4>Click here to buy</h4>
-            <p>www.amazon.com</p>
-          </div> 
-          </button>
-        </span>
-        <span className="roomBtn">
-          <button className="fa-regular fa-circle-dot studyTwo fa-2xl studyBtn">
-          </button>
-        </span>
-        <span className="roomBtn">
-          <button className="fa-regular fa-circle-dot studyThree fa-2xl studyBtn">
-          </button>
-        </span>
-        <span className="roomBtn">
-          <button className="fa-regular fa-circle-dot studyFour fa-2xl studyBtn">
-          </button>
-        </span>
-        <span className="roomBtn">
-          <button className="fa-regular fa-circle-dot studyFive fa-2xl studyBtn">
-          </button>
-        </span>
-        <span className="roomBtn">
-          <button className="fa-regular fa-circle-dot studySix fa-2xl studyBtn">
-          </button>
-        </span>
-      </div>
-      <h3>Featured</h3>
-      <div className="cardContainerMain">
-        <div className="card">
-          <img
-            src="https://i.imgur.com/HBs0rHW.png"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <button href="#" className="btn btn-primary">
-              Go somewhere
-            </button>
+        <div className="roomBtnContainer">
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className=""
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studyBtn studyOne"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
           </div>
-        </div>
-        <div className="card">
-          <img
-            src="https://i.imgur.com/i0yK226.png"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <button href="#" className="btn btn-primary">
-              Go somewhere
-            </button>
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className="studyBtn"
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studyTwo"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
+          </div>{" "}
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className="studyBtn"
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studyThree"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
+          </div>{" "}
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className="studyBtn"
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studyFour"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
+          </div>{" "}
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className="studyBtn"
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studyFive"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
+          </div>{" "}
+          <div style={{ display: "block", padding: 30 }}>
+            <Button
+              className="studyBtn"
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl studysix"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <div className="card">
+                <img
+                  src="https://i.imgur.com/HBs0rHW.png"
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <button href="#" className="btn btn-primary">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </Popover>
           </div>
-        </div>
-        <div className="card">
-          <img
-            src="https://i.imgur.com/N1qG0Fm.png"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
-        <div className="card">
-          <img
-            src="https://i.imgur.com/p4leMsk.png"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+          <h3>Featured</h3>
+          <div className="cardContainerMain">
+            <div className="card">
+              <img
+                src="https://i.imgur.com/HBs0rHW.png"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <button href="#" className="btn btn-primary">
+                  Go somewhere
+                </button>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src="https://i.imgur.com/i0yK226.png"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <button href="#" className="btn btn-primary">
+                  Go somewhere
+                </button>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src="https://i.imgur.com/N1qG0Fm.png"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src="https://i.imgur.com/p4leMsk.png"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

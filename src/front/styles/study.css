@@ -1,25 +1,22 @@
 .studyBtn{
-    background: none;
-    outline: none;
-    border: none;
-    height: 40px;
-    width: 40px;
+    background: none !important;
+    outline: none !important;
+    border: none !important;
+    min-width: 20px !important;
+    min-height: 20px;
+    border-radius:50% !important;
+    padding: none !important;
+    
 }
 
-.studyBtn:focus{
-    color:black !important;
-}
 
 .studyOne{
+    padding-top:10px;
     position: absolute;
+    color: black !important;
     top: 440px;
     right: 142px;
-}
-
-.studyOnePopover{
-    position: absolute;
-    top: 421px;
-    right: 182px;
+    z-index: 8 !important;
 }
 
 .studyTwo{
