@@ -150,7 +150,6 @@ class Object(db.Model):
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    # style inputs need to work more like an array with multiple values
     style = db.Column(db.String(80), nullable=False)
     room_type = db.Column(db.String(80), nullable=False)
     object_type = db.Column(db.String(80), nullable=False)

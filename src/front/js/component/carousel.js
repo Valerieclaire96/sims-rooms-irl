@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Carousel({ sourceList }) {
   const [index, setIndex] = React.useState(0);
@@ -10,9 +11,11 @@ export default function Carousel({ sourceList }) {
           <button
             onClick={() => setIndex(currentIndex)}
             type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to={currentIndex}
             className={index === currentIndex ? "active" : ""}
             aria-current="true"
-            aria-label="Slide 1"
+            aria-label={"Slide " + (index + 1)}
           ></button>
         ))}
       </div>
@@ -20,11 +23,10 @@ export default function Carousel({ sourceList }) {
         {sourceList.map((url, currentIndex) => (
           <div
             className={
-              "carousel-item " + (index === currentIndex ? "active" : "")
+              "carousel-item "  + (index === currentIndex ? "active" : "")
             }
           >
-            <img src={url} className="carousel-room d-block w-100" />
-            {/* make room */}
+            <Link to={index == 0 ? "/scholars_study" : index == 1 ? "scholars_study": index == 2 ? "/scholars_study" : index == 3 ? "/scholars_study": "/scholars_study"}><img src={url} className="carousel-room d-block w-100" /></Link>
           </div>
         ))}
       </div>

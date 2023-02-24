@@ -3,11 +3,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
 import  Login  from "./pages/login";
 import  Signup from "./pages/signup";
 import Categories from "./pages/categories";
-import { Single } from "./pages/single";
+import Geeks4sleep from "./pages/geeks4sleep";
+import GeeksList from "./component/geeksList";
+import ScholarsStudy from "./pages/scholarsStudy";
+import ScholarsList from "./component/scholarsList";
+import TweenageDirtbag from "./pages/tweenageDirtbag";
+import TweenageList from "./component/tweenageList";
+import UnicornDreams from "./pages/unicornDreams";
+import UnicornList from "./component/unicornList";
+import VroomRoom from "./pages/vroomRoom";
+import VroomList from "./component/vroomList";
+import ZenDen from "./pages/zenDen";
+import ZenList from "./component/zenList";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -26,12 +36,24 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Login />} path="/login" />
+
                         <Route element={<Signup />} path="/register" />
+=======
+                        <Route element={<Geeks4sleep />} path="/geeks4sleep" />
+                        <Route element={<GeeksList />} path="geeks4sleep/list" />
+                        <Route element={<ScholarsStudy />} path="/scholars_study" />
+                        <Route element={<ScholarsList />} path="/scholars_study/list" />
+                        <Route element={<TweenageDirtbag />} path="/tweenage_dirtbag" />
+                        <Route element={<TweenageList />} path="/tweenageList" />
+                        <Route element={<UnicornDreams />} path="/unicorn_dream" />
+                        <Route element={<UnicornList />} path="/unicornList" />
+                        <Route element={<VroomRoom />} path="/vroom_room" />
+                        <Route element={<VroomList />} path="/vroomList" />
+                        <Route element={<ZenDen />} path="/zen_den" />
+                        <Route element={<ZenList />} path="/zenList" />
                         <Route element={<Categories />} path="/categories" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<img src="https://i.imgur.com/u01pV8K.png" alt="404:PAGE NOT FOUND"/>} path="*" />
                         
                     </Routes>
                     <Footer />

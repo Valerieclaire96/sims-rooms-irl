@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react'
 
-export default function HomeCards() {
+export default function UnicornList() {
   return (
-    <div className="cardContainerMain">
-      <div className="card">
+    <div>
+       <div className="homeCardContainer">
+      <div className="homecard">
         <img src="https://i.imgur.com/HBs0rHW.png" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -12,7 +13,7 @@ export default function HomeCards() {
           </button>
         </div>
       </div>
-      <div className="card">
+      <div className="homecard">
         <img src="https://i.imgur.com/i0yK226.png" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -21,7 +22,7 @@ export default function HomeCards() {
           </button>
         </div>
       </div>
-      <div className="card">
+      <div className="homecard">
         <img src="https://i.imgur.com/N1qG0Fm.png" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -30,7 +31,7 @@ export default function HomeCards() {
           </a>
         </div>
       </div>
-      <div className="card">
+      <div className="homecard">
         <img src="https://i.imgur.com/p4leMsk.png" className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -40,5 +41,6 @@ export default function HomeCards() {
         </div>
       </div>
     </div>
-  );
+    </div>
+  )
 }

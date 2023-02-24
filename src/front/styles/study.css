@@ -1,0 +1,58 @@
+.studyBtn{
+    background: none;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.studyBtn:focus{
+    color:black !important;
+}
+
+.studyOne{
+    position: absolute;
+    top: 440px;
+    right: 142px;
+}
+
+.studyOnePopover{
+    position: absolute;
+    top: 421px;
+    right: 182px;
+}
+
+.studyTwo{
+    position: absolute;
+    top: 567px;
+    left: 225px;
+}
+
+.studyThree{
+    position: absolute;
+    top: 496px;
+    right: 461px;
+}
+
+.studyFour{
+    position: absolute;
+    top: 593px;
+    right: 915px;
+}
+
+.studyFive{
+    position: absolute;
+    top: 324px;
+    right: 354px;
+}
+
+.studySix{
+    position: absolute;
+    top: 368px;
+    right: 532px;
+}
+
+
+
+
+

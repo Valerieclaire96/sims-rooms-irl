@@ -1,0 +1,37 @@
+ .listBtn {
+    background: none;
+    outline: none;
+    border: none;
+    height: 70px;
+    margin-top: 10px;
+  }
+
+  .roomHeader {
+    margin-bottom: 20px;
+  }
+
+.roomBtnContainer {
+    position: relative;
+}
+
+  .roomImg {
+    height: 750px;
+    border-radius: 15px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+    display: block;
+  }
+
+.fa-circle-dot{
+    color: rgba(245, 245, 245, 0.897) !important;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 4;
+    position: absolute;
+}
+
+.roomBtn:active,
+.fa-circke-dot:active{
+  color: black;
+}
+
+
