@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(0deg, rgba(58,219,221,1) 35%, rgba(254,254,254,0.5074230375744048) 100%);
+  background: linear-gradient(rgb(254, 254, 254, 0) 0%, rgba(0, 241, 244, 0.57) 100%);
 }
 .cardContainerMain {
   display: flex;
