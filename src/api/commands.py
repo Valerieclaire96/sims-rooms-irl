@@ -1,7 +1,9 @@
 
 import click
-from api.models import db, User
-
+from api.models import db, User, Room, Object, Meta
+import os
+import random
+from flask import Flask, request, jsonify, url_for
 """
 In this file, you can add as many commands as you want using the @app.cli.command decorator
 Flask commands are usefull to run cronjobs or tasks outside of the API but sill in integration 
@@ -30,3 +32,4 @@ def setup_commands(app):
         print("All test users created")
 
         ### Insert the code to populate others tables if needed
+

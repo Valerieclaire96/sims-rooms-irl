@@ -1,8 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState, useEffect} from "react";
 
 export default function Carousel({ sourceList }) {
   const [index, setIndex] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = React.useState(index);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+
+      if(currentSlide === index) {
+        setCurrentSlide(index + 1);
+      } else if(currentSlide === index + 1) {
+        setCurrentSlide(index + 2)
+      }else if(currentSlide === index + 2) {
+        setCurrentSlide(index + 3)
+      }else if(currentSlide === index + 3) {
+        setCurrentSlide(index + 4)
+      }else if(currentSlide === index + 4) {
+        setCurrentSlide(index + 5)
+      }
+  }, 100000);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
 
   return (
     <div className="carousel slide" data-ride="carousel">

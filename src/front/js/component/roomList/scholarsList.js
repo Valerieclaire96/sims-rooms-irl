@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ScholarsList() {
   return (
-    <div className="container">
+    <div className="container selection">
       <button title="Room View" className="listBtn">
         <Link to={"/scholars_study"}>
           <div className="fa-solid fa-border-all fa-2xl"></div>

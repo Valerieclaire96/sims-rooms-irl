@@ -6,18 +6,26 @@ import { Home } from "./pages/home";
 import  Login  from "./pages/login";
 import  Signup from "./pages/signup";
 import Categories from "./pages/categories";
-import Geeks4sleep from "./pages/geeks4sleep";
-import GeeksList from "./component/geeksList";
-import ScholarsStudy from "./pages/scholarsStudy";
-import ScholarsList from "./component/scholarsList";
-import TweenageDirtbag from "./pages/tweenageDirtbag";
-import TweenageList from "./component/tweenageList";
-import UnicornDreams from "./pages/unicornDreams";
-import UnicornList from "./component/unicornList";
-import VroomRoom from "./pages/vroomRoom";
-import VroomList from "./component/vroomList";
-import ZenDen from "./pages/zenDen";
-import ZenList from "./component/zenList";
+import Dude from "./pages/roomPages/DudeWheresMyCloset";
+import DudeList from "./component/roomList/dudeList";
+import Lazy from "./pages/roomPages/lazySusansKitchen";
+import LazyList from "./component/roomList/lazyList";
+import Bites from "./pages/roomPages/QuickBitesLongTalks";
+import BitesList from "./component/roomList/bitesList";
+import Zzz from "./pages/roomPages/straightAsToZzz";
+import ZzzList from "./component/roomList/aToZz";
+import Sleep4geeks from "./pages/roomPages/sleep4geeks";
+import GeeksList from "./component/roomList/geeksList";
+import ScholarsStudy from "./pages/roomPages/scholarsStudy";
+import ScholarsList from "./component/roomList/scholarsList";
+import TweenageDirtbag from "./pages/roomPages/tweenageDirtbag";
+import TweenageList from "./component/roomList/tweenageList";
+import UnicornDreams from "./pages/roomPages/unicornDreams";
+import UnicornList from "./component/roomList/unicornList";
+import VroomRoom from "./pages/roomPages/vroomRoom";
+import VroomList from "./component/roomList/vroomList";
+import ZenDen from "./pages/roomPages/zenDen";
+import ZenList from "./component/roomList/zenList";
 import PopoverDemo from "./pages/popoverDemo.js";
 import injectContext from "./store/appContext";
 
@@ -40,8 +48,17 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         <Route element={<Signup />} path="/register" />
                         <Route element={<PopoverDemo />} path="/popover_demo" />
-                        <Route element={<Geeks4sleep />} path="/geeks4sleep" />
-                        <Route element={<GeeksList />} path="geeks4sleep/list" />
+                        <Route element={<Categories />} path="/categories" />
+                        <Route element={<Dude />} path="/dude_wheres_my_closet" />
+                        <Route element={<DudeList />} path="/dude_list" />
+                        <Route element={<Lazy />} path="/lazy_susans_kitchen" />
+                        <Route element={<LazyList />} path="/lazy_susans_kitchen_list" />
+                        <Route element={<Bites />} path="/quick_bites_long_talks" />
+                        <Route element={<BitesList />} path="/quick_bites_long_talks_list" />
+                        <Route element={<Zzz />} path="/straight_as_to_zzz" />
+                        <Route element={<ZzzList />} path="/straight_as_to_zzz_list"/>
+                        <Route element={<Sleep4geeks />} path="/sleep4geeks" />
+                        <Route element={<GeeksList />} path="sleep4geeks/list" />
                         <Route element={<ScholarsStudy />} path="/scholars_study" />
                         <Route element={<ScholarsList />} path="/scholars_study/list" />
                         <Route element={<TweenageDirtbag />} path="/tweenage_dirtbag" />

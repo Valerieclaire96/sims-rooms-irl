@@ -70,7 +70,6 @@ class Room(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     pic_url = db.Column(db.String(500), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
 
     # describes the relationship between rooms and objects
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -91,6 +90,7 @@ class Room(db.Model):
     faved_rooms = db.relationship("User",
             secondary=fav_room,
             back_populates="user_rooms")
+    
     # This is how the artist will print in the console, just the name
     def __repr__(self):
         return self.name
@@ -100,18 +100,40 @@ class Room(db.Model):
             "id": self.id,
             "name": self.name,
             "pic_url": self.pic_url,
-            "price": self.price,
         }
 
+    def add_room(self, room):
+        # fill this method and update the return
+        if "id" not in room:
+            room["id"] = randint(0, 99999999)
+
+        self._rooms.append(room)
+
+
+    def delete_room(self, id):
+        # fill this method and update the return
+        self._rooms = list(filter(lambda room: room["id"] != id, self._rooms))
+
+    def get_member(self, id):
+        # fill this method and update the return
+        room = list(filter(lambda room:room["id"] == id, self._rooms))
+        
+        if len(room) > 0:
+            return room[0]
+        
+        return None
+        
+    # this method is done, it returns a list with all the family rooms
+    def get_all_rooms(self):
+        return self._rooms
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    sims_name = db.Column(db.String(80), nullable=False)
     name = db.Column(db.String(80), nullable=False)
     buy_url = db.Column(db.String(500), nullable=False)
     sims_pic_url = db.Column(db.String(500), nullable=False)
     real_pic_url = db.Column(db.String(500), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
 
     # describes the relationship between rooms and objects
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -143,9 +165,12 @@ class Object(db.Model):
             "id": self.id,
             "name": self.name,
             "buy_url": self.buy_url,
+            "sims_pic_url": self.sims_pic_url,
             "pic_url": self.pic_url,
             "price": self.price,
         }
+
+
 
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):

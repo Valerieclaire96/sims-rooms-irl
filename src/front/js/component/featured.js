@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomeCards() {
+export default function Featured() {
   return (
     <div className="cardContainerMain">
       <div className="card">

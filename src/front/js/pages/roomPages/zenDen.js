@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
 
-export default function ScholarsStudy({cPic,cTitle, cPrice, cLink}) {
+export default function ZenDen({cPic,cTitle, cPrice, cLink}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -305,3 +305,4 @@ export default function ScholarsStudy({cPic,cTitle, cPrice, cLink}) {
         </div>
   );
 }
+
