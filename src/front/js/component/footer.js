@@ -6,5 +6,6 @@ export const Footer = () => (
 			<div>About Us</div>
 			<div>Contact Us</div>
 			<div>CopyRight C</div>
+			<div><a href="https://www.ea.com/games/the-sims">The Sims for FREE here!</a> </div>
 	</footer>
 );
