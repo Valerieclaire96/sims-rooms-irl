@@ -5,7 +5,7 @@ export default function Carousel({ sourceList }) {
   const [index, setIndex] = React.useState(0);
 
   return (
-    <div className="carousel container slide">
+    <div className="carousel slide" data-ride="carousel">
       <div className="carousel-indicators">
         {sourceList.map((url, currentIndex) => (
           <button
@@ -26,7 +26,7 @@ export default function Carousel({ sourceList }) {
               "carousel-item "  + (index === currentIndex ? "active" : "")
             }
           >
-            <Link to={index == 0 ? "/scholars_study" : index == 1 ? "scholars_study": index == 2 ? "/scholars_study" : index == 3 ? "/scholars_study": "/scholars_study"}><img src={url} className="carousel-room d-block w-100" /></Link>
+            <Link to={index == 0 ? "scholars_study" : index == 1 ? "scholars_study": index == 2 ? "/scholars_study" : index == 3 ? "/scholars_study": "/scholars_study"}><img src={url} className="carousel-room d-block w-100" /></Link>
           </div>
         ))}
       </div>

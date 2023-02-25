@@ -29,9 +29,7 @@
     position: absolute;
 }
 
-.roomBtn:active,
-.fa-circke-dot:active{
-  color: black;
+.carousel-item{
+  transition: transform .6s ease-in-out !important;
 }
-
 
