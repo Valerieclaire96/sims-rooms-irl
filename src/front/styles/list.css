@@ -1,0 +1,8 @@
+.cardContainer {
+    display: flex;
+}
+.roomCardContainer {
+    display: flex;
+    flex-direction: column;
+}
+

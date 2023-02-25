@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import  Login  from "./pages/login";
+import  Signup from "./pages/signup";
 import Categories from "./pages/categories";
 import Geeks4sleep from "./pages/geeks4sleep";
 import GeeksList from "./component/geeksList";
@@ -17,6 +18,7 @@ import VroomRoom from "./pages/vroomRoom";
 import VroomList from "./component/vroomList";
 import ZenDen from "./pages/zenDen";
 import ZenList from "./component/zenList";
+import PopoverDemo from "./pages/popoverDemo.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -36,6 +38,8 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Login />} path="/login" />
+                        <Route element={<Signup />} path="/register" />
+                        <Route element={<PopoverDemo />} path="/popover_demo" />
                         <Route element={<Geeks4sleep />} path="/geeks4sleep" />
                         <Route element={<GeeksList />} path="geeks4sleep/list" />
                         <Route element={<ScholarsStudy />} path="/scholars_study" />
@@ -49,7 +53,7 @@ const Layout = () => {
                         <Route element={<ZenDen />} path="/zen_den" />
                         <Route element={<ZenList />} path="/zenList" />
                         <Route element={<Categories />} path="/categories" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<img src="https://i.imgur.com/u01pV8K.png" alt="404:PAGE NOT FOUND"/>} path="*" />
                         
                     </Routes>
                     <Footer />

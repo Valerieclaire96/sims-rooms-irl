@@ -1,0 +1,47 @@
+.studyBtn{
+    background: none !important;
+    outline: none !important;
+    border: none !important;
+    min-width: 20px !important;
+    min-height: 20px;
+    border-radius:50% !important;
+    position: absolute !important;
+    color: black !important;
+    z-index: 8 !important;
+}
+
+
+.studyOne{
+    bottom: 340px;
+    left: 1339px;
+}
+
+.studyTwo{
+    top: 567px;
+    left: 225px;
+}
+
+.studyThree{
+    top: 586px;
+    right: 515px;
+}
+
+.studyFour{
+    top: 871px;
+    right: 915px;
+}
+
+.studyFive{
+    top: 706px;
+    right: 436px;
+}
+
+.studySix{
+    top: 532px;
+    right: 304px;
+}
+
+
+
+
+
