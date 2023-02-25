@@ -5,7 +5,7 @@ export default function Carousel({ sourceList }) {
   const [index, setIndex] = React.useState(0);
 
   return (
-    <div className="carousel container slide">
+    <div className="carousel slide" data-ride="carousel">
       <div className="carousel-indicators">
         {sourceList.map((url, currentIndex) => (
           <button
