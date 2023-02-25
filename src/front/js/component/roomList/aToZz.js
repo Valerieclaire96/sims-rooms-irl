@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function ZzzList() {
-  return (
-    <div>aToZz</div>
-  )
+  return <div>aToZz</div>;
 }
