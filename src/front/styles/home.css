@@ -10,9 +10,12 @@
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   padding: 0;
+  transition: 2s;
+  transition-timing-function: ease-in;
 }
 .carousel-room {
-  height: 750px;
+  width: 1150px;
+  height: 725px;
   border-radius: 15px;
 }
 
