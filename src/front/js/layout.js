@@ -26,7 +26,7 @@ import VroomRoom from "./pages/roomPages/vroomRoom";
 import VroomList from "./component/roomList/vroomList";
 import ZenDen from "./pages/roomPages/zenDen";
 import ZenList from "./component/roomList/zenList";
-import PopoverDemo from "./pages/popoverDemo.js";
+import Demo from "./pages/demo";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -47,7 +47,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Signup />} path="/register" />
-                        <Route element={<PopoverDemo />} path="/popover_demo" />
+                        <Route element={<Demo />} path="/demo" />
                         <Route element={<Categories />} path="/categories" />
                         <Route element={<Dude />} path="/dude_wheres_my_closet" />
                         <Route element={<DudeList />} path="/dude_list" />

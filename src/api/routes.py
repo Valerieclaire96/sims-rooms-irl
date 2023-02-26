@@ -54,7 +54,6 @@ def handle_hello():
 
 @api.route('/object', methods=['POST'])
 def add_object():
-
     request_body = request.get_json(force=True)
     name = request_body.get("name")
     buy_url = request_body.get("buy_url")
@@ -62,12 +61,11 @@ def add_object():
     real_pic_url = request_body.get("real_pic_url")
     price = request_body.get("price")
 
-    return jsonify(response_body), 200
+    return jsonify(response_body.serialize), 200
 
 
-@api.route('/object/str:name>', methods=['GET'])
+@api.route('/object/<int:id>', methods=['GET'])
 def get_object(name):
-    my_object = Object.query.filter_by(name=name).first()
+    my_object = Object.query.get(object_id)
 
-    return jsonify(my_object), 200
-
+    return jsonify(my_object.serialize()), 200

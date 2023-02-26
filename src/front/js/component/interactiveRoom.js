@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
+import "/workspace/sims-rooms-irl/src/front/styles/popover.css";
 
 export default function InteractiveRoom({}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
