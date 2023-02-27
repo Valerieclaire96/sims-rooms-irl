@@ -7,12 +7,8 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
-
-
-
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
-    generate_object_list()
     response_body = {
         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
     }
@@ -31,8 +27,8 @@ def add_object():
     return jsonify(response_body.serialize), 200
 
 
-@api.route('/object/<int:id>', methods=['GET'])
+@api.route('/object/<string:name>', methods=['GET'])
 def get_object(name):
-    my_object = Object.query.get(object_id)
+    my_object = Object.query.filter_by(name=name).first()
 
-    return jsonify(my_object.serialize()), 200
+    return jsonify(my_object), 200
