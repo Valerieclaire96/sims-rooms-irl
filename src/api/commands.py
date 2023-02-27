@@ -32,3 +32,38 @@ def setup_commands(app):
         print("All test users created")
 
         ### Insert the code to populate others tables if needed
+    @app.cli.command("populate-object-table")
+    def generate_object_list():
+        object_list = [
+            {
+                "name": "Roman Temple Architectural study",
+                "buy_url": "Architecture Art 4 : 18th C. English Townhouse Collection - Etsy",
+                "sims_pic_url": "https://imgur.com/Lmr3ZMq",
+                "real_pic_url": "https://i.etsystatic.com/8306577/r/il/b40bb7/3138741932/il_1140xN.3138741932_8jt9.jpg",
+                "price": 58,
+            },
+            {
+                "name": "Lattice in indoor-outdoor rug",
+                "buy_url": "https://www.wayfair.com/rugs/pdp/alcott-hill-tylersburg-moroccan-trellis-ivorynavy-area-rug-alth6143.html?piid=25521865%2C38411307",
+                "sims_pic_url": "https://imgur.com/SmhGAwI",
+                "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/84132909/resize-h1600-w1600%5Ecompr-r85/5860/58602179/Tylersburg+Machine+Woven+%2F+Power+Loomed+Performance+Rug.jpg",
+                "price": 170,
+            },
+            {
+                "name": "The princess and the pineapple bed",
+                "buy_url": "https://a.co/d/6ghdt8J",
+                "sims_pic_url": "https://imgur.com/JakzBPi",
+                "real_pic_url": "https://m.media-amazon.com/images/I/71WpveLsHmL._AC_SL1500_.jpg",
+                "price": 270,
+            },
+        ]
+        for object in object_list:
+            new_object = Object(
+                name = object['name'],
+                buy_url = object['buy_url'],
+                sims_pic_url = object['sims_pic_url'],
+                real_pic_url = object['real_pic_url'],
+                price = object['price'],
+            )
+            db.session.add(new_object)
+            db.session.commit()
