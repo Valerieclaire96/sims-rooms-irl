@@ -108,6 +108,7 @@ class Room(db.Model):
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
+    sims_name = db.Column(db.String(80), unique=True, nullable=False)
     buy_url = db.Column(db.String(2000), nullable=False)
     sims_pic_url = db.Column(db.String(2000), nullable=False)
     real_pic_url = db.Column(db.String(200), nullable=False)
@@ -142,9 +143,10 @@ class Object(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "sims_names": self.sims_name,
             "buy_url": self.buy_url,
             "sims_pic_url": self.sims_pic_url,
-            "pic_url": self.pic_url,
+            "real_pic_url": self.real_pic_url,
             "price": self.price,
         }
 

@@ -24,11 +24,13 @@ def add_object():
     real_pic_url = request_body.get("real_pic_url")
     price = request_body.get("price")
 
-    return jsonify(response_body.serialize), 200
+    return jsonify(request_body), 200
 
 
-@api.route('/object/<string:name>', methods=['GET'])
-def get_object(name):
-    my_object = Object.query.filter_by(name=name).first()
+@api.route('/object/<string:object_name>', methods=['GET'])
+def get_object(object_name):
+    request_body = request.get_json(force=True)
+    object_name = request_body.get("object_name")
+    object = Object.query.filter_by(name=object_name).first()
 
-    return jsonify(my_object), 200
+    return jsonify(object.serialize()), 200
