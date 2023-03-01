@@ -84,21 +84,19 @@ def setup_commands(app):
     def generate_meta_list():
         meta_list = [
             {
-                "style" : "kids"
+                "description" : "kids"
             },
             {
-                "color" : "wood"
+                "description" : "wood"
             },
             {
-                "type" : "kitchen"
+                "description" : "kitchen"
             },
         ]
         for object in object_list:
-            new_object = Object(
-                style = object['style'],
-                color = object['color'],
-                type = object['type'],
+            new_description = Meta(
+                description = object['description']
                
             )
-            db.session.add(new_object)
+            db.session.add(new_description)
             db.session.commit()

@@ -159,9 +159,7 @@ class Object(db.Model):
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    style = db.Column(db.String(80), nullable=True)
-    color = db.Column(db.String(80), nullable=True)
-    type = db.Column(db.String(80), nullable=True)
+    description = db.Column(db.String(80), nullable=True)
 
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -186,7 +184,5 @@ class Meta(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "style": self.style,
-            "color": self.color,
-            "type": self.type,
+            "description": self.description,
         }
