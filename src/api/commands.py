@@ -42,6 +42,8 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/Lmr3ZMq",
                 "real_pic_url": "https://i.etsystatic.com/8306577/r/il/b40bb7/3138741932/il_1140xN.3138741932_8jt9.jpg",
                 "price": 58,
+                "rooms": ["Dude, Where's my Closet?" , "Quick Bites, Long Talks"],
+                "meta_tags": ["Classic", "traditional", "farmhouse", "black", "white", "decor", "picture"]
             },
             {
                 "name": "lattice rug",
@@ -50,6 +52,8 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/SmhGAwI",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/84132909/resize-h1600-w1600%5Ecompr-r85/5860/58602179/Tylersburg+Machine+Woven+%2F+Power+Loomed+Performance+Rug.jpg",
                 "price": 170,
+                "rooms": ["Dude, Where's my Closet?"],
+                "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
             },
             {
                 "name": "padded headboard",
@@ -58,6 +62,8 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/JakzBPi",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71WpveLsHmL._AC_SL1500_.jpg",
                 "price": 270,
+                "rooms": ["Dude, Where's my Closet?"],
+                "meta_tags": ["modern", "contemporary", "grey", "bed", "headboard"]
             },
         ]
         for object in object_list:

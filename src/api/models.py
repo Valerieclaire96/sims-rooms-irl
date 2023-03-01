@@ -148,6 +148,8 @@ class Object(db.Model):
             "sims_pic_url": self.sims_pic_url,
             "real_pic_url": self.real_pic_url,
             "price": self.price,
+            "rooms": self.rooms,
+            "meta_tags": self.meta_tags,
         }
 
 
@@ -156,10 +158,9 @@ class Object(db.Model):
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     style = db.Column(db.String(80), nullable=False)
-    room_type = db.Column(db.String(80), nullable=False)
-    object_type = db.Column(db.String(80), nullable=False)
-    object_pack = db.Column(db.String(80), nullable=False)
-    
+    color = db.Column(db.String(80), nullable=False)
+    type = db.Column(db.String(80), nullable=False)
+
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from meta to Object in the defined in the Object table
@@ -177,14 +178,13 @@ class Meta(db.Model):
     # This is how the artist will print in the console, just the name
 
     def __repr__(self):
-        return self.name
+        return self.id
 
     # This is how the artist will look inside the API JSON responses
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
             "style": self.style,
-            "room_type": self.room_type,
-            "age_group": self.object_pack,
+            "color": self.color,
+            "type": self.type,
         }
