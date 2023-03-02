@@ -4,6 +4,10 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Object, Room, Meta
 from api.utils import generate_sitemap, APIException
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+
 
 api = Blueprint('api', __name__)
 
@@ -14,6 +18,46 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/signup', methods=['POST'])
+def create_account():
+    request_body = request.get_json()
+    email = request_body.get('email')
+    password = request_body.get('password')
+    profile_pic = request_body.get('profile_pic')
+
+    user = User.query.filter_by(email=email).first()
+    if user is not None:
+        return jsonify({'message': 'User already exists'}), 400
+
+    new_user = User(email=email, password=password, profile_pic=profile_pic, is_active=True)
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify({'message': 'User created'}), 201
+
+@api.route('/login', methods=['POST'])
+def login():
+    request_body = request.get_json()
+    email = request_body.get('email')
+    password = request_body.get('password')
+
+    user = User.query.filter_by(email=email).first()
+    if user is not None:
+        token = create_access_token(identity=email)
+        return jsonify({'message': 'Successful Sign in', "token": str(token) }), 200
+    return jsonify({"message': 'User doesn't exists"}), 400
+
+@api.route('/user', methods=['GET'])
+@jwt_required()
+def get_user():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+
+    if user is not None:
+        return jsonify(user.serialize()), 200
+
+    return jsonify({"message": "Uh-oh"}), 400
+
 
 @api.route('/object', methods=['POST'])
 def add_object():

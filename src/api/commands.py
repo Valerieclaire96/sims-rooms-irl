@@ -121,7 +121,7 @@ def setup_commands(app):
                 "real_pic_url": "https://i.etsystatic.com/8306577/r/il/b40bb7/3138741932/il_1140xN.3138741932_8jt9.jpg",
                 "price": 58,
                 "rooms": ["Dude, Where's my Closet?" , "Quick Bites, Long Talks"],
-                "meta_tags": ["Classic", "traditional", "farmhouse", "black", "white", "decor", "picture"]
+                "meta_tags": ["Classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
             },
             {
                 "name": "lattice rug",
@@ -439,7 +439,7 @@ def setup_commands(app):
                 "buy_url": "Hekman 72'' Desk | Wayfair",
                 "sims_pic_url": "https://imgur.com/fdf1RFJ",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/15056160/resize-h755-w755%5Ecompr-r85/1047/104759591/72%27%27+Desk.jpg",
-                "price": 3,998,
+                "price": 3998,
                 "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional", "wood", "brown", "desk"]
             },
@@ -769,7 +769,7 @@ def setup_commands(app):
                 "buy_url": "https://www.wayfair.com/furniture/pdp/birch-lane-ophelie-87-rolled-arm-chesterfield-sofa-w005438470.html?piid=2124489610",
                 "sims_pic_url": "https://i.imgur.com/iz9uoBW.png",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/46106533/resize-h755-w755%5Ecompr-r85/1789/178953001/Ophelie+87%27%27+Upholstered+Sofa.jpg",
-                "price": 1,617,
+                "price": 1617,
                 "rooms": ["Zen den"],
                 "meta_tags": ["classic", "Eclectic", "Shabby", "Chic", "sofa", "coutch", "blue"]
             },
