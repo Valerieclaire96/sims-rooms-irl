@@ -724,6 +724,29 @@ def setup_commands(app):
                 sims_pic_url = object['sims_pic_url'],
                 real_pic_url = object['real_pic_url'],
                 price = object['price'],
+                rooms = object['rooms'],
+                meta_tags = object['meta_tags']
             )
             db.session.add(new_object)
+            db.session.commit()
+
+    @app.cli.command("populate-meta-table")
+    def generate_meta_list():
+        meta_list = [
+            {
+                "description" : "kids"
+            },
+            {
+                "description" : "wood"
+            },
+            {
+                "description" : "kitchen"
+            },
+        ]
+        for object in object_list:
+            new_description = Meta(
+                description = object['description']
+               
+            )
+            db.session.add(new_description)
             db.session.commit()

@@ -49,19 +49,19 @@ class User(db.Model):
 
 # describes the many to many relationship between rooms and objects
 object_room = db.Table('object_room',
-            db.Column("object_id", db.Integer, db.ForeignKey("object.id"), primary_key=True),
-            db.Column("room_id", db.Integer, db.ForeignKey( "room.id"), primary_key=True)
+            db.Column("object_name", db.String, db.ForeignKey("object.name"), primary_key=True),
+            db.Column("room_name", db.String, db.ForeignKey( "room.name"), primary_key=True)
             )
 
 # describes the many to many relationship between rooms and meta
 # the meta table is used to keep track of idenfifying characters that can apply to multiple rooms and objects
 meta_room = db.Table('meta_room',
             db.Column("meta_id", db.Integer, db.ForeignKey("meta.id"), primary_key=True),
-            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True)
+            db.Column("room_name", db.String, db.ForeignKey("room.name"), primary_key=True)
             )
 # describes the many to many relationship between objects and meta
 meta_object = db.Table('meta_object',
-            db.Column("object_id", db.Integer, db.ForeignKey( "object.id"), primary_key=True),
+            db.Column("object_name", db.String, db.ForeignKey( "object.name"), primary_key=True),
             db.Column("meta_id", db.Integer, db.ForeignKey( "meta.id"), primary_key=True)
             )
 
@@ -102,6 +102,8 @@ class Room(db.Model):
             "name": self.name,
             "sims_names": self.sims_name,
             "pic_url": self.pic_url,
+            "objects": self.objects,
+            "meta_tags": self.meta_tags,
         }
 
 
@@ -157,9 +159,7 @@ class Object(db.Model):
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    style = db.Column(db.String(80), nullable=False)
-    color = db.Column(db.String(80), nullable=False)
-    type = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.String(80), nullable=True)
 
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -184,7 +184,5 @@ class Meta(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "style": self.style,
-            "color": self.color,
-            "type": self.type,
+            "description": self.description,
         }
