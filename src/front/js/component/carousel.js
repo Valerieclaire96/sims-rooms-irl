@@ -6,12 +6,12 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 export default function Carousel({ sourceList }) {
   const [index, setIndex] = React.useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIndex((index) => (index + 1) % sourceList.length);
-  //   }, 3500);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((index) => (index + 1) % sourceList.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="carousel slide" data-ride="carousel">
@@ -28,13 +28,14 @@ export default function Carousel({ sourceList }) {
           ></button>
         ))}
       </div>
-      <TransitionGroup>
-        <CSSTransition 
-        key={sourceList[index]}
-        timeout={1000}
-        classNames="slide-right"
-        >
-          <div className="carousel-inner">
+      <div className="carousel-inner">
+        <TransitionGroup>
+          <CSSTransition
+            key={sourceList[index]}
+            timeout={3500}
+            classNames="slide-right"
+          >
+            <div>
             {sourceList.map((url, currentIndex) => (
               <div
                 className={
@@ -58,10 +59,10 @@ export default function Carousel({ sourceList }) {
                 </Link>
               </div>
             ))}
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
-
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      
       <button
         onClick={() =>
           setIndex(index === 0 ? sourceList.length - 1 : index - 1)
@@ -86,6 +87,7 @@ export default function Carousel({ sourceList }) {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
+    </div>
     </div>
   );
 }

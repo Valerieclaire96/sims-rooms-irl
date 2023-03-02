@@ -32,6 +32,84 @@ def setup_commands(app):
         print("All test users created")
 
         ### Insert the code to populate others tables if needed
+
+    @app.cli.command("populate-room-table")
+    def generate_room_list():
+        room_list = [
+            {
+                "name": "Dude, Where's my Closet?",
+                "pic_url": "https://imgur.com/SmhGAwI",
+                "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"],
+                "meta_tags": ["contemporary", "modern", "minimalist", "simple", "bedroom"]
+            },
+             {
+                "name": "geeks4Sleep",
+                "pic_url": "https://imgur.com/MT1HV5j",
+                "objects":  ["indstrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"],
+                "meta_tags": ["teen", "contemporary", "bedroom", "black"]
+            },
+             {
+                "name": "Lazy Susan’s Kitchen",
+                "pic_url": "https://i.imgur.com/9WdnFoR.png",
+                "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"],
+                "meta_tags": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
+            },
+             {
+                "name": "Quick Bites, Long Talks",
+                "pic_url": "https://i.imgur.com/tPG1Meg.png",
+                "objects": ["mc dining table", "mc console table", "floor lamp", "md dining chair", "architecture art", "lotus candle"],
+                "meta_tags": ["mid century modern", "modern", "contemporary","dining room", "vintage", "scandinavian"]
+            },
+             {
+                "name": "The Fancy Man’s Study",
+                "pic_url": "https://i.imgur.com/tPG1Meg.png",
+                "objects":  ["studded arm chair", "globe bar", "bankers lamp", "Persian rug", "executive desk chair", "executive desk"],
+                "meta_tags":  ["office", "study", "classic", "traditional","brown","wood"]
+            },
+             {
+                "name": "Straight As to Zzz",
+                "pic_url": "https://i.imgur.com/YpAijUT.png",
+                "objects": ["leaf art", "mirror with lights", "director’s chair", "white gold dresser", "salt lamp"],
+                "meta_tags":  ["teen", "contemporary","modern","chic","luxe","glamor","bedroom"]
+
+            },
+             {
+                "name": "Tweenage Dirtbag",
+                "pic_url": "https://imgur.com/HHILH8C",
+                "objects": ["pink floyd poster","nautro rug","desk lamp","rice paper lamp","bean bag","bunk bed"],
+                "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
+            },
+             {
+                "name": "Unicorn Dreams",
+                "pic_url": "https://imgur.com/iaJefXz",
+                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling car pink"],
+                "meta_tags": ["kids","cute","pink","purple"]
+            },
+             {
+                "name": "Vroom Room",
+                "pic_url": "https://imgur.com/2W36O5V",
+                "objects": ["school bus toybox","blue rug","dragon","rolling cart","racecar bed","panda chair"],
+                "meta_tags": ["kids","cute","blue"]
+            },
+             {
+                "name": "Zen Den",
+                "pic_url": "https://i.imgur.com/6aHMhet.png",
+                "objects": ["cat planter","lotus candle","arc lamp","wicker basket","handing planter","noddle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
+                "meta_tags": ["boho", "eclectic", "bohemian", "shabby chic", "living room"] 
+            },
+        ]
+        for room in room_list:
+            new_room = Room(
+                name = room['name'],
+                sims_name = room['sims_name'],
+                pic_url = room['pic_url'],
+                real_pic_url = room['real_pic_url'],
+                objects = room['objects'],
+                meta_tags = room['meta_tags']
+            )
+            db.session.add(new_room)
+            db.session.commit()
+
     @app.cli.command("populate-object-table")
     def generate_object_list():
         object_list = [
@@ -96,7 +174,6 @@ def setup_commands(app):
         for object in object_list:
             new_description = Meta(
                 description = object['description']
-               
             )
             db.session.add(new_description)
             db.session.commit()

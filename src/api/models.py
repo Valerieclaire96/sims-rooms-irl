@@ -69,7 +69,6 @@ meta_object = db.Table('meta_object',
 class Room(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80),unique=True, nullable=False)
-    sims_name = db.Column(db.String(80),unique=True, nullable=False)
     pic_url = db.Column(db.String(2000), nullable=False)
 
     # describes the relationship between rooms and objects
@@ -100,7 +99,6 @@ class Room(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "sims_names": self.sims_name,
             "pic_url": self.pic_url,
             "objects": self.objects,
             "meta_tags": self.meta_tags,
