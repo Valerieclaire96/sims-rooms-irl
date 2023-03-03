@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '/workspace/sims-rooms-irl/src/front/styles/loginform.css';
+import { Link } from 'react-router-dom';
 
 
 const LoginForm = () => {
@@ -27,7 +28,7 @@ const LoginForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button type="submit">Login</button>
-              <button type="submit">Register</button>
+              <button><Link to="/register">Register</Link></button>
        </form>
     );
 };

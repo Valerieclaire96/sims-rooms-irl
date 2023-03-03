@@ -20,6 +20,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    profile_pic = db.Column(db.String(120), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     # name to describe the relationship, then the name of the other table
@@ -42,6 +43,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "user_room": [room.serialize() for room in self.user_rooms],
+            "user_objects": [r_object.serialize() for r_object in self.user_objects],
             # do not serialize the password, its a security breach
         }
 
@@ -69,7 +72,6 @@ meta_object = db.Table('meta_object',
 class Room(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80),unique=True, nullable=False)
-    sims_name = db.Column(db.String(80),unique=True, nullable=False)
     pic_url = db.Column(db.String(2000), nullable=False)
 
     # describes the relationship between rooms and objects
@@ -100,10 +102,10 @@ class Room(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "sims_names": self.sims_name,
             "pic_url": self.pic_url,
             "objects": self.objects,
             "meta_tags": self.meta_tags,
+            # "faved_rooms": self.faved_rooms,
         }
 
 
@@ -186,3 +188,4 @@ class Meta(db.Model):
             "id": self.id,
             "description": self.description,
         }
+
