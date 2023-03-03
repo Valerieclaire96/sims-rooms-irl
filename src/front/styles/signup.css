@@ -1,38 +1,37 @@
 .SignupForm {
-  background-color: #fbb0b0;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  text-align: center;
-  color: #3c3c3c;
-  font-family: 'Courier New';
-  padding: 10px;
-
- .h1-signup {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #000;
+  margin: 0 auto;
   }
+
 
   label {
     display: inline-block;
     font-weight: bold;
     padding: 10px 0;
     width: 100%;
-
-    input {
-      padding: 5px 15px;
-      width: 100%;
-      font-size: 1rem;
-      font-family: 'Courier New';
-      color: #000;
-    }
   }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      font-size: 18px;
+     border-radius: 5px;
+    }
+  
 
   .primary-btn {
-    margin: 10px 0 0;
-    background-color: #0096ef;
-    color: #fff;
-    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #0099ff;
+    border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
   }
-}
+
