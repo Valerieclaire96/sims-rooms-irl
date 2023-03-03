@@ -1,8 +1,9 @@
-.container {
+.catContainer {
   flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row
 }
-img {
+.catImg {
   height: 400px;
   width: 600px;
 }

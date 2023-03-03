@@ -29,7 +29,4 @@
     position: absolute;
 }
 
-.carousel-item{
-  transition: transform .6s ease-in-out !important;
-}
 

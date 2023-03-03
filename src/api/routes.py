@@ -26,6 +26,13 @@ def create_account():
     password = request_body.get('password')
     profile_pic = request_body.get('profile_pic')
 
+    if not request_body["name"]:
+      return jsonify({"msg": "Name is required"}), 400
+    if not request_body["email"]:
+      return jsonify({"msg": "Email is required"}), 400
+    if not request_body["password"]:
+      return jsonify({"msg": "Password is required"}), 400
+
     user = User.query.filter_by(email=email).first()
     if user is not None:
         return jsonify({'message': 'User already exists'}), 400
@@ -45,6 +52,13 @@ def login():
     if user is not None:
         token = create_access_token(identity=email)
         return jsonify({'message': 'Successful Sign in', "token": str(token) }), 200
+
+        expiration = datetime.timedelta(days=1)
+        access_token = create_access_token(identity= user.id, expires_delta= expiration)
+        favorites = getFavoritesByID(user.id)
+        user_name = user.name
+        return jsonify(access_token=access_token, favorites=favorites, user_name=user_name)
+
     return jsonify({"message': 'User doesn't exists"}), 400
 
 @api.route('/user', methods=['GET'])
@@ -59,6 +73,7 @@ def get_user():
     return jsonify({"message": "Uh-oh"}), 400
 
 
+
 @api.route('/object', methods=['POST'])
 def add_object():
     request_body = request.get_json(force=True)
@@ -67,6 +82,8 @@ def add_object():
     sims_pic_url = request_body.get("sims_pic_url")
     real_pic_url = request_body.get("real_pic_url")
     price = request_body.get("price")
+    room = request_body.get("room")
+    meta_tags = request_body.get("meta_tags")
 
     return jsonify(request_body), 200
 
@@ -75,6 +92,26 @@ def add_object():
 def get_object(object_name):
     request_body = request.get_json(force=True)
     object_name = request_body.get("object_name")
-    object = Object.query.filter_by(name=object_name).first()
+    r_object = Object.query.filter_by(name=object_name).first()
 
-    return jsonify(object.serialize()), 200
+    return jsonify(r_object.serialize()), 200
+
+@api.route('/room', methods=['POST'])
+def add_room():
+    request_body = request.get_json(force=True)
+    name = request_body.get("name")
+    buy_url = request_body.get("buy_url")
+    pic_url = request_body.get("pic_url")
+    objects = request_body.get("objects")
+    meta_tags = request_body.get("meta_tag")
+
+    return jsonify(request_body), 200
+
+
+@api.route('/room/<string:room_name>', methods=['GET'])
+def get_room(room_name):
+    request_body = request.get_json(force=True)
+    room_name = request_body.get("room_name")
+    room = Object.query.filter_by(name=room_name).first()
+
+    return jsonify(room.serialize()), 200
