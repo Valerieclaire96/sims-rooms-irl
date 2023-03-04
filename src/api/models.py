@@ -51,7 +51,7 @@ class User(db.Model):
 
 
 # describes the many to many relationship between rooms and objects
-room_object = db.Table('object_room',
+room_object = db.Table('room_object',
             db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True),
             db.Column("object_id", db.Integer, db.ForeignKey("object.id"), primary_key=True),
             )

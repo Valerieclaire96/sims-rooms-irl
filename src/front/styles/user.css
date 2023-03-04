@@ -1,0 +1,17 @@
+.profilePic{
+    border-radius: 50%;
+    height: 75px;
+    background-color: white;
+    margin: 1px
+}
+
+.profilePicContainer{
+    background-color: rgb(0, 104, 255);
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    justify-content: center;
+}

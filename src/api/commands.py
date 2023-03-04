@@ -31,10 +31,14 @@ def setup_commands(app):
 
         print("All test users created")
 
-        ### Insert the code to populate others tables if needed
-    # @app.cli.command("populate-fav_room-table")
-    #     def generate_fav_room():
+        ## Insert the code to populate others tables if needed
+    @app.cli.command("populate-fav_room-table")
+    def generate_fav_room():
+        fav_room_list= []
 
+    @app.cli.command("populate-fav_object-table")
+    def generate_fav_object():
+        fav_object_list= []
 
     @app.cli.command("populate-room-table")
     def generate_room_list():
@@ -107,7 +111,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/SmhGAwI",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/84132909/resize-h1600-w1600%5Ecompr-r85/5860/58602179/Tylersburg+Machine+Woven+%2F+Power+Loomed+Performance+Rug.jpg",
                 "price": 270,
-                "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
             },
             {
                 "name": "padded headboard",
@@ -722,53 +725,59 @@ def setup_commands(app):
     def generate_object_room_list():
         room_object_list = [
             {
-                "rooms": ["Zen Den"],
+                "rooms": "Zen Den",
                 "objects": ["cat planter","lotus candle","arc lamp","wicker basket","handing planter","noddle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
             },
             {
-                "rooms": ["Vroom Room"],
+                "rooms": "Vroom Room",
                 "objects": ["school bus toybox","blue rug","dragon","rolling cart","racecar bed","panda chair"]
             },
             {
-                "rooms": ["Unicorn Dreams"],
+                "rooms": "Unicorn Dreams",
                 "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling car pink"]
             },
             {
-                "rooms": ["Tweenage Dirtbag"],
+                "rooms": "Tweenage Dirtbag",
                 "objects": ["pink floyd poster","nautro rug","desk lamp","rice paper lamp","bean bag","bunk bed"]
             },
             {
-                "rooms": ["Straight As to Zzz"],
+                "rooms": "Straight As to Zzz",
                 "objects": ["leaf art", "mirror with lights", "director’s chair", "white gold dresser", "salt lamp"]
             },
             {
-                "rooms": ["The Fancy Man's Study"],
+                "rooms": "The Fancy Man's Study",
                 "objects":  ["studded arm chair", "globe bar", "bankers lamp", "Persian rug", "executive desk chair", "executive desk"]
             },
             {
-                "rooms": ["Quick Bites, Long Talks"],
+                "rooms": "Quick Bites, Long Talks",
                 "objects": ["mc dining table", "mc console table", "floor lamp", "md dining chair", "architecture art", "lotus candle"]
             },
             {
-                "rooms": ["Lazy Susan's Kitchen"],
+                "rooms": "Lazy Susan's Kitchen",
                 "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"]
             },
             {
-                "rooms": ["sleep4geeks"],
+                "rooms": "sleep4geeks",
                 "objects":  ["indstrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"]
             },
             {
-                "rooms": ["Dude, Where's my Closet?"],
+                "rooms": "Dude, Where's my Closet?",
                 "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
             }
         ]
-        for r_o in room_object_list:
-            new_r_o = room_object(
-                room = room["name"],
-                object = object["name"]
-            )
+            # object_instance_list = []
+            # for single_object in r_o["objects"]:
+            #     object_instance_list.append(Object.query.filter_by(name=single_object).first())
+            # room = Room.query.filter_by(name=r_o["rooms"]).first()
+            # for object_instance in object_instance_list:
+            #     new_r_o = room_object(
+            #         room = rooms["name"],
+            #         object = objects["name"]
+            #     )
+        for object_instance in object_instance_list:
+            new_r_o = room_object(room = object_instance["room"], object = object_instance["object"]) 
             db.session.add(new_r_o)
-            db.session.commit()
+    db.session.commit()
 
     @app.cli.command("populate-meta_room-table")
     def generate_meta_room_list():
@@ -829,6 +838,11 @@ def setup_commands(app):
             {
                 "name": "architecture art",
                 "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
+            },
+            {
+                "name": "lattice rug",
+                "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
+
             },
         ]
 
