@@ -99,7 +99,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/Lmr3ZMq",
                 "real_pic_url": "https://i.etsystatic.com/8306577/r/il/b40bb7/3138741932/il_1140xN.3138741932_8jt9.jpg",
                 "price": 58,
-                "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
             },
             {
                 "name": "lattice rug",
@@ -819,10 +818,19 @@ def setup_commands(app):
         for room in meta_room_list:
             new_room = meta_room(
                 room = room["name"],
-                meta_tags = meta["description"]
+                meta_tags = meta["tag"]
             )
-            db.session.add(new_r_o)
+            db.session.add(new_room)
             db.session.commit()
+    
+    @app.cli.command("populate-meta_object-table")
+    def generate_meta_object_list():
+        meta_object_list = [
+            {
+                "name": "architecture art",
+                "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
+            },
+        ]
 
     @app.cli.command("populate-meta-table")
     def generate_meta_list():
