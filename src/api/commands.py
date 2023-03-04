@@ -32,6 +32,9 @@ def setup_commands(app):
         print("All test users created")
 
         ### Insert the code to populate others tables if needed
+    # @app.cli.command("populate-fav_room-table")
+    #     def generate_fav_room():
+
 
     @app.cli.command("populate-room-table")
     def generate_room_list():
@@ -39,64 +42,41 @@ def setup_commands(app):
             {
                 "name": "Dude, Where's my Closet?",
                 "pic_url": "https://imgur.com/SmhGAwI",
-                "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"],
-                "meta_tags": ["contemporary", "modern", "minimalist", "simple", "bedroom"]
             },
              {
                 "name": "geeks4Sleep",
                 "pic_url": "https://imgur.com/MT1HV5j",
-                "objects":  ["indstrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"],
-                "meta_tags": ["teen", "contemporary", "bedroom", "black"]
             },
              {
                 "name": "Lazy Susan’s Kitchen",
-                "pic_url": "https://i.imgur.com/9WdnFoR.png",
-                "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"],
-                # fix this
-                "meta_tags": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
-            },
+                "pic_url": "https://i.imgur.com/9WdnFoR.png",            },
              {
                 "name": "Quick Bites, Long Talks",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-                "objects": ["mc dining table", "mc console table", "floor lamp", "md dining chair", "architecture art", "lotus candle"],
-                "meta_tags": ["mid century modern", "modern", "contemporary","dining room", "vintage", "scandinavian"]
-            },
+             },
              {
                 "name": "The Fancy Man’s Study",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-                "objects":  ["studded arm chair", "globe bar", "bankers lamp", "Persian rug", "executive desk chair", "executive desk"],
-                "meta_tags":  ["office", "study", "classic", "traditional" , "brown","wood"]
-            },
+             },
              {
                 "name": "Straight As to Zzz",
                 "pic_url": "https://i.imgur.com/YpAijUT.png",
-                "objects": ["leaf art", "mirror with lights", "director’s chair", "white gold dresser", "salt lamp"],
-                "meta_tags":  ["teen", "contemporary","modern","chic","luxe","glamor","bedroom"]
-
             },
              {
                 "name": "Tweenage Dirtbag",
                 "pic_url": "https://imgur.com/HHILH8C",
-                "objects": ["pink floyd poster","nautro rug","desk lamp","rice paper lamp","bean bag","bunk bed"],
-                "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
             },
              {
                 "name": "Unicorn Dreams",
                 "pic_url": "https://imgur.com/iaJefXz",
-                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling car pink"],
-                "meta_tags": ["kids","cute","pink","purple"]
             },
              {
                 "name": "Vroom Room",
                 "pic_url": "https://imgur.com/2W36O5V",
-                "objects": ["school bus toybox","blue rug","dragon","rolling cart","racecar bed","panda chair"],
-                "meta_tags": ["kids","cute","blue"]
             },
              {
                 "name": "Zen Den",
                 "pic_url": "https://i.imgur.com/6aHMhet.png",
-                "objects": ["cat planter","lotus candle","arc lamp","wicker basket","handing planter","noddle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
-                "meta_tags": ["boho", "eclectic", "bohemian", "shabby chic", "living room"] 
             },
         ]
         for room in room_list:
@@ -119,7 +99,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/Lmr3ZMq",
                 "real_pic_url": "https://i.etsystatic.com/8306577/r/il/b40bb7/3138741932/il_1140xN.3138741932_8jt9.jpg",
                 "price": 58,
-                "rooms": ["Dude, Where's my Closet?" , "Quick Bites, Long Talks"],
                 "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
             },
             {
@@ -129,7 +108,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/SmhGAwI",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/84132909/resize-h1600-w1600%5Ecompr-r85/5860/58602179/Tylersburg+Machine+Woven+%2F+Power+Loomed+Performance+Rug.jpg",
                 "price": 270,
-                "rooms": ["Dude, Where's my Closet?"],
                 "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
             },
             {
@@ -139,7 +117,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/JakzBPi",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71WpveLsHmL._AC_SL1500_.jpg",
                 "price": 170,
-                "rooms": ["Dude, Where's my Closet?"],
                 "meta_tags": ["modern", "simple", "minimalist"]
             },
             {
@@ -149,7 +126,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/hiPfwrw",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612+MvvNgiL._AC_SL1500_.jpg",
                 "price": 23,
-                "rooms": ["Dude, Where's my Closet?","Straight As to Zzz"],
                 "meta_tags": ["boho", "rustic", "eclectic", "orange", "wood", "lamp", "decor"]
             },
             {
@@ -159,7 +135,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/qmrGR5q",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61yj2yUTvFL._AC_SL1001_.jpg",
                 "price": 22,
-                "rooms": ["Dude, Where's my Closet?"],
                 "meta_tags": ["cute", "plant", "eclectic", "plant", "pot", "black", "white", "brown", "green", "multicolor"]
             },
             {
@@ -169,7 +144,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/zPjohe7",
                 "real_pic_url": "https://m.media-amazon.com/images/I/810YHmx21YL._AC_SL1500_.jpg",
                 "price": 110,
-                "rooms": ["Dude, Where's my Closet?"],
                 "meta_tags": ["contemporary", "minimalist", "chic", "black", "wood", "dresser", "clothing", "rack"]
             },
             {
@@ -179,7 +153,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/pxe6Lsa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/A1uwIeK-FfL._AC_SL1500_.jpg",
                 "price": 115,
-                "rooms": ["Dude, Where's my Closet?"],
                 "meta_tags": ["farmhouse", "rustic", "wood", "brown", "hamper", "laundry", "basket"]
             },
             {
@@ -189,7 +162,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/aoWOTkb",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71QjFE+tq-L._AC_SL1500_.jpg",
                 "price": 49,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["industrial", "dclectic", "black", "silver", "lamp", "teen"]
             },
             {
@@ -199,7 +171,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/UoIPr7e",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612r4sw1jYL._AC_SL1500_.jpg",
                 "price": 180,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["teen", "contemporary", "teen", "chair", "desk chair", "gaming chair", "black", "purple", "gaming"]
             },
             {
@@ -209,7 +180,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/dAZrqCr",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612r4sw1jYL._AC_SL1500_.jpg",
                 "price": 158,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["teen", "contemporary", "teen", "black", "multcolor", "rainbow", "desk", "gaming"]
             },
             {
@@ -219,7 +189,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/MT1HV5j",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91Lq6XCHLpL._AC_SL1500_.jpg",
                 "price": 92,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["teen", "contemporary", "rug", "checkered", "black", "white"]
             },
             {
@@ -229,7 +198,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/O3kqb2S",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91OUnFry9bL._AC_SX466_.jpg",
                 "price": 19,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["boho", "teen", "decor", "art", "rainbow", "multi", "black", "vintage"]
             },
             {
@@ -239,7 +207,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/NWCjOxa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/717q7wg1ZhL._AC_SL1500_.jpg",
                 "price": 34,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["modern", "teen", "minimalist", "chic", "table", "coffee table", "side table", "night stand", "contemporary", "black", "circle"]
             },
             {
@@ -249,7 +216,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/hcnNmZ1.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51TXvzE-mCL._AC_.jpg",
                 "price": 255,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["teen", "contemporary", "storage", "dresser", "wardrobe", "wood", "brown", "expresso"]
             },
             {
@@ -259,7 +225,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/fWQxBXu",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81M46m8NvfL._AC_SL1500_.jpg",
                 "price": 78,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["modern", "chic", "boho", "contemporary", "teen", "green", "black", "plant" ]
             },
             {
@@ -269,7 +234,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/NWCjOxa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61dmJx+pZyL._AC_SL1500_.jpg",
                 "price": 22,
-                "rooms": ["geeks4sleep"],
                 "meta_tags": ["retro", "vintage", "green", "atomic", "lamp", "decor"]
             },
             {
@@ -279,7 +243,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/LNCop8r.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612yDwcfJKL._AC_SL1500_.jpg",
                 "price": 25,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["modern" "glam", "luxe", "minimalist", "grey", "white", "gold", "planter"]
             },
             {
@@ -289,7 +252,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/lb0PNzQ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51N593Uu05L._AC_SL1500_.jpg",
                 "price": 70,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["pets", "black", "tech", "pet", "feeder", "modern", "minimalist" ]
             },
             {
@@ -299,7 +261,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/BwIWcRY.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71eZwHSWsjL._AC_SL1500_.jpg",
                 "price": 25,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["tech", "applicance", "red" ]
             },
             {
@@ -309,7 +270,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/FLhNqne.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81MdPE8Q-4L._AC_SL1500_.jpg",
                 "price": 50,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["classic", "farmhouse", "rustic", "red", "cookware"]
             },
             {
@@ -319,7 +279,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/Fl4mF8E.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71PAf6HAJyS._AC_SL1500_.jpg",
                 "price": 85,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["mid century modern", "atomic", "chic", "mordern", "red", "stool", "bar stool", "swivle"]
             },
             {
@@ -329,7 +288,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/mGmroRT.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71NzBFARuQL._AC_SL1500_.jpg",
                 "price": 23,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["contemporary", "decor", "storage", "wood", "black"]
             },
             {
@@ -339,7 +297,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/6FDZkiQ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41ztJBWqD-L._AC_.jpg",
                 "price": 23,
-                "rooms": ["Lazy Susan's Kitchen"],
                 "meta_tags": ["modern", "industrial", "contemporary", "silver", "decor", "storage"]
             },
             {
@@ -349,7 +306,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/RxOkVfY.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/93954241/resize-h755-w755%5Ecompr-r85/3492/34928790/Agla+40%27%27+Solid+Wood+Console+Table.jpg",
                 "price": 350,
-                "rooms": ["Quick Bites, Long Talks"],
                 "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian", "table", "dining table", "wood", "glass"]
             },
             {
@@ -359,7 +315,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/EeNoQ2R.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/38840974/resize-h1600-w1600%5Ecompr-r85/2326/232656119/Geoff+43.3%27%27+Dining+Table.jpg",
                 "price": 250,
-                "rooms": ["Quick Bites, Long Talks"],
                 "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian"]
             },
             {
@@ -369,7 +324,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/dZea7Oz.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81wgW-40KxL._AC_SL1500_.jpg",
                 "price": 170,
-                "rooms": ["Quick Bites, Long Talks"],
                 "meta_tags": ["mid century modern", "modern", "scandinavian", "wood", "black", "lamp", "decor"]
             },
             {
@@ -379,7 +333,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/E361OMJ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71zYPalXIwL._AC_SL1500_.jpg",
                 "price": 300,
-                "rooms": ["Quick Bites, Long Talks"],
                 "meta_tags": ["mid", "century", "modern", "chair", "dining chair", "wood", "retro"]
             },
             {
@@ -389,7 +342,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/RWKMMIc",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71NK46jk6lL._AC_SL1500_.jpg",
                 "price": 180,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional", "black", "gold", "chair", "arm chair"]
             },
             {
@@ -399,7 +351,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/uML6YY1",
                 "real_pic_url": "https://m.media-amazon.com/images/I/A1+Zq-qJoDL._AC_SL1500_.jpg",
                 "price": 170,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional",  "brown", "gold", "black", "bar"]
             },
             {
@@ -409,7 +360,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/rtiTdQq",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71-8Kce+v2S._AC_SX679_.jpg",
                 "price": 50,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional", "gold", "green", "lamp"]
             },
             {
@@ -419,7 +369,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/jG5GOPd",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/07880182/resize-h755-w755%5Ecompr-r85/9762/97620517/Edens+Machine+Woven+%2F+Power+Loomed+Performance+Burgundy+Rug.jpg",
                 "price": 180,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "persian", "red", "blue", "multi", "rug", "decor"]
             },
             {
@@ -429,7 +378,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/JPUugQj",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/10739145/resize-h755-w755%5Ecompr-r85/1933/193366503/Murphie+High+Back+Traditional+Tufted+LeatherSoft+Executive+Swivel+Ergonomic+Office+Chair.jpg",
                 "price": 520,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional", "black", "gold", "chair", "desk chair" ]
             },
             {
@@ -439,7 +387,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/fdf1RFJ",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/15056160/resize-h755-w755%5Ecompr-r85/1047/104759591/72%27%27+Desk.jpg",
                 "price": 3998,
-                "rooms": ["The Fancy Man's Study"],
                 "meta_tags": ["classic", "traditional", "wood", "brown", "desk"]
             },
             {
@@ -449,7 +396,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/493s267.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81ZlycohRdL._AC_SL1500_.jpg",
                 "price": 30,
-                "rooms": ["Straight As to Zzz"],
                 "meta_tags": ["teen", "contemporary", "art", "decor", "white", "green", "picture"]
             },
             {
@@ -459,7 +405,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/43Tnda1.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71Ht6+RY-qL._AC_SL1200_.jpg",
                 "price": 106,
-                "rooms": ["Straight As to Zzz"],
                 "meta_tags": ["teen", "contemporary", "white", "glam", "mirror", "lighting"]
             },
             {
@@ -469,7 +414,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/reKadqx.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91I9mjcPpeL._AC_SL1500_.jpg",
                 "price": 93,
-                "rooms": ["Straight As to Zzz"],
                 "meta_tags": ["teen", "contemporary", "eclectic", "chair", "white"]
             },
             {
@@ -479,7 +423,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/YywYqrv.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71TRhy+wLlL._AC_SL1500_.jpg",
                 "price": 220,
-                "rooms": ["Straight As to Zzz"],
                 "meta_tags": ["teen", "modern", "chic", "white", "gold", "glam", "dresser", "storage"]
             },
             {
@@ -489,7 +432,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/DWyyeQM",
                 "real_pic_url": "https://m.media-amazon.com/images/I/31By9mlOVLL._AC_.jpg",
                 "price": 12,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["retro", "vintage", "black", "multi", "rainbow", "poster", "decor", "kid", "teen"]
             },
             {
@@ -499,7 +441,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/HHILH8C",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61MXoRUAi-L._AC_SL1500_.jpg",
                 "price": 33,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["kid", "teen", "black", "red", "decor", "rug", "teen", "kid"]
             },
             {
@@ -509,7 +450,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/YPVZA0l",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61R7hBIB0jL._AC_SL1500_.jpg",
                 "price": 50,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["contemporary", "blue", "wood", "lamp"]
             },
             {
@@ -519,7 +459,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/6wtNhm3",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71nP6CvGTAL._AC_SL1500_.jpg",
                 "price": 60,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["contemporary", "modern", "black", "white", "lamp", "teen", "kid"]
             },
             {
@@ -529,7 +468,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/i0yK226",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41OYjcpRr4L._AC_.jpg",
                 "price": 17,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["kid", "teen", "black", "chair" ]
             },
             {
@@ -539,7 +477,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/VygFyk8",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71e8EANp6ML._AC_SL1500_.jpg",
                 "price": 210,
-                "rooms": ["Tweenage Dirtbag"],
                 "meta_tags": ["Kid", "teen", "black", "bed" ]
             },
             {
@@ -549,7 +486,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/x87KkeL",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71HBJNvLPwS._AC_SL1300_.jpg",
                 "price": 12,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["kid" "cute" "decal" "decor" "multi" "pink" "purple"]
             },
             {
@@ -559,7 +495,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/3TMfnyS",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51FSfBMPzXL._AC_SL1000_.jpg",
                 "price": 15,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["kid", "cute", "pink", "red", "toy" ]
             },
             {
@@ -569,7 +504,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/LNPgEbX",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71f0m-0-t5L._AC_SX425_.jpg",
                 "price": 70,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["kid", "cute", "pink", "purple", "toy"]
             },
             {
@@ -579,7 +513,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/C3DySEs",
                 "real_pic_url": "https://m.media-amazon.com/images/I/710NuDZK2FL._AC_SL1500_.jpg",
                 "price": 20,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["kid", "cute", "pink", "blue", "chair"]
             },
             {
@@ -589,7 +522,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/ePPYIWK",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71fQae7TEjL._AC_SL1500_.jpg",
                 "price": 310,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["kid", "cute", "white", "bed", "toddler bed"]
             },
             {
@@ -599,7 +531,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/OwbrUao",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61kNKty4LqL._AC_SL1000_.jpg",
                 "price": 13,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["cute", "contemporary", "kid", "lights", "decor", "white" ]
             },
             {
@@ -609,7 +540,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/LO1PrkZ",
                 "real_pic_url": "https://m.media-amazon.com/images/I/5120jRW-2mL._AC_SL1000_.jpg",
                 "price": 50,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["simple", "kids", "contemporary", "storage", "pink", "decor", "cute"]
             },
             {
@@ -619,7 +549,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/iaJefXz",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/32169864/resize-h755-w755%5Ecompr-r85/2040/204061422/Nakitia+Machine+Woven+%2F+Power+Loomed+Performance+White+Machine+Washable+Rug.jpg",
                 "price": 55,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["luxe", "glam", "contemporary", "chic", "rug", "decor", "white", "kid", "cite"]
             },
             {
@@ -629,7 +558,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/mOSDQo7",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61ps48N3xTL._AC_SL1500_.jpg",
                 "price": 17,
-                "rooms": ["Unicorn Dreams"],
                 "meta_tags": ["Kids", "cute", "shelf", "storage", "pink", "purple"]
             },
             {
@@ -639,7 +567,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/MHduNxc",
                 "real_pic_url": "https://m.media-amazon.com/images/I/711ggnv8FxL._SL1357_.jpg",
                 "price": 25,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["kids", "cute", "yellow", "toy", "storage"]
             },
             {
@@ -649,7 +576,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/2W36O5V",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81r-KxDZGgL._AC_SL1440_.jpg",
                 "price": 24,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["kid", "contemporary", "cute", "blue", "rug", "decor"]
             },
             {
@@ -659,7 +585,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/7NgwWJl",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71Q4uFBBjKL._AC_SX466_.jpg",
                 "price": 90,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["kid", "cute", "toy", "green"]
             },
             {
@@ -669,7 +594,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://a.co/d/eBvm5KH",
                 "real_pic_url": "https://imgur.com/b8D9rs9",
                 "price": 30,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["simple", "kids", "contemporary", "storage", "blue", "decor", "cute"]
             },
             {
@@ -679,7 +603,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/GUSp8XH",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/22270517/resize-h755-w755%5Ecompr-r85/3626/36268214/Aashish+Twin+Cars+Bed+by+Zoomie+Kids.jpg",
                 "price": 277,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["kid", "cute", "bed", "red", "toodler bed" ]
             },
             {
@@ -689,7 +612,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/d97UBUB",
                 "real_pic_url": "https://m.media-amazon.com/images/I/616X1k2Ye0S._AC_SL1500_.jpg",
                 "price": 70,
-                "rooms": ["Vroom Room"],
                 "meta_tags": ["kid", "cute", "black", "white", "chair" ]
             },
             {
@@ -699,7 +621,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/uK7iIyG.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41A25rgxZgL._AC_.jpg",
                 "price": 8,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["cute", "plant", "pot", "multi", "white", "orage" ]
             },
             {
@@ -709,7 +630,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ZDVzExF.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/413hQe6UPQL._AC_.jpg",
                 "price": 16,
-                "rooms": ["Zen Den, quick bites, long talks"],
                 "meta_tags": ["boho", "plant", "eclectic", "bohemian", "decor", "blue", "purple", "candle"]
             },
             {
@@ -719,7 +639,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/PdNztKd.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71iwpsZVtaL._AC_SL1500_.jpg",
                 "price": 130,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["boho", "modern", "contemporary", "chic", "eclectic", "bohemian", "lamp", "white", "gold", "black"]
             },
             {
@@ -729,7 +648,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/AScesnX.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81yaZZfwYkL._AC_SL1500_.jpg",
                 "price": 63,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["classic", "rustic", "traditional", "eclectic", "shabby", "chic", "brown", "wood", "storage", "decor", "basket"]
             },
             {
@@ -739,7 +657,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/gxMv0pX.png",
                 "real_pic_url": "https://www.amazon.com/dp/B09VX72F64?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_3STM4DBZMZZGEJ4ZHF68",
                 "price": 25,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["plant", "eclectic", "pot", "white", "decor", "boho", "bohiemian"]
             },
             {
@@ -749,7 +666,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ogATGXc.png",
                 "real_pic_url": "https://www.etsy.com/listing/1173053554/wavy-sculptural-soy-wax-candle-home?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=squiggle+candles+blue&ref=sr_gallery-1-4&pro=1&sts=1&organic_search_click=1&variation0=2511071137",
                 "price": 17,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["cute", "boho", "contemporary", "eclectic", "bohemian", "blue", "multi", "candle"]
             },
             {
@@ -759,7 +675,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/6aHMhet.png",
                 "real_pic_url": "https://www.rug-images.com/products/osNew/roomImage/200RZBD16A.jpg?purpose=pdpLifestyleSmall",
                 "price": 285,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["contemporary", "modern", "moroccan", "Ssabby", "chic", "cream", "grey", "rug", "decor"]
             },
             {
@@ -769,7 +684,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/iz9uoBW.png",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/46106533/resize-h755-w755%5Ecompr-r85/1789/178953001/Ophelie+87%27%27+Upholstered+Sofa.jpg",
                 "price": 1617,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["classic", "eclectic", "shabby", "chic", "sofa", "coutch", "blue"]
             },
             {
@@ -779,7 +693,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ksmJfsF.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/7324537/resize-h755-w755%5Ecompr-r85/1019/101974035/Schubert+50%27%27+Console+Table.jpg",
                 "price": 320,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["classic",  "craftsman", "wood", "table", "side", "table", "console", "table"]
             },
             {
@@ -789,7 +702,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/MTx1Cas.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/59924886/resize-h755-w755%5Ecompr-r85/1257/125745313/Howardwick+Coffee+Table.jpg",
                 "price": 295,
-                "rooms": ["Zen Den"],
                 "meta_tags": ["industrial", "eclectic", "shabby", "chic", "table", "coffee", "table", "wood", "glass"]
             },
         ]
@@ -807,22 +719,127 @@ def setup_commands(app):
             db.session.add(new_object)
             db.session.commit()
 
+    @app.cli.command("populate-object_room-table")
+    def generate_object_room_list():
+        room_object_list = [
+            {
+                "rooms": ["Zen Den"],
+                "objects": ["cat planter","lotus candle","arc lamp","wicker basket","handing planter","noddle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
+            },
+            {
+                "rooms": ["Vroom Room"],
+                "objects": ["school bus toybox","blue rug","dragon","rolling cart","racecar bed","panda chair"]
+            },
+            {
+                "rooms": ["Unicorn Dreams"],
+                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling car pink"]
+            },
+            {
+                "rooms": ["Tweenage Dirtbag"],
+                "objects": ["pink floyd poster","nautro rug","desk lamp","rice paper lamp","bean bag","bunk bed"]
+            },
+            {
+                "rooms": ["Straight As to Zzz"],
+                "objects": ["leaf art", "mirror with lights", "director’s chair", "white gold dresser", "salt lamp"]
+            },
+            {
+                "rooms": ["The Fancy Man's Study"],
+                "objects":  ["studded arm chair", "globe bar", "bankers lamp", "Persian rug", "executive desk chair", "executive desk"]
+            },
+            {
+                "rooms": ["Quick Bites, Long Talks"],
+                "objects": ["mc dining table", "mc console table", "floor lamp", "md dining chair", "architecture art", "lotus candle"]
+            },
+            {
+                "rooms": ["Lazy Susan's Kitchen"],
+                "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"]
+            },
+            {
+                "rooms": ["sleep4geeks"],
+                "objects":  ["indstrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"]
+            },
+            {
+                "rooms": ["Dude, Where's my Closet?"],
+                "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
+            }
+        ]
+        for r_o in room_object_list:
+            new_r_o = room_object(
+                room = room["name"],
+                object = object["name"]
+            )
+            db.session.add(new_r_o)
+            db.session.commit()
+
+    @app.cli.command("populate-meta_room-table")
+    def generate_meta_room_list():
+        meta_room_list = [
+            {
+                "room": ["Dude, Where's my Closet?"],
+                "meta_tags": ["contemporary", "modern", "minimalist", "simple", "bedroom"]
+            },
+            {
+                "room": ["sleep4geeks"],
+                "meta_tags": ["teen", "contemporary", "bedroom", "black"]
+            },
+            {
+                "room": ["Lazy Susan's Kitchen"],
+                "meta_tags": ["modern" , "contemporary", "retro", "kitchen", "atomic", "mid century"]
+            },
+            {
+                "room": ["Quick Bites, Long Talks"],
+                "meta_tags": ["mid century modern", "modern", "contemporary","dining room", "vintage", "scandinavian"]
+            },
+            {
+                "room": ["The Fancy Man's Study"],
+                "meta_tags":  ["office", "study", "classic", "traditional" , "brown","wood"]
+            },
+            {
+                "room": ["Straight As to Zzz"],
+                "meta_tags":  ["teen", "contemporary","modern","chic","luxe","glamor","bedroom"]
+
+            },
+            {
+                "rooms": ["Tweenage Dirtbag"],
+                "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
+            },
+            {
+                "room": ["Unicorn Dreams"],
+                "meta_tags": ["kids","cute","pink","purple"]
+            },
+            {
+                "room": ["Vroom Room"],
+                "meta_tags": ["kids","cute","blue"]
+            },
+            {
+                "rooms": ["Zen Den"],
+                "meta_tags": ["boho", "eclectic", "bohemian", "shabby chic", "living room"] 
+            }
+        ]
+        for room in meta_room_list:
+            new_room = meta_room(
+                room = room["name"],
+                meta_tags = meta["description"]
+            )
+            db.session.add(new_r_o)
+            db.session.commit()
+
     @app.cli.command("populate-meta-table")
     def generate_meta_list():
         meta_list = [
             {
-                "description" : "kids"
+                "tag" : "kids"
             },
             {
-                "description" : "wood"
+                "tag" : "wood"
             },
             {
-                "description" : "kitchen"
+                "tag" : "kitchen"
             },
         ]
-        for tag in meta_list:
-            new_description = Meta(
-                description = tag['description']
+        for description in meta_list:
+            new_tag = Meta(
+                tag = description['tag']
             )
-            db.session.add(new_description)
+            db.session.add(new_tag)
             db.session.commit()
