@@ -107,7 +107,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/SmhGAwI",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/84132909/resize-h1600-w1600%5Ecompr-r85/5860/58602179/Tylersburg+Machine+Woven+%2F+Power+Loomed+Performance+Rug.jpg",
                 "price": 270,
-                "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
             },
             {
                 "name": "padded headboard",
@@ -116,7 +115,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/JakzBPi",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71WpveLsHmL._AC_SL1500_.jpg",
                 "price": 170,
-                "meta_tags": ["modern", "simple", "minimalist"]
             },
             {
                 "name": "salt lamp",
@@ -125,7 +123,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/hiPfwrw",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612+MvvNgiL._AC_SL1500_.jpg",
                 "price": 23,
-                "meta_tags": ["boho", "rustic", "eclectic", "orange", "wood", "lamp", "decor"]
             },
             {
                 "name": "dog planter",
@@ -134,7 +131,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/qmrGR5q",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61yj2yUTvFL._AC_SL1001_.jpg",
                 "price": 22,
-                "meta_tags": ["cute", "plant", "eclectic", "plant", "pot", "black", "white", "brown", "green", "multicolor"]
             },
             {
                 "name": "clothing rack",
@@ -143,7 +139,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/zPjohe7",
                 "real_pic_url": "https://m.media-amazon.com/images/I/810YHmx21YL._AC_SL1500_.jpg",
                 "price": 110,
-                "meta_tags": ["contemporary", "minimalist", "chic", "black", "wood", "dresser", "clothing", "rack"]
             },
             {
                 "name": "wicker hamper",
@@ -152,7 +147,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/pxe6Lsa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/A1uwIeK-FfL._AC_SL1500_.jpg",
                 "price": 115,
-                "meta_tags": ["farmhouse", "rustic", "wood", "brown", "hamper", "laundry", "basket"]
             },
             {
                 "name": "industrial lamp",
@@ -161,7 +155,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/aoWOTkb",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71QjFE+tq-L._AC_SL1500_.jpg",
                 "price": 49,
-                "meta_tags": ["industrial", "dclectic", "black", "silver", "lamp", "teen"]
             },
             {
                 "name": "gaming chair",
@@ -170,7 +163,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/UoIPr7e",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612r4sw1jYL._AC_SL1500_.jpg",
                 "price": 180,
-                "meta_tags": ["teen", "contemporary", "teen", "chair", "desk chair", "gaming chair", "black", "purple", "gaming"]
             },
             {
                 "name": "gaming desk",
@@ -179,7 +171,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/dAZrqCr",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612r4sw1jYL._AC_SL1500_.jpg",
                 "price": 158,
-                "meta_tags": ["teen", "contemporary", "teen", "black", "multcolor", "rainbow", "desk", "gaming"]
             },
             {
                 "name": "checkered rug",
@@ -188,7 +179,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/MT1HV5j",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91Lq6XCHLpL._AC_SL1500_.jpg",
                 "price": 92,
-                "meta_tags": ["teen", "contemporary", "rug", "checkered", "black", "white"]
             },
             {
                 "name": "record art",
@@ -197,7 +187,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/O3kqb2S",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91OUnFry9bL._AC_SX466_.jpg",
                 "price": 19,
-                "meta_tags": ["boho", "teen", "decor", "art", "rainbow", "multi", "black", "vintage"]
             },
             {
                 "name": "round table",
@@ -206,7 +195,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/NWCjOxa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/717q7wg1ZhL._AC_SL1500_.jpg",
                 "price": 34,
-                "meta_tags": ["modern", "teen", "minimalist", "chic", "table", "coffee table", "side table", "night stand", "contemporary", "black", "circle"]
             },
             {
                 "name": "wardrobe",
@@ -215,7 +203,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/hcnNmZ1.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51TXvzE-mCL._AC_.jpg",
                 "price": 255,
-                "meta_tags": ["teen", "contemporary", "storage", "dresser", "wardrobe", "wood", "brown", "expresso"]
             },
             {
                 "name": "bamboo",
@@ -224,7 +211,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/fWQxBXu",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81M46m8NvfL._AC_SL1500_.jpg",
                 "price": 78,
-                "meta_tags": ["modern", "chic", "boho", "contemporary", "teen", "green", "black", "plant" ]
             },
             {
                 "name": "lava lamp",
@@ -233,7 +219,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/NWCjOxa",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61dmJx+pZyL._AC_SL1500_.jpg",
                 "price": 22,
-                "meta_tags": ["retro", "vintage", "green", "atomic", "lamp", "decor"]
             },
             {
                 "name": "stripped planter",
@@ -242,7 +227,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/LNCop8r.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/612yDwcfJKL._AC_SL1500_.jpg",
                 "price": 25,
-                "meta_tags": ["modern" "glam", "luxe", "minimalist", "grey", "white", "gold", "planter"]
             },
             {
                 "name": "pet feeder",
@@ -251,7 +235,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/lb0PNzQ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51N593Uu05L._AC_SL1500_.jpg",
                 "price": 70,
-                "meta_tags": ["pets", "black", "tech", "pet", "feeder", "modern", "minimalist" ]
             },
             {
                 "name": "popcorn maker",
@@ -260,7 +243,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/BwIWcRY.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71eZwHSWsjL._AC_SL1500_.jpg",
                 "price": 25,
-                "meta_tags": ["tech", "applicance", "red" ]
             },
             {
                 "name": "dutch oven",
@@ -269,7 +251,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/FLhNqne.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81MdPE8Q-4L._AC_SL1500_.jpg",
                 "price": 50,
-                "meta_tags": ["classic", "farmhouse", "rustic", "red", "cookware"]
             },
             {
                 "name": "barstool",
@@ -278,7 +259,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/Fl4mF8E.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71PAf6HAJyS._AC_SL1500_.jpg",
                 "price": 85,
-                "meta_tags": ["mid century modern", "atomic", "chic", "mordern", "red", "stool", "bar stool", "swivle"]
             },
             {
                 "name": "tea rack",
@@ -287,7 +267,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/mGmroRT.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71NzBFARuQL._AC_SL1500_.jpg",
                 "price": 23,
-                "meta_tags": ["contemporary", "decor", "storage", "wood", "black"]
             },
             {
                 "name": "knife rack",
@@ -296,7 +275,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/6FDZkiQ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41ztJBWqD-L._AC_.jpg",
                 "price": 23,
-                "meta_tags": ["modern", "industrial", "contemporary", "silver", "decor", "storage"]
             },
             {
                 "name": "mc dining table",
@@ -305,7 +283,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/RxOkVfY.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/93954241/resize-h755-w755%5Ecompr-r85/3492/34928790/Agla+40%27%27+Solid+Wood+Console+Table.jpg",
                 "price": 350,
-                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian", "table", "dining table", "wood", "glass"]
             },
             {
                 "name": "mc console table",
@@ -314,7 +291,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/EeNoQ2R.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/38840974/resize-h1600-w1600%5Ecompr-r85/2326/232656119/Geoff+43.3%27%27+Dining+Table.jpg",
                 "price": 250,
-                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian"]
             },
             {
                 "name": "floor lamp",
@@ -323,7 +299,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/dZea7Oz.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81wgW-40KxL._AC_SL1500_.jpg",
                 "price": 170,
-                "meta_tags": ["mid century modern", "modern", "scandinavian", "wood", "black", "lamp", "decor"]
             },
             {
                 "name": "mc dining chair",
@@ -332,7 +307,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/E361OMJ.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71zYPalXIwL._AC_SL1500_.jpg",
                 "price": 300,
-                "meta_tags": ["mid", "century", "modern", "chair", "dining chair", "wood", "retro"]
             },
             {
                 "name": "studded arm chair",
@@ -341,7 +315,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/RWKMMIc",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71NK46jk6lL._AC_SL1500_.jpg",
                 "price": 180,
-                "meta_tags": ["classic", "traditional", "black", "gold", "chair", "arm chair"]
             },
             {
                 "name": "globe bar",
@@ -350,7 +323,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/uML6YY1",
                 "real_pic_url": "https://m.media-amazon.com/images/I/A1+Zq-qJoDL._AC_SL1500_.jpg",
                 "price": 170,
-                "meta_tags": ["classic", "traditional",  "brown", "gold", "black", "bar"]
             },
             {
                 "name": "bankers lamp",
@@ -359,7 +331,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/rtiTdQq",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71-8Kce+v2S._AC_SX679_.jpg",
                 "price": 50,
-                "meta_tags": ["classic", "traditional", "gold", "green", "lamp"]
             },
             {
                 "name": "persian rug",
@@ -368,7 +339,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/jG5GOPd",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/07880182/resize-h755-w755%5Ecompr-r85/9762/97620517/Edens+Machine+Woven+%2F+Power+Loomed+Performance+Burgundy+Rug.jpg",
                 "price": 180,
-                "meta_tags": ["classic", "persian", "red", "blue", "multi", "rug", "decor"]
             },
             {
                 "name": "executive desk chair",
@@ -377,7 +347,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/JPUugQj",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/10739145/resize-h755-w755%5Ecompr-r85/1933/193366503/Murphie+High+Back+Traditional+Tufted+LeatherSoft+Executive+Swivel+Ergonomic+Office+Chair.jpg",
                 "price": 520,
-                "meta_tags": ["classic", "traditional", "black", "gold", "chair", "desk chair" ]
             },
             {
                 "name": "executive desk",
@@ -386,7 +355,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/fdf1RFJ",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/15056160/resize-h755-w755%5Ecompr-r85/1047/104759591/72%27%27+Desk.jpg",
                 "price": 3998,
-                "meta_tags": ["classic", "traditional", "wood", "brown", "desk"]
             },
             {
                 "name": "leaf art",
@@ -395,7 +363,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/493s267.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81ZlycohRdL._AC_SL1500_.jpg",
                 "price": 30,
-                "meta_tags": ["teen", "contemporary", "art", "decor", "white", "green", "picture"]
             },
             {
                 "name": "mirror with lights",
@@ -404,7 +371,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/43Tnda1.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71Ht6+RY-qL._AC_SL1200_.jpg",
                 "price": 106,
-                "meta_tags": ["teen", "contemporary", "white", "glam", "mirror", "lighting"]
             },
             {
                 "name": "directors chair",
@@ -413,7 +379,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/reKadqx.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/91I9mjcPpeL._AC_SL1500_.jpg",
                 "price": 93,
-                "meta_tags": ["teen", "contemporary", "eclectic", "chair", "white"]
             },
             {
                 "name": "white gold dresser",
@@ -422,7 +387,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/YywYqrv.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71TRhy+wLlL._AC_SL1500_.jpg",
                 "price": 220,
-                "meta_tags": ["teen", "modern", "chic", "white", "gold", "glam", "dresser", "storage"]
             },
             {
                 "name": "pink floyd poster",
@@ -431,7 +395,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/DWyyeQM",
                 "real_pic_url": "https://m.media-amazon.com/images/I/31By9mlOVLL._AC_.jpg",
                 "price": 12,
-                "meta_tags": ["retro", "vintage", "black", "multi", "rainbow", "poster", "decor", "kid", "teen"]
             },
             {
                 "name": "naruto rug",
@@ -440,7 +403,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/HHILH8C",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61MXoRUAi-L._AC_SL1500_.jpg",
                 "price": 33,
-                "meta_tags": ["kid", "teen", "black", "red", "decor", "rug", "teen", "kid"]
             },
             {
                 "name": "desk lamp",
@@ -449,7 +411,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/YPVZA0l",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61R7hBIB0jL._AC_SL1500_.jpg",
                 "price": 50,
-                "meta_tags": ["contemporary", "blue", "wood", "lamp"]
             },
             {
                 "name": "rice paper lamp",
@@ -458,7 +419,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/6wtNhm3",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71nP6CvGTAL._AC_SL1500_.jpg",
                 "price": 60,
-                "meta_tags": ["contemporary", "modern", "black", "white", "lamp", "teen", "kid"]
             },
             {
                 "name": "bean bag",
@@ -467,7 +427,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/i0yK226",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41OYjcpRr4L._AC_.jpg",
                 "price": 17,
-                "meta_tags": ["kid", "teen", "black", "chair" ]
             },
             {
                 "name": "bunk bed",
@@ -476,7 +435,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/VygFyk8",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71e8EANp6ML._AC_SL1500_.jpg",
                 "price": 210,
-                "meta_tags": ["Kid", "teen", "black", "bed" ]
             },
             {
                 "name": "wall decal",
@@ -485,7 +443,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/x87KkeL",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71HBJNvLPwS._AC_SL1300_.jpg",
                 "price": 12,
-                "meta_tags": ["kid" "cute" "decal" "decor" "multi" "pink" "purple"]
             },
             {
                 "name": "teddy bear",
@@ -494,7 +451,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/3TMfnyS",
                 "real_pic_url": "https://m.media-amazon.com/images/I/51FSfBMPzXL._AC_SL1000_.jpg",
                 "price": 15,
-                "meta_tags": ["kid", "cute", "pink", "red", "toy" ]
             },
             {
                 "name": "unicorn",
@@ -503,7 +459,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/LNPgEbX",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71f0m-0-t5L._AC_SX425_.jpg",
                 "price": 70,
-                "meta_tags": ["kid", "cute", "pink", "purple", "toy"]
             },
             {
                 "name": "butterfly chair",
@@ -512,7 +467,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/C3DySEs",
                 "real_pic_url": "https://m.media-amazon.com/images/I/710NuDZK2FL._AC_SL1500_.jpg",
                 "price": 20,
-                "meta_tags": ["kid", "cute", "pink", "blue", "chair"]
             },
             {
                 "name": "house toddler bed",
@@ -521,7 +475,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/ePPYIWK",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71fQae7TEjL._AC_SL1500_.jpg",
                 "price": 310,
-                "meta_tags": ["kid", "cute", "white", "bed", "toddler bed"]
             },
             {
                 "name": "string lights",
@@ -530,7 +483,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/OwbrUao",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61kNKty4LqL._AC_SL1000_.jpg",
                 "price": 13,
-                "meta_tags": ["cute", "contemporary", "kid", "lights", "decor", "white" ]
             },
             {
                 "name": "rolling cart pink",
@@ -539,7 +491,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/LO1PrkZ",
                 "real_pic_url": "https://m.media-amazon.com/images/I/5120jRW-2mL._AC_SL1000_.jpg",
                 "price": 50,
-                "meta_tags": ["simple", "kids", "contemporary", "storage", "pink", "decor", "cute"]
             },
             {
                 "name": "fur rug",
@@ -548,7 +499,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/iaJefXz",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/32169864/resize-h755-w755%5Ecompr-r85/2040/204061422/Nakitia+Machine+Woven+%2F+Power+Loomed+Performance+White+Machine+Washable+Rug.jpg",
                 "price": 55,
-                "meta_tags": ["luxe", "glam", "contemporary", "chic", "rug", "decor", "white", "kid", "cite"]
             },
             {
                 "name": "cloud shelf",
@@ -557,7 +507,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/mOSDQo7",
                 "real_pic_url": "https://m.media-amazon.com/images/I/61ps48N3xTL._AC_SL1500_.jpg",
                 "price": 17,
-                "meta_tags": ["Kids", "cute", "shelf", "storage", "pink", "purple"]
             },
             {
                 "name": "school bus toybox",
@@ -566,7 +515,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/MHduNxc",
                 "real_pic_url": "https://m.media-amazon.com/images/I/711ggnv8FxL._SL1357_.jpg",
                 "price": 25,
-                "meta_tags": ["kids", "cute", "yellow", "toy", "storage"]
             },
             {
                 "name": "blue rug",
@@ -575,7 +523,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/2W36O5V",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81r-KxDZGgL._AC_SL1440_.jpg",
                 "price": 24,
-                "meta_tags": ["kid", "contemporary", "cute", "blue", "rug", "decor"]
             },
             {
                 "name": "dragon",
@@ -584,7 +531,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/7NgwWJl",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71Q4uFBBjKL._AC_SX466_.jpg",
                 "price": 90,
-                "meta_tags": ["kid", "cute", "toy", "green"]
             },
             {
                 "name": "rolling cart blue",
@@ -593,7 +539,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://a.co/d/eBvm5KH",
                 "real_pic_url": "https://imgur.com/b8D9rs9",
                 "price": 30,
-                "meta_tags": ["simple", "kids", "contemporary", "storage", "blue", "decor", "cute"]
             },
             {
                 "name": "racecar bed",
@@ -602,7 +547,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/GUSp8XH",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/22270517/resize-h755-w755%5Ecompr-r85/3626/36268214/Aashish+Twin+Cars+Bed+by+Zoomie+Kids.jpg",
                 "price": 277,
-                "meta_tags": ["kid", "cute", "bed", "red", "toodler bed" ]
             },
             {
                 "name": "panda chair",
@@ -611,7 +555,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://imgur.com/d97UBUB",
                 "real_pic_url": "https://m.media-amazon.com/images/I/616X1k2Ye0S._AC_SL1500_.jpg",
                 "price": 70,
-                "meta_tags": ["kid", "cute", "black", "white", "chair" ]
             },
             {
                 "name": "cat planter",
@@ -620,7 +563,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/uK7iIyG.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/41A25rgxZgL._AC_.jpg",
                 "price": 8,
-                "meta_tags": ["cute", "plant", "pot", "multi", "white", "orage" ]
             },
             {
                 "name": "lotus candle",
@@ -629,7 +571,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ZDVzExF.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/413hQe6UPQL._AC_.jpg",
                 "price": 16,
-                "meta_tags": ["boho", "plant", "eclectic", "bohemian", "decor", "blue", "purple", "candle"]
             },
             {
                 "name": "arc lamp",
@@ -638,7 +579,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/PdNztKd.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/71iwpsZVtaL._AC_SL1500_.jpg",
                 "price": 130,
-                "meta_tags": ["boho", "modern", "contemporary", "chic", "eclectic", "bohemian", "lamp", "white", "gold", "black"]
             },
             {
                 "name": "wicker basket",
@@ -647,7 +587,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/AScesnX.png",
                 "real_pic_url": "https://m.media-amazon.com/images/I/81yaZZfwYkL._AC_SL1500_.jpg",
                 "price": 63,
-                "meta_tags": ["classic", "rustic", "traditional", "eclectic", "shabby", "chic", "brown", "wood", "storage", "decor", "basket"]
             },
             {
                 "name": "hanging planter",
@@ -656,7 +595,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/gxMv0pX.png",
                 "real_pic_url": "https://www.amazon.com/dp/B09VX72F64?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_3STM4DBZMZZGEJ4ZHF68",
                 "price": 25,
-                "meta_tags": ["plant", "eclectic", "pot", "white", "decor", "boho", "bohiemian"]
             },
             {
                 "name": "noodle candle",
@@ -665,7 +603,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ogATGXc.png",
                 "real_pic_url": "https://www.etsy.com/listing/1173053554/wavy-sculptural-soy-wax-candle-home?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=squiggle+candles+blue&ref=sr_gallery-1-4&pro=1&sts=1&organic_search_click=1&variation0=2511071137",
                 "price": 17,
-                "meta_tags": ["cute", "boho", "contemporary", "eclectic", "bohemian", "blue", "multi", "candle"]
             },
             {
                 "name": "moroccan rug",
@@ -674,7 +611,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/6aHMhet.png",
                 "real_pic_url": "https://www.rug-images.com/products/osNew/roomImage/200RZBD16A.jpg?purpose=pdpLifestyleSmall",
                 "price": 285,
-                "meta_tags": ["contemporary", "modern", "moroccan", "Ssabby", "chic", "cream", "grey", "rug", "decor"]
             },
             {
                 "name": "blue sofa",
@@ -683,7 +619,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/iz9uoBW.png",
                 "real_pic_url": "https://secure.img1-fg.wfcdn.com/im/46106533/resize-h755-w755%5Ecompr-r85/1789/178953001/Ophelie+87%27%27+Upholstered+Sofa.jpg",
                 "price": 1617,
-                "meta_tags": ["classic", "eclectic", "shabby", "chic", "sofa", "coutch", "blue"]
             },
             {
                 "name": "console table",
@@ -692,7 +627,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/ksmJfsF.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/7324537/resize-h755-w755%5Ecompr-r85/1019/101974035/Schubert+50%27%27+Console+Table.jpg",
                 "price": 320,
-                "meta_tags": ["classic",  "craftsman", "wood", "table", "side", "table", "console", "table"]
             },
             {
                 "name": "industrial coffee table",
@@ -701,7 +635,6 @@ def setup_commands(app):
                 "sims_pic_url": "https://i.imgur.com/MTx1Cas.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/59924886/resize-h755-w755%5Ecompr-r85/1257/125745313/Howardwick+Coffee+Table.jpg",
                 "price": 295,
-                "meta_tags": ["industrial", "eclectic", "shabby", "chic", "table", "coffee", "table", "wood", "glass"]
             },
         ]
         for r_object in object_list:
@@ -830,6 +763,275 @@ def setup_commands(app):
                 "name": "architecture art",
                 "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
             },
+            {
+                "name": "lattice rug",
+                "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
+            },
+            {           
+                "name": "padded headboard",
+                "meta_tags": ["modern", "simple", "minimalist"]
+            },
+            {
+                "name": "salt lamp",
+                "meta_tags": ["boho", "rustic", "eclectic", "orange", "wood", "lamp", "decor"]
+            },
+            {
+                "name": "dog planter",
+                "meta_tags": ["cute", "plant", "eclectic", "plant", "pot", "black", "white", "brown", "green", "multicolor"]
+            },
+            {
+                "name": "clothing rack",
+                "meta_tags": ["contemporary", "minimalist", "chic", "black", "wood", "dresser", "clothing", "rack"]
+            },
+            {
+                "name": "wicker hamper",
+                "meta_tags": ["farmhouse", "rustic", "wood", "brown", "hamper", "laundry", "basket"]
+            },
+            {
+                "name": "industrial lamp",
+                "meta_tags": ["industrial", "dclectic", "black", "silver", "lamp", "teen"]
+            },
+            {
+                "name": "gaming chair",
+                "meta_tags": ["teen", "contemporary", "teen", "chair", "desk chair", "gaming chair", "black", "purple", "gaming"]
+            },
+            {
+                "name": "gaming desk",
+                "meta_tags": ["teen", "contemporary", "teen", "black", "multcolor", "rainbow", "desk", "gaming"]
+            },
+            {
+                "name": "checkered rug",
+                "meta_tags": ["teen", "contemporary", "rug", "checkered", "black", "white"]
+            },
+            {
+                "name": "record art",
+                "meta_tags": ["boho", "teen", "decor", "art", "rainbow", "multi", "black", "vintage"]
+            },
+            {
+                "name": "round table",
+                "meta_tags": ["modern", "teen", "minimalist", "chic", "table", "coffee table", "side table", "night stand", "contemporary", "black", "circle"]
+            },
+            {
+                "name": "wardrobe",
+                "meta_tags": ["teen", "contemporary", "storage", "dresser", "wardrobe", "wood", "brown", "expresso"]
+            },
+            {
+                "name": "bamboo",
+                "meta_tags": ["modern", "chic", "boho", "contemporary", "teen", "green", "black", "plant" ]
+            },
+            {
+                "name": "lava lamp",
+                "meta_tags": ["retro", "vintage", "green", "atomic", "lamp", "decor"]
+            },
+            {
+                "name": "stripped planter",
+                "meta_tags": ["modern" "glam", "luxe", "minimalist", "grey", "white", "gold", "planter"]
+            },
+            {
+                "name": "pet feeder",
+                "meta_tags": ["pets", "black", "tech", "pet", "feeder", "modern", "minimalist" ]
+            },
+            {
+                "name": "popcorn maker",
+                "meta_tags": ["tech", "applicance", "red" ]
+            },
+            {
+                "name": "dutch oven",
+                "meta_tags": ["classic", "farmhouse", "rustic", "red", "cookware"]
+            },
+            {
+                "name": "barstool",
+                "meta_tags": ["mid century modern", "atomic", "chic", "mordern", "red", "stool", "bar stool", "swivle"]
+            },
+            {
+                "name": "tea rack",
+                "meta_tags": ["contemporary", "decor", "storage", "wood", "black"]
+            },
+            {
+                "name": "knife rack",
+                "meta_tags": ["modern", "industrial", "contemporary", "silver", "decor", "storage"]
+            },
+            {
+                "name": "mc dining table",
+                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian", "table", "dining table", "wood", "glass"]
+            },
+            {
+                "name": "mc console table",
+                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian"]
+            },
+            {
+                "name": "floor lamp",
+                "meta_tags": ["mid century modern", "modern", "scandinavian", "wood", "black", "lamp", "decor"]
+            },
+            {
+                "name": "mc dining chair",
+                "meta_tags": ["mid", "century", "modern", "chair", "dining chair", "wood", "retro"]
+            },
+            {
+                "name": "studded arm chair",
+                "meta_tags": ["classic", "traditional", "black", "gold", "chair", "arm chair"]
+            },
+            {
+                "name": "globe bar",
+                "meta_tags": ["classic", "traditional",  "brown", "gold", "black", "bar"]
+            },
+            {
+                "name": "bankers lamp",
+                "meta_tags": ["classic", "traditional", "gold", "green", "lamp"]
+            },
+            {
+                "name": "persian rug",
+                "meta_tags": ["classic", "persian", "red", "blue", "multi", "rug", "decor"]
+            },
+            {
+                "name": "executive desk chair",
+                "meta_tags": ["classic", "traditional", "black", "gold", "chair", "desk chair" ]
+            },
+            {
+                "name": "executive desk",
+                "meta_tags": ["classic", "traditional", "wood", "brown", "desk"]
+            },
+            {
+                "name": "leaf art",
+                "meta_tags": ["teen", "contemporary", "art", "decor", "white", "green", "picture"]
+            },
+            {
+                "name": "mirror with lights",
+                "meta_tags": ["teen", "contemporary", "white", "glam", "mirror", "lighting"]
+            },
+            {
+                "name": "directors chair",
+                "meta_tags": ["teen", "contemporary", "eclectic", "chair", "white"]
+            },
+            {
+                "name": "white gold dresser",
+                "meta_tags": ["teen", "modern", "chic", "white", "gold", "glam", "dresser", "storage"]
+            },
+            {
+                "name": "pink floyd poster",
+                "meta_tags": ["retro", "vintage", "black", "multi", "rainbow", "poster", "decor", "kid", "teen"]
+            },
+            {
+                "name": "naruto rug",
+                "meta_tags": ["kid", "teen", "black", "red", "decor", "rug", "teen", "kid"]
+            },
+            {
+                "name": "desk lamp",
+                "meta_tags": ["contemporary", "blue", "wood", "lamp"]
+            },
+            {
+                "name": "rice paper lamp",
+                "meta_tags": ["contemporary", "modern", "black", "white", "lamp", "teen", "kid"]
+            },
+            {
+                "name": "bean bag",
+                "meta_tags": ["kid", "teen", "black", "chair" ]
+            },
+            {
+                "name": "bunk bed",
+                "meta_tags": ["Kid", "teen", "black", "bed" ]
+            },
+            {
+                "name": "wall decal",
+                "meta_tags": ["kid" "cute" "decal" "decor" "multi" "pink" "purple"]
+            },
+            {
+                "name": "teddy bear",
+                "meta_tags": ["kid", "cute", "pink", "red", "toy" ]
+            },
+            {
+                "name": "unicorn",
+                "meta_tags": ["kid", "cute", "pink", "purple", "toy"]
+            },
+            {
+                "name": "butterfly chair",
+                "meta_tags": ["kid", "cute", "pink", "blue", "chair"]
+            },
+            {
+                "name": "house toddler bed",
+                "meta_tags": ["kid", "cute", "white", "bed", "toddler bed"]
+            },
+            {
+                "name": "string lights",
+                "meta_tags": ["cute", "contemporary", "kid", "lights", "decor", "white" ]
+            },
+            {
+                "name": "rolling cart pink",
+                "meta_tags": ["simple", "kids", "contemporary", "storage", "pink", "decor", "cute"]
+            },
+            {
+                "name": "fur rug",
+                "meta_tags": ["luxe", "glam", "contemporary", "chic", "rug", "decor", "white", "kid", "cite"]
+            },
+            {
+                "name": "cloud shelf",
+                "meta_tags": ["Kids", "cute", "shelf", "storage", "pink", "purple"]
+            },
+            {
+                "name": "school bus toybox",
+                "meta_tags": ["kids", "cute", "yellow", "toy", "storage"]
+            },
+            {
+                "name": "blue rug",
+                "meta_tags": ["kid", "contemporary", "cute", "blue", "rug", "decor"]
+            },
+            {
+                "name": "dragon",
+                "meta_tags": ["kid", "cute", "toy", "green"]
+            },
+            {
+                "name": "rolling cart blue",
+                "meta_tags": ["simple", "kids", "contemporary", "storage", "blue", "decor", "cute"]
+            },
+            {
+                "name": "racecar bed",
+                "meta_tags": ["kid", "cute", "bed", "red", "toodler bed" ]
+            },
+            {
+                "name": "panda chair",
+                "meta_tags": ["kid", "cute", "black", "white", "chair" ]
+            },
+            {
+                "name": "cat planter",
+                "meta_tags": ["cute", "plant", "pot", "multi", "white", "orage" ]
+            },
+            {
+                "name": "lotus candle",
+                "meta_tags": ["boho", "plant", "eclectic", "bohemian", "decor", "blue", "purple", "candle"]
+            },
+            {
+                "name": "arc lamp",
+                "meta_tags": ["boho", "modern", "contemporary", "chic", "eclectic", "bohemian", "lamp", "white", "gold", "black"]
+            },
+            {
+                "name": "wicker basket",
+                "meta_tags": ["classic", "rustic", "traditional", "eclectic", "shabby", "chic", "brown", "wood", "storage", "decor", "basket"]
+            },
+            {
+                "name": "hanging planter",
+                "meta_tags": ["plant", "eclectic", "pot", "white", "decor", "boho", "bohiemian"]
+            },
+            {
+                "name": "noodle candle",
+                "meta_tags": ["cute", "boho", "contemporary", "eclectic", "bohemian", "blue", "multi", "candle"]
+            },
+            {
+                "name": "moroccan rug",
+                "meta_tags": ["contemporary", "modern", "moroccan", "Ssabby", "chic", "cream", "grey", "rug", "decor"]
+            },
+            {
+                "name": "blue sofa",
+                "meta_tags": ["classic", "eclectic", "shabby", "chic", "sofa", "coutch", "blue"]
+            },
+            {
+                "name": "console table",
+                "meta_tags": ["classic",  "craftsman", "wood", "table", "side", "table", "console", "table"]
+            },
+            {
+                "name": "industrial coffee table",
+                "meta_tags": ["industrial", "eclectic", "shabby", "chic", "table", "coffee", "table", "wood", "glass"]
+            },
+
         ]
 
     @app.cli.command("populate-meta-table")
