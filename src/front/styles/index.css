@@ -1,7 +1,12 @@
+@font-face {
+  font-family: 'SimsSans';
+  src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+}
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
 .container {
+  font-family: 'SimsSans';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +21,7 @@
 }
 
 .footer {
+  font-family: 'SimsSans';
   display: flex;
   align-items: center;
   justify-content: space-around;

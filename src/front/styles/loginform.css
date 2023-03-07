@@ -1,4 +1,10 @@
+@font-face {
+      font-family: 'SimsSans';
+      src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+    }
+
 .loginForm {
+      font-family: 'SimsSans';
       width: 300px;
       padding: 20px;
       border: 1px solid #ccc;

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'SimsSans';
+    src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+  }
+  
 .profilePic{
     border-radius: 50%;
     height: 75px;
@@ -6,6 +11,7 @@
 }
 
 .profilePicContainer{
+    font-family: 'SimsSans';
     background-color: rgb(0, 104, 255);
     height: 200px;
     width: 300px;
