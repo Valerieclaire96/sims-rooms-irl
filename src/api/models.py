@@ -130,7 +130,7 @@ class Object(db.Model):
     # back populations refers to the relationship from meta to Object in the defined in the meta table
     meta_tags = db.relationship("Meta",
         secondary=meta_object,
-        back_populates="object")
+        back_populates="r_object")
 
     # describes the relationship between Objects and user
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -166,7 +166,7 @@ class Meta(db.Model):
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from meta to Object in the defined in the Object table
-    object = db.relationship("Object",
+    r_object = db.relationship("Object",
         secondary=meta_object,
         back_populates="meta_tags")
 
@@ -187,5 +187,7 @@ class Meta(db.Model):
         return {
             "id": self.id,
             "description": self.tag,
+            "room": self.room,
+            "r_object": self.r_object,
         }
 

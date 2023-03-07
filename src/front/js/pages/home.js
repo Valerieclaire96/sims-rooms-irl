@@ -6,6 +6,8 @@ import Featured from "../component/featured";
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
+  // store.roomArr then store.roomArr.map loop through it eto get each value
+
   return (
     <div className="text-center mt-5 container">
       <h1>

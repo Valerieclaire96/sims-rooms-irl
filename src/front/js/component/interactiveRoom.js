@@ -10,11 +10,11 @@ export default function InteractiveRoom({}) {
 
   return (
     <div className="container">
-       <button title="List View" className="listBtn">
-         <Link to={"/scholars_study/list"}>
-           <div className="fa-solid fa-border-all fa-2xl"></div>
-         </Link>
-       </button> 
+      <button title="List View" className="listBtn">
+        <Link to={"/scholars_study/list"}>
+          <div className="fa-solid fa-border-all fa-2xl"></div>
+        </Link>
+      </button>
       <h2 className="roomHeader">The Scholar's Study</h2>
       <div className="roomBtnContainer">
         <img className="roomImg" src="https://i.imgur.com/jG5GOPdh.png" />

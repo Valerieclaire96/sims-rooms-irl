@@ -82,7 +82,7 @@ def add_object():
     sims_pic_url = request_body.get("sims_pic_url")
     real_pic_url = request_body.get("real_pic_url")
     price = request_body.get("price")
-    room = request_body.get("room")
+    rooms = request_body.get("room")
     meta_tags = request_body.get("meta_tags")
 
     return jsonify(request_body), 200
@@ -107,6 +107,12 @@ def add_room():
 
     return jsonify(request_body), 200
 
+@api.route('/rooms', methods=['GET'])
+def get_rooms():
+    room_list = Room.query.all()
+    rooms_serialized = [room.serialize() for room in room_list]
+    return jsonify(rooms_serialized), 200
+
 
 @api.route('/room/<string:room_name>', methods=['GET'])
 def get_room(room_name):
@@ -128,6 +134,6 @@ def add_meta():
 def get_meta(meta_tag):
     request_body = request.get_json(force=True)
     meta_tag = request_body.get("meta")
-    meta = Object.query.filter_by(name=meta_tag).first()
+    meta = Meta.query.filter_by(tag=meta_tag).first()
 
-    return jsonify(room.serialize()), 200
+    return jsonify(meta.serialize()), 200

@@ -40,6 +40,7 @@ def setup_commands(app):
     def generate_fav_object():
         fav_object_list= []
 
+
     @app.cli.command("populate-room-table")
     def generate_room_list():
         room_list = [
