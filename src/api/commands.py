@@ -1116,9 +1116,6 @@ def setup_commands(app):
                 "tag" : "brown"
             },
             {
-                "tag" : "blue"
-            },
-            {
                 "tag" : "grey"
             },
             {
@@ -1346,4 +1343,4 @@ def setup_commands(app):
                 tag = description['tag']
             )
             db.session.add(new_tag)
-            db.session.commit()
+        db.session.commit()
