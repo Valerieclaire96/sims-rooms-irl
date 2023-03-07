@@ -47,38 +47,39 @@ def setup_commands(app):
                 "name": "Dude, Where's my Closet?",
                 "pic_url": "https://imgur.com/SmhGAwI",
             },
-             {
+            {
                 "name": "sleep4geeks",
                 "pic_url": "https://imgur.com/MT1HV5j",
             },
-             {
+            {
                 "name": "Lazy Susan's Kitchen",
-                "pic_url": "https://i.imgur.com/9WdnFoR.png",            },
-             {
+                "pic_url": "https://i.imgur.com/9WdnFoR.png",
+            },
+            {
                 "name": "Quick Bites, Long Talks",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-             },
-             {
+            },
+            {
                 "name": "The Fancy Man's Study",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-             },
-             {
+            },
+            {
                 "name": "Straight As to Zzz",
                 "pic_url": "https://i.imgur.com/YpAijUT.png",
             },
-             {
+            {
                 "name": "Tweenage Dirtbag",
                 "pic_url": "https://imgur.com/HHILH8C",
             },
-             {
+            {
                 "name": "Unicorn Dreams",
                 "pic_url": "https://imgur.com/iaJefXz",
             },
-             {
+            {
                 "name": "Vroom Room",
                 "pic_url": "https://imgur.com/2W36O5V",
             },
-             {
+            {
                 "name": "Zen Den",
                 "pic_url": "https://i.imgur.com/6aHMhet.png",
             },
@@ -288,7 +289,7 @@ def setup_commands(app):
             },
             {
                 "name": "mc console table",
-                "sims_name": "Moder Mid-Century Marvel",
+                "sims_name": "Modern Mid-Century Marvel",
                 "buy_url": "https://www.wayfair.com/furniture/pdp/birch-lane-geoff-glass-dining-table-w008599694.html",
                 "sims_pic_url": "https://i.imgur.com/EeNoQ2R.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/38840974/resize-h1600-w1600%5Ecompr-r85/2326/232656119/Geoff+43.3%27%27+Dining+Table.jpg",
@@ -695,7 +696,7 @@ def setup_commands(app):
                 "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
             }
         ]
-         
+
         for object_instance in room_object_list:
             room = Room.query.filter_by(name=object_instance["roomName"]).first()
             if room is None: 
@@ -711,54 +712,57 @@ def setup_commands(app):
     def generate_meta_room_list():
         meta_room_list = [
             {
-                "room": ["Dude, Where's my Closet?"],
+                "roomName": "Dude, Where's my Closet?",
                 "meta_tags": ["contemporary", "modern", "minimalist", "simple", "bedroom"]
             },
             {
-                "room": ["sleep4geeks"],
+                "roomName": "sleep4geeks",
                 "meta_tags": ["teen", "contemporary", "bedroom", "black"]
             },
             {
-                "room": ["Lazy Susan's Kitchen"],
+                "roomName": "Lazy Susan's Kitchen",
                 "meta_tags": ["modern" , "contemporary", "retro", "kitchen", "atomic", "mid century"]
             },
             {
-                "room": ["Quick Bites, Long Talks"],
+                "roomName": "Quick Bites, Long Talks",
                 "meta_tags": ["mid century modern", "modern", "contemporary","dining room", "vintage", "scandinavian"]
             },
             {
-                "room": ["The Fancy Man's Study"],
+                "roomName": "The Fancy Man's Study",
                 "meta_tags":  ["office", "study", "classic", "traditional" , "brown","wood"]
             },
             {
-                "room": ["Straight As to Zzz"],
+                "roomName": "Straight As to Zzz",
                 "meta_tags":  ["teen", "contemporary","modern","chic","luxe","glamor","bedroom"]
 
             },
             {
-                "rooms": ["Tweenage Dirtbag"],
+                "room": "Tweenage Dirtbag",
                 "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
             },
             {
-                "room": ["Unicorn Dreams"],
+                "roomName": "Unicorn Dreams",
                 "meta_tags": ["kids","cute","pink","purple"]
             },
             {
-                "room": ["Vroom Room"],
+                "roomName": "Vroom Room",
                 "meta_tags": ["kids","cute","blue"]
             },
             {
-                "rooms": ["Zen Den"],
+                "roomName": "Zen Den",
                 "meta_tags": ["boho", "eclectic", "bohemian", "shabby chic", "living room"] 
             }
         ]
-        for room in meta_room_list:
-            new_room = meta_room(
-                room = room["name"],
-                meta_tags = meta["tag"]
-            )
-            db.session.add(new_room)
-            db.session.commit()
+        for tag_instance in meta_room_list:
+            room = Room.query.filter_by(name=tag_instance["roomName"]).first()
+            if room is None: 
+                raise Exception(f"Room {tag_instance['roomName']} does not exist, did you forget to run the previous command to add the rooms and objects?")
+            for tagName in tag_instance["meta_tags"]:
+                tags = Meta.query.filter_by(tag=tagName).first()
+                if tags is None: 
+                    raise Exception(f"Tags {tagName} does not exist, did you forget to run the previous command to add the room and tags?")
+                room.meta_tags.append(tags)
+        db.session.commit()
     
     @app.cli.command("populate-meta_object-table")
     def generate_meta_object_list():
@@ -1051,17 +1055,17 @@ def setup_commands(app):
             {
                 "tag" : "teen"
             },
-             {
-                "tag" : "contemporary"
-            },
             {
-                "tag" : "modern"
+                "tag" : "contemporary"
             },
             {
                 "tag" : "chic boho"
             },
-             {
+            {
                 "tag" : "retro"
+            },
+            {
+                "tag": "simple"
             },
             {
                 "tag" : "vintage"
@@ -1069,7 +1073,7 @@ def setup_commands(app):
             {
                 "tag" : "atomic"
             },
-             {
+            {
                 "tag" : "luxe"
             },
             {
@@ -1078,7 +1082,7 @@ def setup_commands(app):
             {
                 "tag" : "minimalist"
             },
-             {
+            {
                 "tag" : "classic"
             },
             {
@@ -1087,7 +1091,7 @@ def setup_commands(app):
             {
                 "tag" : "rustic"
             },
-             {
+            {
                 "tag" : "mid-century"
             },
             {
@@ -1096,7 +1100,7 @@ def setup_commands(app):
             {
                 "tag" : "chic"
             },
-             {
+            {
                 "tag" : "moroccan"
             },
             {
@@ -1105,7 +1109,7 @@ def setup_commands(app):
             {
                 "tag" : "wood"
             },
-             {
+            {
                 "tag" : "glass"
             },
             {
@@ -1114,7 +1118,7 @@ def setup_commands(app):
             {
                 "tag" : "blue"
             },
-             {
+            {
                 "tag" : "grey"
             },
             {
@@ -1123,7 +1127,7 @@ def setup_commands(app):
             {
                 "tag" : "white"
             },
-             {
+            {
                 "tag" : "blue"
             },
             {
@@ -1132,7 +1136,7 @@ def setup_commands(app):
             {
                 "tag" : "orange"
             },
-             {
+            {
                 "tag" : "red"
             },
             {
@@ -1141,7 +1145,7 @@ def setup_commands(app):
             {
                 "tag" : "yellow"
             },
-             {
+            {
                 "tag" : "pink"
             },
             {
@@ -1150,7 +1154,7 @@ def setup_commands(app):
             {
                 "tag" : "rainbow"
             },
-             {
+            {
                 "tag" : "multi"
             },
             {
@@ -1159,25 +1163,17 @@ def setup_commands(app):
             {
                 "tag" : "silver"
             },
-             {
+            {
                 "tag" : "expresso"
             },
             {
                 "tag" : "checkered"
             },
             {
-
                 "tag" : "multicolor"
-            }, {
+            }, 
+            {
                 "tag" : "kitchen"
-
-                "tag" : ""
-            },
-            {
-                "tag" : ""
-            },
-            {
-                "tag" : ""
             },
             {
                 "tag" : "chic"
@@ -1187,7 +1183,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "kids room"
-            }, {
+            }, 
+            {
                 "tag" : "teens room"
             },
             {
@@ -1195,7 +1192,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "dining room"
-            }, {
+            }, 
+            {
                 "tag" : "study"
             },
             {
@@ -1203,7 +1201,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "den"
-            }, {
+            }, 
+            {
                 "tag" : "lamp"
             },
             {
@@ -1211,7 +1210,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "plant"
-            }, {
+            }, 
+            {
                 "tag" : "pot"
             },
             {
@@ -1219,7 +1219,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "storage"
-            }, {
+            }, 
+            {
                 "tag" : "clothing rack"
             },
             {
@@ -1227,7 +1228,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "hamper"
-            }, {
+            }, 
+            {
                 "tag" : "desk chair"
             },
             {
@@ -1235,7 +1237,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "chair"
-            }, {
+            }, 
+            {
                 "tag" : "desk"
             },
             {
@@ -1244,7 +1247,7 @@ def setup_commands(app):
             {
                 "tag" : "rug"
             },
-             {
+            {
                 "tag" : "coffee table"
             },
             {
@@ -1252,7 +1255,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "nightstand"
-            }, {
+            }, 
+            {
                 "tag" : "table"
             },
             {
@@ -1260,7 +1264,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "tech"
-            }, {
+            }, 
+            {
                 "tag" : "appliance"
             },
             {
@@ -1268,7 +1273,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "stool"
-            }, {
+            }, 
+            {
                 "tag" : "barstool"
             },
             {
@@ -1276,7 +1282,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "chair"
-            }, {
+            }, 
+            {
                 "tag" : "dining chair"
             },
             {
@@ -1284,7 +1291,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "picture"
-            }, {
+            }, 
+            {
                 "tag" : "poster"
             },
             {
@@ -1293,7 +1301,7 @@ def setup_commands(app):
             {
                 "tag" : "console table"
             },
-             {
+            {
                 "tag" : "side table"
             },
             {
@@ -1301,7 +1309,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "mirror"
-            }, {
+            }, 
+            {
                 "tag" : "lighting"
             },
             {
@@ -1309,7 +1318,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "toy"
-            }, {
+            }, 
+            {
                 "tag" : "toddler bed"
             },
             {
@@ -1320,7 +1330,8 @@ def setup_commands(app):
             },
             {
                 "tag" : "candle"
-            }, {
+            }, 
+            {
                 "tag" : "basket"
             },
             {
