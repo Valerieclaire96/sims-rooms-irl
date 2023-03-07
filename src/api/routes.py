@@ -27,11 +27,11 @@ def create_account():
     profile_pic = request_body.get('profile_pic')
 
     if not request_body["name"]:
-      return jsonify({"msg": "Name is required"}), 400
+        return jsonify({"msg": "Name is required"}), 400
     if not request_body["email"]:
-      return jsonify({"msg": "Email is required"}), 400
+        return jsonify({"msg": "Email is required"}), 400
     if not request_body["password"]:
-      return jsonify({"msg": "Password is required"}), 400
+        return jsonify({"msg": "Password is required"}), 400
 
     user = User.query.filter_by(email=email).first()
     if user is not None:
@@ -113,5 +113,21 @@ def get_room(room_name):
     request_body = request.get_json(force=True)
     room_name = request_body.get("room_name")
     room = Object.query.filter_by(name=room_name).first()
+
+    return jsonify(room.serialize()), 200
+
+@api.route('/meta', methods=['POST'])
+def add_meta():
+    request_body = request.get_json(force=True)
+    tag = request_body.get("tag")
+
+    return jsonify(request_body), 200
+
+
+@api.route('/meta/<string:meta_tags>', methods=['GET'])
+def get_meta(meta_tag):
+    request_body = request.get_json(force=True)
+    meta_tag = request_body.get("meta")
+    meta = Object.query.filter_by(name=meta_tag).first()
 
     return jsonify(room.serialize()), 200

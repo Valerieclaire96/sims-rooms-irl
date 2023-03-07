@@ -47,38 +47,39 @@ def setup_commands(app):
                 "name": "Dude, Where's my Closet?",
                 "pic_url": "https://imgur.com/SmhGAwI",
             },
-             {
-                "name": "geeks4Sleep",
+            {
+                "name": "sleep4geeks",
                 "pic_url": "https://imgur.com/MT1HV5j",
             },
-             {
-                "name": "Lazy Susan’s Kitchen",
-                "pic_url": "https://i.imgur.com/9WdnFoR.png",            },
-             {
+            {
+                "name": "Lazy Susan's Kitchen",
+                "pic_url": "https://i.imgur.com/9WdnFoR.png",
+            },
+            {
                 "name": "Quick Bites, Long Talks",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-             },
-             {
-                "name": "The Fancy Man’s Study",
+            },
+            {
+                "name": "The Fancy Man's Study",
                 "pic_url": "https://i.imgur.com/tPG1Meg.png",
-             },
-             {
+            },
+            {
                 "name": "Straight As to Zzz",
                 "pic_url": "https://i.imgur.com/YpAijUT.png",
             },
-             {
+            {
                 "name": "Tweenage Dirtbag",
                 "pic_url": "https://imgur.com/HHILH8C",
             },
-             {
+            {
                 "name": "Unicorn Dreams",
                 "pic_url": "https://imgur.com/iaJefXz",
             },
-             {
+            {
                 "name": "Vroom Room",
                 "pic_url": "https://imgur.com/2W36O5V",
             },
-             {
+            {
                 "name": "Zen Den",
                 "pic_url": "https://i.imgur.com/6aHMhet.png",
             },
@@ -87,8 +88,6 @@ def setup_commands(app):
             new_room = Room(
                 name = room['name'],
                 pic_url = room['pic_url'],
-                objects = room['objects'],
-                meta_tags = room['meta_tags']
             )
             db.session.add(new_room)
             db.session.commit()
@@ -290,7 +289,7 @@ def setup_commands(app):
             },
             {
                 "name": "mc console table",
-                "sims_name": "Moder Mid-Century Marvel",
+                "sims_name": "Modern Mid-Century Marvel",
                 "buy_url": "https://www.wayfair.com/furniture/pdp/birch-lane-geoff-glass-dining-table-w008599694.html",
                 "sims_pic_url": "https://i.imgur.com/EeNoQ2R.png",
                 "real_pic_url": "https://secure.img1-cg.wfcdn.com/im/38840974/resize-h1600-w1600%5Ecompr-r85/2326/232656119/Geoff+43.3%27%27+Dining+Table.jpg",
@@ -602,7 +601,7 @@ def setup_commands(app):
             },
             {
                 "name": "noodle candle",
-                "sims_name": "The Noddle Candle",
+                "sims_name": "The Noodle Candle",
                 "buy_url": "https://www.etsy.com/listing/1173053554/wavy-sculptural-soy-wax-candle-home?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=squiggle+candles+blue&ref=sr_gallery-1-4&pro=1&sts=1&organic_search_click=1&variation0=2511071137",
                 "sims_pic_url": "https://i.imgur.com/ogATGXc.png",
                 "real_pic_url": "https://www.etsy.com/listing/1173053554/wavy-sculptural-soy-wax-candle-home?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=squiggle+candles+blue&ref=sr_gallery-1-4&pro=1&sts=1&organic_search_click=1&variation0=2511071137",
@@ -649,8 +648,6 @@ def setup_commands(app):
                 sims_pic_url = r_object['sims_pic_url'],
                 real_pic_url = r_object['real_pic_url'],
                 price = r_object['price'],
-                rooms = r_object['rooms'],
-                meta_tags = r_object['meta_tags']
             )
             db.session.add(new_object)
             db.session.commit()
@@ -659,112 +656,113 @@ def setup_commands(app):
     def generate_object_room_list():
         room_object_list = [
             {
-                "rooms": "Zen Den",
-                "objects": ["cat planter","lotus candle","arc lamp","wicker basket","handing planter","noddle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
+                "roomName": "Zen Den",
+                "objects": ["cat planter","lotus candle","arc lamp","wicker basket","hanging planter","noodle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
             },
             {
-                "rooms": "Vroom Room",
-                "objects": ["school bus toybox","blue rug","dragon","rolling cart","racecar bed","panda chair"]
+                "roomName": "Vroom Room",
+                "objects": ["school bus toybox","blue rug","dragon","rolling cart blue","racecar bed","panda chair"]
             },
             {
-                "rooms": "Unicorn Dreams",
-                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling car pink"]
+                "roomName": "Unicorn Dreams",
+                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling cart pink"]
             },
             {
-                "rooms": "Tweenage Dirtbag",
-                "objects": ["pink floyd poster","nautro rug","desk lamp","rice paper lamp","bean bag","bunk bed"]
+                "roomName": "Tweenage Dirtbag",
+                "objects": ["pink floyd poster","naruto rug","desk lamp","rice paper lamp","bean bag","bunk bed"]
             },
             {
-                "rooms": "Straight As to Zzz",
-                "objects": ["leaf art", "mirror with lights", "director’s chair", "white gold dresser", "salt lamp"]
+                "roomName": "Straight As to Zzz",
+                "objects": ["leaf art", "mirror with lights", "directors chair", "white gold dresser", "salt lamp"]
             },
             {
-                "rooms": "The Fancy Man's Study",
-                "objects":  ["studded arm chair", "globe bar", "bankers lamp", "Persian rug", "executive desk chair", "executive desk"]
+                "roomName": "The Fancy Man's Study",
+                "objects":  ["studded arm chair", "globe bar", "bankers lamp", "persian rug", "executive desk chair", "executive desk"]
             },
             {
-                "rooms": "Quick Bites, Long Talks",
-                "objects": ["mc dining table", "mc console table", "floor lamp", "md dining chair", "architecture art", "lotus candle"]
+                "roomName": "Quick Bites, Long Talks",
+                "objects": ["mc dining table", "mc console table", "floor lamp", "mc dining chair", "architecture art", "lotus candle"]
             },
             {
-                "rooms": "Lazy Susan's Kitchen",
+                "roomName": "Lazy Susan's Kitchen",
                 "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"]
             },
             {
-                "rooms": "sleep4geeks",
-                "objects":  ["indstrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"]
+                "roomName": "sleep4geeks",
+                "objects":  ["industrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"]
             },
             {
-                "rooms": "Dude, Where's my Closet?",
+                "roomName": "Dude, Where's my Closet?",
                 "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"]
             }
         ]
-            # object_instance_list = []
-            # for single_object in r_o["objects"]:
-            #     object_instance_list.append(Object.query.filter_by(name=single_object).first())
-            # room = Room.query.filter_by(name=r_o["rooms"]).first()
-            # for object_instance in object_instance_list:
-            #     new_r_o = room_object(
-            #         room = rooms["name"],
-            #         object = objects["name"]
-            #     )
-        for object_instance in object_instance_list:
-            new_r_o = room_object(room = object_instance["room"], object = object_instance["object"]) 
-            db.session.add(new_r_o)
-    db.session.commit()
+
+        for object_instance in room_object_list:
+            room = Room.query.filter_by(name=object_instance["roomName"]).first()
+            if room is None: 
+                raise Exception(f"Room {object_instance['roomName']} does not exist, did you forget to run the previous command to add the rooms and objects?")
+            for objectName in object_instance["objects"]:
+                r_object = Object.query.filter_by(name=objectName).first()
+                if r_object is None: 
+                    raise Exception(f"Object {objectName} does not exist, did you forget to run the previous command to add the room and objects?")
+                room.objects.append(r_object)
+        db.session.commit()
 
     @app.cli.command("populate-meta_room-table")
     def generate_meta_room_list():
         meta_room_list = [
             {
-                "room": ["Dude, Where's my Closet?"],
+                "roomName": "Dude, Where's my Closet?",
                 "meta_tags": ["contemporary", "modern", "minimalist", "simple", "bedroom"]
             },
             {
-                "room": ["sleep4geeks"],
+                "roomName": "sleep4geeks",
                 "meta_tags": ["teen", "contemporary", "bedroom", "black"]
             },
             {
-                "room": ["Lazy Susan's Kitchen"],
+                "roomName": "Lazy Susan's Kitchen",
                 "meta_tags": ["modern" , "contemporary", "retro", "kitchen", "atomic", "mid century"]
             },
             {
-                "room": ["Quick Bites, Long Talks"],
+                "roomName": "Quick Bites, Long Talks",
                 "meta_tags": ["mid century modern", "modern", "contemporary","dining room", "vintage", "scandinavian"]
             },
             {
-                "room": ["The Fancy Man's Study"],
+                "roomName": "The Fancy Man's Study",
                 "meta_tags":  ["office", "study", "classic", "traditional" , "brown","wood"]
             },
             {
-                "room": ["Straight As to Zzz"],
+                "roomName": "Straight As to Zzz",
                 "meta_tags":  ["teen", "contemporary","modern","chic","luxe","glamor","bedroom"]
 
             },
             {
-                "rooms": ["Tweenage Dirtbag"],
+                "room": "Tweenage Dirtbag",
                 "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
             },
             {
-                "room": ["Unicorn Dreams"],
+                "roomName": "Unicorn Dreams",
                 "meta_tags": ["kids","cute","pink","purple"]
             },
             {
-                "room": ["Vroom Room"],
+                "roomName": "Vroom Room",
                 "meta_tags": ["kids","cute","blue"]
             },
             {
-                "rooms": ["Zen Den"],
+                "roomName": "Zen Den",
                 "meta_tags": ["boho", "eclectic", "bohemian", "shabby chic", "living room"] 
             }
         ]
-        for room in meta_room_list:
-            new_room = meta_room(
-                room = room["name"],
-                meta_tags = meta["tag"]
-            )
-            db.session.add(new_room)
-            db.session.commit()
+        for tag_instance in meta_room_list:
+            room = Room.query.filter_by(name=tag_instance["roomName"]).first()
+            if room is None: 
+                raise Exception(f"Room {tag_instance['roomName']} does not exist, did you forget to run the previous command to add the rooms and objects?")
+            for tagName in tag_instance["meta_tags"]:
+                tags = Meta.query.filter_by(tag=tagName).first()
+                if tags is None: 
+                    raise Exception(f"Tags {tagName} does not exist, did you forget to run the previous command to add the room and tags?")
+                room.meta_tags.append(tags)
+        db.session.commit()
     
     @app.cli.command("populate-meta_object-table")
     def generate_meta_object_list():
@@ -1052,10 +1050,295 @@ def setup_commands(app):
                 "tag" : "kids"
             },
             {
+                "tag" : "cute"
+            },
+            {
+                "tag" : "teen"
+            },
+            {
+                "tag" : "contemporary"
+            },
+            {
+                "tag" : "chic boho"
+            },
+            {
+                "tag" : "retro"
+            },
+            {
+                "tag": "simple"
+            },
+            {
+                "tag" : "vintage"
+            },
+            {
+                "tag" : "atomic"
+            },
+            {
+                "tag" : "luxe"
+            },
+            {
+                "tag" : "glam"
+            },
+            {
+                "tag" : "minimalist"
+            },
+            {
+                "tag" : "classic"
+            },
+            {
+                "tag" : "farmhouse"
+            },
+            {
+                "tag" : "rustic"
+            },
+            {
+                "tag" : "mid-century"
+            },
+            {
+                "tag" : "modern"
+            },
+            {
+                "tag" : "chic"
+            },
+            {
+                "tag" : "moroccan"
+            },
+            {
+                "tag" : "pets"
+            },
+            {
                 "tag" : "wood"
             },
             {
+                "tag" : "glass"
+            },
+            {
+                "tag" : "brown"
+            },
+            {
+                "tag" : "blue"
+            },
+            {
+                "tag" : "grey"
+            },
+            {
+                "tag" : "cream"
+            },
+            {
+                "tag" : "white"
+            },
+            {
+                "tag" : "blue"
+            },
+            {
+                "tag" : "purple"
+            },
+            {
+                "tag" : "orange"
+            },
+            {
+                "tag" : "red"
+            },
+            {
+                "tag" : "green"
+            },
+            {
+                "tag" : "yellow"
+            },
+            {
+                "tag" : "pink"
+            },
+            {
+                "tag" : "black"
+            },
+            {
+                "tag" : "rainbow"
+            },
+            {
+                "tag" : "multi"
+            },
+            {
+                "tag" : "gold"
+            },
+            {
+                "tag" : "silver"
+            },
+            {
+                "tag" : "expresso"
+            },
+            {
+                "tag" : "checkered"
+            },
+            {
+                "tag" : "multicolor"
+            }, 
+            {
                 "tag" : "kitchen"
+            },
+            {
+                "tag" : "chic"
+            },
+            {
+                "tag" : "bedroom"
+            },
+            {
+                "tag" : "kids room"
+            }, 
+            {
+                "tag" : "teens room"
+            },
+            {
+                "tag" : "living room"
+            },
+            {
+                "tag" : "dining room"
+            }, 
+            {
+                "tag" : "study"
+            },
+            {
+                "tag" : "office"
+            },
+            {
+                "tag" : "den"
+            }, 
+            {
+                "tag" : "lamp"
+            },
+            {
+                "tag" : "decor"
+            },
+            {
+                "tag" : "plant"
+            }, 
+            {
+                "tag" : "pot"
+            },
+            {
+                "tag" : "dresser"
+            },
+            {
+                "tag" : "storage"
+            }, 
+            {
+                "tag" : "clothing rack"
+            },
+            {
+                "tag" : "laundry basket"
+            },
+            {
+                "tag" : "hamper"
+            }, 
+            {
+                "tag" : "desk chair"
+            },
+            {
+                "tag" : "gaming chair"
+            },
+            {
+                "tag" : "chair"
+            }, 
+            {
+                "tag" : "desk"
+            },
+            {
+                "tag" : "gaming desk"
+            },
+            {
+                "tag" : "rug"
+            },
+            {
+                "tag" : "coffee table"
+            },
+            {
+                "tag" : "side table"
+            },
+            {
+                "tag" : "nightstand"
+            }, 
+            {
+                "tag" : "table"
+            },
+            {
+                "tag" : "wardrobe"
+            },
+            {
+                "tag" : "tech"
+            }, 
+            {
+                "tag" : "appliance"
+            },
+            {
+                "tag" : "cookware"
+            },
+            {
+                "tag" : "stool"
+            }, 
+            {
+                "tag" : "barstool"
+            },
+            {
+                "tag" : "dining table"
+            },
+            {
+                "tag" : "chair"
+            }, 
+            {
+                "tag" : "dining chair"
+            },
+            {
+                "tag" : "art"
+            },
+            {
+                "tag" : "picture"
+            }, 
+            {
+                "tag" : "poster"
+            },
+            {
+                "tag" : "armchair"
+            },
+            {
+                "tag" : "console table"
+            },
+            {
+                "tag" : "side table"
+            },
+            {
+                "tag" : "desk lamp"
+            },
+            {
+                "tag" : "mirror"
+            }, 
+            {
+                "tag" : "lighting"
+            },
+            {
+                "tag" : "decal"
+            },
+            {
+                "tag" : "toy"
+            }, 
+            {
+                "tag" : "toddler bed"
+            },
+            {
+                "tag" : "lights"
+            },
+            {
+                "tag" : "shelf"
+            },
+            {
+                "tag" : "candle"
+            }, 
+            {
+                "tag" : "basket"
+            },
+            {
+                "tag" : "sofa"
+            },
+            {
+                "tag" : "couch"
             },
         ]
         for description in meta_list:

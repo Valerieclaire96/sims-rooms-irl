@@ -186,6 +186,6 @@ class Meta(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "description": self.description,
+            "description": self.tag,
         }
 
