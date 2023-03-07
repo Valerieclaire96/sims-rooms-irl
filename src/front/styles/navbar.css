@@ -1,4 +1,9 @@
+@font-face {
+  font-family: 'SimsSans';
+  src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+}
 .navbar{
+  font-family: 'SimsSans';
   padding: 10px;
   background: white;
   height: 75px;

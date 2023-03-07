@@ -1,4 +1,8 @@
- .listBtn {
+@font-face {
+  font-family: 'SimsSans';
+  src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+}
+.listBtn {
     background: none;
     outline: none;
     border: none;
@@ -7,6 +11,7 @@
   }
 
   .roomHeader {
+    font-family: 'SimsSans';
     margin-bottom: 20px;
   }
 
