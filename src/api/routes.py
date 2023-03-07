@@ -115,3 +115,19 @@ def get_room(room_name):
     room = Object.query.filter_by(name=room_name).first()
 
     return jsonify(room.serialize()), 200
+
+@api.route('/meta', methods=['POST'])
+def add_meta():
+    request_body = request.get_json(force=True)
+    tag = request_body.get("tag")
+
+    return jsonify(request_body), 200
+
+
+@api.route('/room/<string:room_name>', methods=['GET'])
+def get_room(meta):
+    request_body = request.get_json(force=True)
+    meta__tag = request_body.get("meta")
+    meta = Object.query.filter_by(name=meta__tag).first()
+
+    return jsonify(room.serialize()), 200
