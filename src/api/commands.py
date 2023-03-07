@@ -737,7 +737,7 @@ def setup_commands(app):
 
             },
             {
-                "room": "Tweenage Dirtbag",
+                "roomName": "Tweenage Dirtbag",
                 "meta_tags": ["kid","teen","contemporary", "bedroom","white","blue"]
             },
             {
@@ -764,288 +764,345 @@ def setup_commands(app):
                 room.meta_tags.append(tags)
         db.session.commit()
     
-    @app.cli.command("populate-meta_object-table")
+    @app.cli.command("populate-meta_objects-table")
     def generate_meta_object_list():
         meta_object_list = [
             {
-                "name": "architecture art",
+                "objectName": "architecture art",
                 "meta_tags": ["classic", "traditional", "farmhouse", "black", "white", "decor", "picture"],
             },
             {
-                "name": "lattice rug",
+                "objectName": "lattice rug",
                 "meta_tags": ["simple", "contemporary", "brown", "white", "rug", "decor"]
 
             },
             {           
-                "name": "padded headboard",
+                "objectName": "padded headboard",
                 "meta_tags": ["modern", "simple", "minimalist"]
             },
             {
-                "name": "salt lamp",
+                "objectName": "salt lamp",
                 "meta_tags": ["boho", "rustic", "eclectic", "orange", "wood", "lamp", "decor"]
             },
             {
-                "name": "dog planter",
+                "objectName": "dog planter",
                 "meta_tags": ["cute", "plant", "eclectic", "plant", "pot", "black", "white", "brown", "green", "multicolor"]
             },
             {
-                "name": "clothing rack",
-                "meta_tags": ["contemporary", "minimalist", "chic", "black", "wood", "dresser", "clothing", "rack"]
+                "objectName": "clothing rack",
+                "meta_tags": ["contemporary", "minimalist", "chic", "black", "wood", "dresser"]
             },
             {
-                "name": "wicker hamper",
+                "objectName": "wicker hamper",
                 "meta_tags": ["farmhouse", "rustic", "wood", "brown", "hamper", "laundry", "basket"]
             },
             {
-                "name": "industrial lamp",
-                "meta_tags": ["industrial", "dclectic", "black", "silver", "lamp", "teen"]
+                "objectName": "industrial lamp",
+                "meta_tags": ["industrial", "eclectic", "black", "silver", "lamp", "teen"]
             },
             {
-                "name": "gaming chair",
+                "objectName": "gaming chair",
                 "meta_tags": ["teen", "contemporary", "teen", "chair", "desk chair", "gaming chair", "black", "purple", "gaming"]
             },
             {
-                "name": "gaming desk",
-                "meta_tags": ["teen", "contemporary", "teen", "black", "multcolor", "rainbow", "desk", "gaming"]
+                "objectName": "gaming desk",
+                "meta_tags": ["teen", "contemporary", "teen", "black", "multicolor", "rainbow", "desk", "gaming"]
             },
             {
-                "name": "checkered rug",
+                "objectName": "checkered rug",
                 "meta_tags": ["teen", "contemporary", "rug", "checkered", "black", "white"]
             },
             {
-                "name": "record art",
+                "objectName": "record art",
                 "meta_tags": ["boho", "teen", "decor", "art", "rainbow", "multi", "black", "vintage"]
             },
             {
-                "name": "round table",
-                "meta_tags": ["modern", "teen", "minimalist", "chic", "table", "coffee table", "side table", "night stand", "contemporary", "black", "circle"]
+                "objectName": "round table",
+                "meta_tags": ["modern", "teen", "minimalist", "chic", "table", "coffee table", "side table", "night stand", "contemporary", "black"]
             },
             {
-                "name": "wardrobe",
+                "objectName": "wardrobe",
                 "meta_tags": ["teen", "contemporary", "storage", "dresser", "wardrobe", "wood", "brown", "expresso"]
             },
             {
-                "name": "bamboo",
+                "objectName": "bamboo",
                 "meta_tags": ["modern", "chic", "boho", "contemporary", "teen", "green", "black", "plant" ]
             },
             {
-                "name": "lava lamp",
+                "objectName": "lava lamp",
                 "meta_tags": ["retro", "vintage", "green", "atomic", "lamp", "decor"]
             },
             {
-                "name": "stripped planter",
-                "meta_tags": ["modern" "glam", "luxe", "minimalist", "grey", "white", "gold", "planter"]
+                "objectName": "stripped planter",
+                "meta_tags": ["modern", "glam", "luxe", "minimalist", "grey", "white", "gold", "planter"]
             },
             {
-                "name": "pet feeder",
-                "meta_tags": ["pets", "black", "tech", "pet", "feeder", "modern", "minimalist" ]
+                "objectName": "pet feeder",
+                "meta_tags": ["pets", "black", "tech", "pet", "modern", "minimalist" ]
             },
             {
-                "name": "popcorn maker",
-                "meta_tags": ["tech", "applicance", "red" ]
+                "objectName": "popcorn maker",
+                "meta_tags": ["tech", "appliance", "red" ]
             },
             {
-                "name": "dutch oven",
+                "objectName": "dutch oven",
                 "meta_tags": ["classic", "farmhouse", "rustic", "red", "cookware"]
             },
             {
-                "name": "barstool",
-                "meta_tags": ["mid century modern", "atomic", "chic", "mordern", "red", "stool", "bar stool", "swivle"]
+                "objectName": "barstool",
+                "meta_tags": ["mid century modern", "atomic", "chic", "modern", "red", "stool", "bar stool"]
             },
             {
-                "name": "tea rack",
+                "objectName": "tea rack",
                 "meta_tags": ["contemporary", "decor", "storage", "wood", "black"]
             },
             {
-                "name": "knife rack",
+                "objectName": "knife rack",
                 "meta_tags": ["modern", "industrial", "contemporary", "silver", "decor", "storage"]
             },
             {
-                "name": "mc dining table",
-                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian", "table", "dining table", "wood", "glass"]
+                "objectName": "mc dining table",
+                "meta_tags": ["mid century modern", "modern", "contemporary", "scandinavian", "table", "dining table", "wood", "glass"]
             },
             {
-                "name": "mc console table",
-                "meta_tags": ["mid", "century", "modern", "modern", "contemporary", "scandinavian"]
+                "objectName": "mc console table",
+                "meta_tags": ["mid century modern", "modern", "contemporary", "scandinavian"]
             },
             {
-                "name": "floor lamp",
+                "objectName": "floor lamp",
                 "meta_tags": ["mid century modern", "modern", "scandinavian", "wood", "black", "lamp", "decor"]
             },
             {
-                "name": "mc dining chair",
-                "meta_tags": ["mid", "century", "modern", "chair", "dining chair", "wood", "retro"]
+                "objectName": "mc dining chair",
+                "meta_tags": ["mid century modern", "chair", "dining chair", "wood", "retro"]
             },
             {
-                "name": "studded arm chair",
+                "objectName": "studded arm chair",
                 "meta_tags": ["classic", "traditional", "black", "gold", "chair", "arm chair"]
             },
             {
-                "name": "globe bar",
+                "objectName": "globe bar",
                 "meta_tags": ["classic", "traditional",  "brown", "gold", "black", "bar"]
             },
             {
-                "name": "bankers lamp",
+                "objectName": "bankers lamp",
                 "meta_tags": ["classic", "traditional", "gold", "green", "lamp"]
             },
             {
-                "name": "persian rug",
+                "objectName": "persian rug",
                 "meta_tags": ["classic", "persian", "red", "blue", "multi", "rug", "decor"]
             },
             {
-                "name": "executive desk chair",
+                "objectName": "executive desk chair",
                 "meta_tags": ["classic", "traditional", "black", "gold", "chair", "desk chair" ]
             },
             {
-                "name": "executive desk",
+                "objectName": "executive desk",
                 "meta_tags": ["classic", "traditional", "wood", "brown", "desk"]
             },
             {
-                "name": "leaf art",
+                "objectName": "leaf art",
                 "meta_tags": ["teen", "contemporary", "art", "decor", "white", "green", "picture"]
             },
             {
-                "name": "mirror with lights",
+                "objectName": "mirror with lights",
                 "meta_tags": ["teen", "contemporary", "white", "glam", "mirror", "lighting"]
             },
             {
-                "name": "directors chair",
+                "objectName": "directors chair",
                 "meta_tags": ["teen", "contemporary", "eclectic", "chair", "white"]
             },
             {
-                "name": "white gold dresser",
+                "objectName": "white gold dresser",
                 "meta_tags": ["teen", "modern", "chic", "white", "gold", "glam", "dresser", "storage"]
             },
             {
-                "name": "pink floyd poster",
+                "objectName": "pink floyd poster",
                 "meta_tags": ["retro", "vintage", "black", "multi", "rainbow", "poster", "decor", "kid", "teen"]
             },
             {
-                "name": "naruto rug",
+                "objectName": "naruto rug",
                 "meta_tags": ["kid", "teen", "black", "red", "decor", "rug", "teen", "kid"]
             },
             {
-                "name": "desk lamp",
+                "objectName": "desk lamp",
                 "meta_tags": ["contemporary", "blue", "wood", "lamp"]
             },
             {
-                "name": "rice paper lamp",
+                "objectName": "rice paper lamp",
                 "meta_tags": ["contemporary", "modern", "black", "white", "lamp", "teen", "kid"]
             },
             {
-                "name": "bean bag",
+                "objectName": "bean bag",
                 "meta_tags": ["kid", "teen", "black", "chair" ]
             },
             {
-                "name": "bunk bed",
-                "meta_tags": ["Kid", "teen", "black", "bed" ]
+                "objectName": "bunk bed",
+                "meta_tags": ["kid", "teen", "black", "bed" ]
             },
             {
-                "name": "wall decal",
-                "meta_tags": ["kid" "cute" "decal" "decor" "multi" "pink" "purple"]
+                "objectName": "wall decal",
+                "meta_tags": ["kid", "cute", "decal", "decor", "multi", "pink" ,"purple"]
             },
             {
-                "name": "teddy bear",
+                "objectName": "teddy bear",
                 "meta_tags": ["kid", "cute", "pink", "red", "toy" ]
             },
             {
-                "name": "unicorn",
+                "objectName": "unicorn",
                 "meta_tags": ["kid", "cute", "pink", "purple", "toy"]
             },
             {
-                "name": "butterfly chair",
+                "objectName": "butterfly chair",
                 "meta_tags": ["kid", "cute", "pink", "blue", "chair"]
             },
             {
-                "name": "house toddler bed",
+                "objectName": "house toddler bed",
                 "meta_tags": ["kid", "cute", "white", "bed", "toddler bed"]
             },
             {
-                "name": "string lights",
+                "objectName": "string lights",
                 "meta_tags": ["cute", "contemporary", "kid", "lights", "decor", "white" ]
             },
             {
-                "name": "rolling cart pink",
+                "objectName": "rolling cart pink",
                 "meta_tags": ["simple", "kids", "contemporary", "storage", "pink", "decor", "cute"]
             },
             {
-                "name": "fur rug",
-                "meta_tags": ["luxe", "glam", "contemporary", "chic", "rug", "decor", "white", "kid", "cite"]
+                "objectName": "fur rug",
+                "meta_tags": ["luxe", "glam", "contemporary", "chic", "rug", "decor", "white", "kid", "cute"]
             },
             {
-                "name": "cloud shelf",
-                "meta_tags": ["Kids", "cute", "shelf", "storage", "pink", "purple"]
+                "objectName": "cloud shelf",
+                "meta_tags": ["kids", "cute", "shelf", "storage", "pink", "purple"]
             },
             {
-                "name": "school bus toybox",
+                "objectName": "school bus toybox",
                 "meta_tags": ["kids", "cute", "yellow", "toy", "storage"]
             },
             {
-                "name": "blue rug",
+                "objectName": "blue rug",
                 "meta_tags": ["kid", "contemporary", "cute", "blue", "rug", "decor"]
             },
             {
-                "name": "dragon",
+                "objectName": "dragon",
                 "meta_tags": ["kid", "cute", "toy", "green"]
             },
             {
-                "name": "rolling cart blue",
+                "objectName": "rolling cart blue",
                 "meta_tags": ["simple", "kids", "contemporary", "storage", "blue", "decor", "cute"]
             },
             {
-                "name": "racecar bed",
-                "meta_tags": ["kid", "cute", "bed", "red", "toodler bed" ]
+                "objectName": "racecar bed",
+                "meta_tags": ["kid", "cute", "bed", "red", "toddler bed" ]
             },
             {
-                "name": "panda chair",
+                "objectName": "panda chair",
                 "meta_tags": ["kid", "cute", "black", "white", "chair" ]
             },
             {
-                "name": "cat planter",
-                "meta_tags": ["cute", "plant", "pot", "multi", "white", "orage" ]
+                "objectName": "cat planter",
+                "meta_tags": ["cute", "plant", "pot", "multi", "white", "orange" ]
             },
             {
-                "name": "lotus candle",
+                "objectName": "lotus candle",
                 "meta_tags": ["boho", "plant", "eclectic", "bohemian", "decor", "blue", "purple", "candle"]
             },
             {
-                "name": "arc lamp",
+                "objectName": "arc lamp",
                 "meta_tags": ["boho", "modern", "contemporary", "chic", "eclectic", "bohemian", "lamp", "white", "gold", "black"]
             },
             {
-                "name": "wicker basket",
+                "objectName": "wicker basket",
                 "meta_tags": ["classic", "rustic", "traditional", "eclectic", "shabby", "chic", "brown", "wood", "storage", "decor", "basket"]
             },
             {
-                "name": "hanging planter",
-                "meta_tags": ["plant", "eclectic", "pot", "white", "decor", "boho", "bohiemian"]
+                "objectName": "hanging planter",
+                "meta_tags": ["plant", "eclectic", "pot", "white", "decor", "boho", "bohemian"]
             },
             {
-                "name": "noodle candle",
+                "objectName": "noodle candle",
                 "meta_tags": ["cute", "boho", "contemporary", "eclectic", "bohemian", "blue", "multi", "candle"]
             },
             {
-                "name": "moroccan rug",
-                "meta_tags": ["contemporary", "modern", "moroccan", "Ssabby", "chic", "cream", "grey", "rug", "decor"]
+                "objectName": "moroccan rug",
+                "meta_tags": ["contemporary", "modern", "moroccan", "shabby", "chic", "cream", "grey", "rug", "decor"]
             },
             {
-                "name": "blue sofa",
-                "meta_tags": ["classic", "eclectic", "shabby", "chic", "sofa", "coutch", "blue"]
+                "objectName": "blue sofa",
+                "meta_tags": ["classic", "eclectic", "shabby", "chic", "sofa", "couch", "blue"]
             },
             {
-                "name": "console table",
-                "meta_tags": ["classic",  "craftsman", "wood", "table", "side", "table", "console", "table"]
+                "objectName": "console table",
+                "meta_tags": ["classic",  "craftsman", "wood", "table", "side table", "console table"]
             },
             {
-                "name": "industrial coffee table",
-                "meta_tags": ["industrial", "eclectic", "shabby", "chic", "table", "coffee", "table", "wood", "glass"]
+                "objectName": "industrial coffee table",
+                "meta_tags": ["industrial", "eclectic", "shabby", "chic", "table", "coffee table", "wood", "glass"]
             },
-
         ]
+        for tag_instance in meta_object_list:
+            r_object = Object.query.filter_by(name=tag_instance["objectName"]).first()
+            if r_object is None: 
+                raise Exception(f"Room {tag_instance['objectName']} does not exist, did you forget to run the previous command to add the rooms and objects?")
+            for tagName in tag_instance["meta_tags"]:
+                tags = Meta.query.filter_by(tag=tagName).first()
+                if tags is None: 
+                    raise Exception(f"Tags {tagName} does not exist, did you forget to run the previous command to add the room and tags?")
+                r_object.meta_tags.append(tags)
+        db.session.commit()
 
     @app.cli.command("populate-meta-table")
     def generate_meta_list():
         meta_list = [
+            {
+                "tag": "laundry"
+            },
+            {
+                "tag": "planter"
+            },
+            {
+                "tag": "pets"
+            },
+            {
+                "tag": "gaming"
+            },
+            {
+                "tag": "industrial"
+            },
+            {
+                "tag" : "mid century modern",
+            },
+            {
+                "tag": "night stand"
+            },
+            {
+                "tag" : "kid",
+            },
+            {
+                "tag" : "boho",
+            },
+            {
+                "tag" : "eclectic",
+            },
+            {
+                "tag" : "bohemian",
+            },
+            {
+                "tag" : "shabby chic",
+            },
+            {
+                "tag" : "mid century",
+            },
+            {
+                "tag" : "scandinavian",
+            },
+            {
+                "tag" : "traditional",
+            },
+            {
+                "tag" : "glamor",
+            },
             {
                 "tag" : "kids"
             },
@@ -1063,6 +1120,9 @@ def setup_commands(app):
             },
             {
                 "tag" : "retro"
+            },
+            {
+                "tag" : "bar stool"
             },
             {
                 "tag": "simple"
@@ -1098,9 +1158,6 @@ def setup_commands(app):
                 "tag" : "modern"
             },
             {
-                "tag" : "chic"
-            },
-            {
                 "tag" : "moroccan"
             },
             {
@@ -1134,6 +1191,9 @@ def setup_commands(app):
                 "tag" : "orange"
             },
             {
+                "tag" : "shabby"
+            },
+            {
                 "tag" : "red"
             },
             {
@@ -1158,6 +1218,9 @@ def setup_commands(app):
                 "tag" : "gold"
             },
             {
+                "tag" : "bed"
+            },
+            {
                 "tag" : "silver"
             },
             {
@@ -1168,6 +1231,12 @@ def setup_commands(app):
             },
             {
                 "tag" : "multicolor"
+            },
+            {
+                "tag" : "arm chair"
+            }, 
+            {
+                "tag" : "craftsman"
             }, 
             {
                 "tag" : "kitchen"
@@ -1177,6 +1246,12 @@ def setup_commands(app):
             },
             {
                 "tag" : "bedroom"
+            },
+            {
+                "tag" : "bar"
+            },
+            {
+                "tag" : "persian"
             },
             {
                 "tag" : "kids room"
@@ -1233,9 +1308,6 @@ def setup_commands(app):
                 "tag" : "gaming chair"
             },
             {
-                "tag" : "chair"
-            }, 
-            {
                 "tag" : "desk"
             },
             {
@@ -1246,9 +1318,6 @@ def setup_commands(app):
             },
             {
                 "tag" : "coffee table"
-            },
-            {
-                "tag" : "side table"
             },
             {
                 "tag" : "nightstand"
