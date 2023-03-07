@@ -1046,9 +1046,131 @@ def setup_commands(app):
                 "tag" : "kids"
             },
             {
-                "tag" : "wood"
+                "tag" : "cute"
             },
             {
+                "tag" : "teen"
+            },
+             {
+                "tag" : "contemporary"
+            },
+            {
+                "tag" : "modern"
+            },
+            {
+                "tag" : "chic boho"
+            },
+             {
+                "tag" : "retro"
+            },
+            {
+                "tag" : "vintage"
+            },
+            {
+                "tag" : "atomic"
+            },
+             {
+                "tag" : "luxe"
+            },
+            {
+                "tag" : "glam"
+            },
+            {
+                "tag" : "minimalist"
+            },
+             {
+                "tag" : "classic"
+            },
+            {
+                "tag" : "farmhouse"
+            },
+            {
+                "tag" : "rustic"
+            },
+             {
+                "tag" : "mid-century"
+            },
+            {
+                "tag" : "modern"
+            },
+            {
+                "tag" : "chic"
+            },
+             {
+                "tag" : "moroccan"
+            },
+            {
+                "tag" : "pets"
+            },
+            {
+                "tag" : "wood"
+            },
+             {
+                "tag" : "glass"
+            },
+            {
+                "tag" : "brown"
+            },
+            {
+                "tag" : "blue"
+            },
+             {
+                "tag" : "grey"
+            },
+            {
+                "tag" : "cream"
+            },
+            {
+                "tag" : "white"
+            },
+             {
+                "tag" : "blue"
+            },
+            {
+                "tag" : "purple"
+            },
+            {
+                "tag" : "orange"
+            },
+             {
+                "tag" : "red"
+            },
+            {
+                "tag" : "green"
+            },
+            {
+                "tag" : "yellow"
+            },
+             {
+                "tag" : "pink"
+            },
+            {
+                "tag" : "black"
+            },
+            {
+                "tag" : "rainbow"
+            },
+             {
+                "tag" : "multi"
+            },
+            {
+                "tag" : "gold"
+            },
+            {
+                "tag" : "silver"
+            },
+             {
+                "tag" : "expresso"
+            },
+            {
+                "tag" : "checkered"
+            },
+            {
+
+                "tag" : "multicolor"
+            }, {
+                "tag" : "kitchen"
+
                 "tag" : ""
             },
             {
@@ -1059,6 +1181,153 @@ def setup_commands(app):
             },
             {
                 "tag" : "chic"
+            },
+            {
+                "tag" : "bedroom"
+            },
+            {
+                "tag" : "kids room"
+            }, {
+                "tag" : "teens room"
+            },
+            {
+                "tag" : "living room"
+            },
+            {
+                "tag" : "dining room"
+            }, {
+                "tag" : "study"
+            },
+            {
+                "tag" : "office"
+            },
+            {
+                "tag" : "den"
+            }, {
+                "tag" : "lamp"
+            },
+            {
+                "tag" : "decor"
+            },
+            {
+                "tag" : "plant"
+            }, {
+                "tag" : "pot"
+            },
+            {
+                "tag" : "dresser"
+            },
+            {
+                "tag" : "storage"
+            }, {
+                "tag" : "clothing rack"
+            },
+            {
+                "tag" : "laundry basket"
+            },
+            {
+                "tag" : "hamper"
+            }, {
+                "tag" : "desk chair"
+            },
+            {
+                "tag" : "gaming chair"
+            },
+            {
+                "tag" : "chair"
+            }, {
+                "tag" : "desk"
+            },
+            {
+                "tag" : "gaming desk"
+            },
+            {
+                "tag" : "rug"
+            },
+             {
+                "tag" : "coffee table"
+            },
+            {
+                "tag" : "side table"
+            },
+            {
+                "tag" : "nightstand"
+            }, {
+                "tag" : "table"
+            },
+            {
+                "tag" : "wardrobe"
+            },
+            {
+                "tag" : "tech"
+            }, {
+                "tag" : "appliance"
+            },
+            {
+                "tag" : "cookware"
+            },
+            {
+                "tag" : "stool"
+            }, {
+                "tag" : "barstool"
+            },
+            {
+                "tag" : "dining table"
+            },
+            {
+                "tag" : "chair"
+            }, {
+                "tag" : "dining chair"
+            },
+            {
+                "tag" : "art"
+            },
+            {
+                "tag" : "picture"
+            }, {
+                "tag" : "poster"
+            },
+            {
+                "tag" : "armchair"
+            },
+            {
+                "tag" : "console table"
+            },
+             {
+                "tag" : "side table"
+            },
+            {
+                "tag" : "desk lamp"
+            },
+            {
+                "tag" : "mirror"
+            }, {
+                "tag" : "lighting"
+            },
+            {
+                "tag" : "decal"
+            },
+            {
+                "tag" : "toy"
+            }, {
+                "tag" : "toddler bed"
+            },
+            {
+                "tag" : "lights"
+            },
+            {
+                "tag" : "shelf"
+            },
+            {
+                "tag" : "candle"
+            }, {
+                "tag" : "basket"
+            },
+            {
+                "tag" : "sofa"
+            },
+            {
+                "tag" : "couch"
             },
         ]
         for description in meta_list:
