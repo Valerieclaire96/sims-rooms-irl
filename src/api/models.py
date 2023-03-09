@@ -96,16 +96,13 @@ class Room(db.Model):
     
     # This is how the artist will print in the console, just the name
     def __repr__(self):
-        return self.name
+        return self.id
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
             "pic_url": self.pic_url,
-            "objects": self.objects,
-            "meta_tags": self.meta_tags,
-            # "faved_rooms": self.faved_rooms,
         }
 
 
@@ -151,9 +148,7 @@ class Object(db.Model):
             "buy_url": self.buy_url,
             "sims_pic_url": self.sims_pic_url,
             "real_pic_url": self.real_pic_url,
-            "price": self.price,
-            "rooms": self.rooms,
-            "meta_tags": self.meta_tags,
+            "price": self.price
         }
 
 
@@ -161,7 +156,7 @@ class Object(db.Model):
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    tag = db.Column(db.String(80), unique=True, nullable=True)
+    tag = db.Column(db.String(80), unique=True)
 
     # describes the relationship between Object and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -186,8 +181,6 @@ class Meta(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "description": self.tag,
-            "room": self.room,
-            "r_object": self.r_object,
+            "tag": self.tag,
         }
 

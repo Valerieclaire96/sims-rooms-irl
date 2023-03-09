@@ -88,19 +88,24 @@ def add_object():
     return jsonify(request_body), 200
 
 
-@api.route('/object/<string:object_name>', methods=['GET'])
-def get_object(object_name):
-    request_body = request.get_json(force=True)
-    object_name = request_body.get("object_name")
-    r_object = Object.query.filter_by(name=object_name).first()
+@api.route('/objects', methods=['GET'])
+def get_objects():
+    objects_list = Object.query
+    if "name" in request.args:
+        objects_list = objects_list.filter(Object.name.ilike(f"%{request.args['name']}%"))
+    objects_list = objects_list.all()
+    all_objects = list(map(lambda object: object.serialize(), objects_list))
+    return jsonify(all_objects), 200
 
+@api.route('/objects/<int:id>', methods=['GET'])
+def get_object(id):
+    r_object = Object.query.filter_by(id=id).first()
     return jsonify(r_object.serialize()), 200
 
 @api.route('/room', methods=['POST'])
 def add_room():
     request_body = request.get_json(force=True)
     name = request_body.get("name")
-    buy_url = request_body.get("buy_url")
     pic_url = request_body.get("pic_url")
     objects = request_body.get("objects")
     meta_tags = request_body.get("meta_tag")
@@ -109,18 +114,19 @@ def add_room():
 
 @api.route('/rooms', methods=['GET'])
 def get_rooms():
-    room_list = Room.query.all()
-    rooms_serialized = [room.serialize() for room in room_list]
-    return jsonify(rooms_serialized), 200
+    rooms_list = Room.query
+    if "name" in request.args:
+        rooms_list = rooms_list.filter(Room.name.ilike(f"%{request.args['name']}%"))
+    rooms_list = rooms_list.all()
+    all_rooms = list(map(lambda room: room.serialize(), rooms_list))
+    return jsonify(all_rooms), 200
 
 
-@api.route('/room/<string:room_name>', methods=['GET'])
-def get_room(room_name):
-    request_body = request.get_json(force=True)
-    room_name = request_body.get("room_name")
-    room = Object.query.filter_by(name=room_name).first()
-
+@api.route('/rooms/<int:id>', methods=['GET'])
+def get_room(id):
+    room = Room.query.filter_by(id=id).first()
     return jsonify(room.serialize()), 200
+
 
 @api.route('/meta', methods=['POST'])
 def add_meta():
@@ -129,11 +135,17 @@ def add_meta():
 
     return jsonify(request_body), 200
 
+@api.route('/metatags', methods=['GET'])
+def get_meta_tags():
+    meta_tags_list = Meta.query
+    if "tag" in request.args:
+        meta_tags_list = meta_tags_list.filter(Meta.tag.ilike(f"%{request.args['tag']}%"))
+    meta_tags_list = meta_tags_list.all()
+    all_meta_tags = list(map(lambda meta_tags: meta_tags.serialize(), meta_tags_list))
+    return jsonify(all_meta_tags), 200
 
-@api.route('/meta/<string:meta_tags>', methods=['GET'])
-def get_meta(meta_tag):
-    request_body = request.get_json(force=True)
-    meta_tag = request_body.get("meta")
-    meta = Meta.query.filter_by(tag=meta_tag).first()
 
-    return jsonify(meta.serialize()), 200
+@api.route('/metatags/<int:id>', methods=['GET'])
+def get_meta_tag(id):
+    meta_tags = Meta.query.filter_by(id=id).first()
+    return jsonify(meta_tags.serialize()), 200

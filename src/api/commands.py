@@ -839,7 +839,7 @@ def setup_commands(app):
             },
             {
                 "objectName": "pet feeder",
-                "meta_tags": ["pets", "black", "tech", "pet", "modern", "minimalist" ]
+                "meta_tags": ["pets", "black", "tech", "modern", "minimalist" ]
             },
             {
                 "objectName": "popcorn maker",
@@ -1063,7 +1063,7 @@ def setup_commands(app):
                 "tag": "planter"
             },
             {
-                "tag": "pets"
+                "tag" : "pet"
             },
             {
                 "tag": "gaming"
@@ -1410,7 +1410,7 @@ def setup_commands(app):
         ]
         for description in meta_list:
             new_tag = Meta(
-                tag = description['tag']
+                tag = description["tag"]
             )
             db.session.add(new_tag)
         db.session.commit()
