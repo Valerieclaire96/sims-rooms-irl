@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Featured from "../component/featured";
+// import Featured from "../component/featured";
 import InteractiveRoom from "../component/interactiveRoom.js";
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
@@ -14,7 +14,7 @@ export default function Room({}) {
   return (
     <div className="container">
       <InteractiveRoom id={id} />
-      <Featured />
+      {/* <Featured /> */}
     </div>
   );
 }

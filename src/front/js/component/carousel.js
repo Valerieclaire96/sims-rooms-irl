@@ -62,10 +62,9 @@ export default function Carousel({ sourceList }) {
             </div>
           </CSSTransition>
         </TransitionGroup>
-
         <button
           onClick={() =>
-            setIndex(index === 0 ? sourceList.length - 1 : index - 1)
+            setIndex(index === 0 ? sourceList.length - 1 : index - 1) && setInterval(5500)
           }
           className="carousel-control-prev"
           type="button"
@@ -80,7 +79,7 @@ export default function Carousel({ sourceList }) {
         </button>
         <button
           onClick={() =>
-            setIndex(index === sourceList.length - 1 ? 0 : index + 1)
+            setIndex(index === sourceList.length - 1 ? 0 : index + 1)&& setInterval(5500)
           }
           className="carousel-control-next"
           type="button"

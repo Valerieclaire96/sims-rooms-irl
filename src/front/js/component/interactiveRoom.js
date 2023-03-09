@@ -11,13 +11,15 @@ export default function InteractiveRoom({id}) {
   const open = Boolean(anchorEl);
   const [roomInfo, setRoomInfo] = useState(defaultRoomInfo);
 
-  useEffect(async() => {
+  useEffect(() => {
+    async function fetchData() {
     const res = await fetch(
-      "https://3001-valerieclai-simsroomsir-xyu3edngwba.ws-us89b.gitpod.io/api/rooms/" + id
+      process.env.BACKEND_URL + "/api/rooms/" + id
     )
       const data = await res.json()
-
+  
         setRoomInfo(data);
+  }; fetchData();
   }, [id]);
 
   return (

@@ -5,24 +5,26 @@ const defaultSimsObjectInfo = {id:null, name:"thisObject", sims_names:"thisCard"
 export default function SimsCard({id}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [ simsObjectInfo, setSimsObjectInfo] = useState(defaultSimsObjectInfo);
+  const [ objectInfo, setObjectInfo] = useState(defaultSimsObjectInfo);
 
-  useEffect(async() => {
-    const res = await fetch(
-      "https://3001-valerieclai-simsroomsir-xyu3edngwba.ws-us89b.gitpod.io/api/objects/" + id
-    )
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(
+        process.env.BACKEND_URL + "/api/objects/" + id  
+      )
       const data = await res.json()
-
-        setSimsObjectInfo(data);
+  
+        setObjectInfo(data);
+  }; fetchData();
   }, [id]);
 
   return (
     <div>
       <div className="card">
-        <img src={simsObjectInfo.sims_pic_url} className="card-img-top" />
+        <img src={objectInfo.sims_pic_url} className="card-img-top" />
         <div className="card-body">
-          <h5 className="card-title">{simsObjectInfo.sims_names + " - $" + simsObjectInfo.price}</h5>
-          <button href={simsObjectInfo.buy_url} className="btn btn-primary">
+          <h5 className="card-title">{objectInfo.sims_names + " - $" + objectInfo.price}</h5>
+          <button href={objectInfo.buy_url} className="btn btn-primary">
             Buy Now
           </button>
         </div>
