@@ -9,16 +9,16 @@ export default function Carousel({ sourceList }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((index) => (index + 1) % sourceList.length);
-    }, 3500);
+    }, 5500);
     return () => clearInterval(interval);
-  }, []);
+  },[]);
 
   return (
     <div className="carousel slide" data-ride="carousel">
       <div className="carousel-indicators">
         {sourceList.map((url, currentIndex) => (
           <button
-            onClick={() => setIndex(currentIndex)}
+            onClick={() => setIndex(currentIndex) && setInterval(5500)}
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to={currentIndex}
@@ -45,14 +45,14 @@ export default function Carousel({ sourceList }) {
                   <Link
                     to={
                       index == 0
-                        ? "scholars_study"
+                        ? "room/2"
                         : index == 1
-                        ? "scholars_study"
+                        ? "/room/6"
                         : index == 2
-                        ? "/scholars_study"
+                        ? "/room/10"
                         : index == 3
-                        ? "/scholars_study"
-                        : "/scholars_study"
+                        ? "/room/4"
+                        :"/room/8"
                     }
                   >
                     <img src={url} className="carousel-room d-block w-100" />

@@ -46,11 +46,11 @@ def setup_commands(app):
         room_list = [
             {
                 "name": "Dude, Where's my Closet?",
-                "pic_url": "https://imgur.com/SmhGAwI",
+                "pic_url": "https://i.imgur.com/SmhGAwI.png",
             },
             {
                 "name": "sleep4geeks",
-                "pic_url": "https://imgur.com/MT1HV5j",
+                "pic_url": "https://i.imgur.com/MT1HV5j.png",
             },
             {
                 "name": "Lazy Susan's Kitchen",
@@ -62,7 +62,7 @@ def setup_commands(app):
             },
             {
                 "name": "The Fancy Man's Study",
-                "pic_url": "https://i.imgur.com/tPG1Meg.png",
+                "pic_url": "https://i.imgur.com/jG5GOPd.png",
             },
             {
                 "name": "Straight As to Zzz",
@@ -70,15 +70,15 @@ def setup_commands(app):
             },
             {
                 "name": "Tweenage Dirtbag",
-                "pic_url": "https://imgur.com/HHILH8C",
+                "pic_url": "https://i.imgur.com/HHILH8C.png",
             },
             {
                 "name": "Unicorn Dreams",
-                "pic_url": "https://imgur.com/iaJefXz",
+                "pic_url": "https://i.imgur.com/iaJefXz.png",
             },
             {
                 "name": "Vroom Room",
-                "pic_url": "https://imgur.com/2W36O5V",
+                "pic_url": "https://i.imgur.com/2W36O5V.png",
             },
             {
                 "name": "Zen Den",

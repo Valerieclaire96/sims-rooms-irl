@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
 import "/workspace/sims-rooms-irl/src/front/styles/popover.css";
+import SimsCard from "./simsCard";
 
-export default function InteractiveRoom({}) {
+const defaultRoomInfo = {id:null, name:"thisRoom", pic_url:"https://i.imgur.com/jG5GOPdh.png"};
+export default function InteractiveRoom({id}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const [roomInfo, setRoomInfo] = useState(defaultRoomInfo);
+
+  useEffect(async() => {
+    const res = await fetch(
+      "https://3001-valerieclai-simsroomsir-xyu3edngwba.ws-us89b.gitpod.io/api/rooms/" + id
+    )
+      const data = await res.json()
+
+        setRoomInfo(data);
+  }, [id]);
 
   return (
     <div className="container">
@@ -15,9 +27,9 @@ export default function InteractiveRoom({}) {
           <div className="fa-solid fa-border-all fa-2xl"></div>
         </Link>
       </button>
-      <h2 className="roomHeader">The Scholar's Study</h2>
+      <h2 className="roomHeader">{roomInfo.name}</h2>
       <div className="roomBtnContainer">
-        <img className="roomImg" src="https://i.imgur.com/jG5GOPdh.png" />
+        <img className="roomImg" src={roomInfo.pic_url} />
         <Button
           className="studyBtn studyOne"
           onClick={(event) => {

@@ -14,8 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "/rooms")
 					const data = await resp.json()
-					setStore({ message: data.message })
-					//change message to roomArr and data.results 
+					setStore({roomArr: data}) 
 					// don't forget to return something, that is how the async resolves
 					return data;
 				}catch(error){
