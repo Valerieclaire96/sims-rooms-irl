@@ -13,6 +13,7 @@ export const Home = ({}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const { id } = useParams();
+  const [ objectInfo, setObjectInfo] = useState(defaultSimsObjectInfo);
   const [roomInfoOne, setRoomInfoOne] = useState(defaultRoomInfo);
   const [roomInfoTwo, setRoomInfoTwo] = useState(defaultRoomInfo);
   const [roomInfoThree, setRoomInfoThree] = useState(defaultRoomInfo);
@@ -24,7 +25,7 @@ export const Home = ({}) => {
 useEffect(() => {
     async function fetchData() {
     const res = await fetch(
-      process.env.BACKEND_URL + "/api/rooms/" + id,  
+      process.env.BACKEND_URL + "/api/rooms/2" ,  
     )
       const data = await res.json()
         setRoomInfoOne(data);
@@ -76,13 +77,15 @@ useEffect(() => {
 }, [id]);
 
 
-useEffect(async() => {
-  const res = await fetch(
-    process.env.BACKEND_URL + "/api/objects/" + id, 
-  )
+useEffect(() => {
+  async function fetchData() {
+    const res = await fetch(
+      process.env.BACKEND_URL + "/api/objects"  
+    )
     const data = await res.json()
 
-      setObjectInfo(data);
+      setObjectsInfo(data);
+}; fetchData();
 }, [id]);
 
   return (
@@ -93,7 +96,7 @@ useEffect(async() => {
       <Carousel 
         sourceList={[
           roomInfoOne.pic_url,
-          roomInfoOne.pic_url,
+          roomInfoTwo.pic_url,
           roomInfoThree.pic_url,
           roomInfoFour.pic_url,
           roomInfoFive.pic_url

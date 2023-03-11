@@ -50,12 +50,6 @@ class User(db.Model):
 
 
 
-# describes the many to many relationship between rooms and objects
-room_object = db.Table('room_object',
-            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True),
-            db.Column("object_id", db.Integer, db.ForeignKey("object.id"), primary_key=True),
-            )
-
 # describes the many to many relationship between rooms and meta
 # the meta table is used to keep track of idenfifying characters that can apply to multiple rooms and objects
 meta_room = db.Table('meta_room',
@@ -74,12 +68,8 @@ class Room(db.Model):
     name = db.Column(db.String(80),unique=True, nullable=False)
     pic_url = db.Column(db.String(2000), nullable=False)
 
-    # describes the relationship between rooms and objects
-    # the secondary element is the table that defines the many to many relationship between the two tables
-    # the back populations refers to the relationship from object to room in the defined in the Objects table 
-    objects = db.relationship("Object",
-            secondary=room_object,
-            back_populates="rooms")
+    objects = db.relationship('ObjectPlace', backref='room',lazy=True)
+    
     # describes the relationship between rooms and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from meta to room in the defined in the meta table
@@ -115,12 +105,7 @@ class Object(db.Model):
     real_pic_url = db.Column(db.String(2000), nullable=False)
     price = db.Column(db.Float, nullable=False)
 
-    # describes the relationship between rooms and objects
-    # the secondary element is the table that defines the many to many relationship between the two tables
-    # the back populations refers to the relationship from object to room in the defined in the rooms table 
-    rooms = db.relationship("Room",
-        secondary=room_object,
-        back_populates="objects")
+    rooms = db.relationship('ObjectPlace', backref='object',lazy=True)
 
     # describes the relationship between Objects and meta
     # the secondary element is the table that defines the many to many relationship between the two tables
@@ -151,7 +136,20 @@ class Object(db.Model):
             "price": self.price
         }
 
+class ObjectPlace(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    room_id = db.Column(db.Integer, db.ForeignKey("room.id"), nullable=False)
+    object_id = db.Column(db.Integer, db.ForeignKey("object.id"), nullable=False)
+    top = db.Column(db.Integer, nullable=False)
+    left = db.Column(db.Integer, nullable=False)
 
+    def serialize(self):
+        return {
+            "room_id": self.room_id,
+            "object": self.object.serialize(),
+            "top": self.top,
+            "left": self.left,
+        }
 
 # I need help understanding how to use this table because I want to have multiple tags
 class Meta(db.Model):

@@ -1,6 +1,6 @@
 
 import click
-from api.models import db, User, Room, Object, Meta
+from api.models import db, User, Room, Object, Meta, ObjectPlace
 import os
 import random
 from flask import Flask, request, jsonify, url_for
@@ -659,6 +659,7 @@ def setup_commands(app):
             {
                 "roomName": "Zen Den",
                 "objects": ["cat planter","lotus candle","arc lamp","wicker basket","hanging planter","noodle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
+                "positions": [(20,40),      (70,40),      (70,40),      (70,40),         (70,40),          (70,40),      (70,40),      (70,40),       (70,40),           (70,40)],
             },
             {
                 "roomName": "Vroom Room",
@@ -702,11 +703,15 @@ def setup_commands(app):
             room = Room.query.filter_by(name=object_instance["roomName"]).first()
             if room is None: 
                 raise Exception(f"Room {object_instance['roomName']} does not exist, did you forget to run the previous command to add the rooms and objects?")
+            objectIndex = 0
             for objectName in object_instance["objects"]:
                 r_object = Object.query.filter_by(name=objectName).first()
                 if r_object is None: 
                     raise Exception(f"Object {objectName} does not exist, did you forget to run the previous command to add the room and objects?")
-                room.objects.append(r_object)
+                if "positions" in object_instance:
+                    placement = ObjectPlace(room=room, object=r_object, left=object_instance["positions"][objectIndex][0], top=object_instance["positions"][objectIndex][1])
+                    db.session.add(placement)
+                objectIndex += 1
         db.session.commit()
 
     @app.cli.command("populate-meta_room-table")

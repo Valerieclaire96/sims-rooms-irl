@@ -24,9 +24,9 @@ export default function SimsCard({id}) {
         <img src={objectInfo.sims_pic_url} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">{objectInfo.sims_names + " - $" + objectInfo.price}</h5>
-          <button href={objectInfo.buy_url} className="btn btn-primary">
+          <a href={objectInfo.buy_url} target="blank"><button  className="btn btn-primary">
             Buy Now
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

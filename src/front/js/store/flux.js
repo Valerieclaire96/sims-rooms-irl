@@ -1,42 +1,37 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			roomArr: [],
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+  return {
+    store: {
+      objectArr: [],
+	  roomArr: [],
+    },
+    actions: {
+      // Use getActions to call a function within a fuction
 
-			getRoom: async () => {
-				try{
-					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/rooms")
-					const data = await resp.json()
-					setStore({roomArr: data}) 
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+      getRooms: async () => {
+        try {
+          // fetching data from the backend
+          const res = await fetch(process.env.BACKEND_URL + "/api/rooms");
+          const data = await res.json();
+          setStore({ roomArr: data });
+		  console.log("//printing getRooms", data);
+          // don't forget to return something, that is how the async resolves
+          return data;
+        } catch (error) {
+          console.log("Error loading message from backend", error);
+        }
+      },
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+      getObjects: async () => {
+        try {
+          const res = await fetch(process.env.BACKEND_URL + "/api/objects");
+          const data = await res.json();
+          setStore({ objectArr: data });
+		  return data;
+        } catch (error) {
+          console.error(error);
+        }
+      },
+    },
+  };
 };
-
 export default getState;

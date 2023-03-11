@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Object, Room, Meta
+from api.models import db, User, Object, Room, Meta, ObjectPlace
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -90,12 +90,28 @@ def add_object():
 
 @api.route('/objects', methods=['GET'])
 def get_objects():
+    room = None
     objects_list = Object.query
     if "name" in request.args:
         objects_list = objects_list.filter(Object.name.ilike(f"%{request.args['name']}%"))
+    if "room_id" in request.args:
+        objects_list = objects_list.filter(Object.rooms.any(id = request.args['room_id']))
     objects_list = objects_list.all()
     all_objects = list(map(lambda object: object.serialize(), objects_list))
     return jsonify(all_objects), 200
+
+@api.route('/room/<int:room_id>/objects', methods=['GET'])
+def get_objects_placement(room_id):
+    room = None
+    objects_list = ObjectPlace.query.filter_by(room_id = room_id).all()
+    all_objects = list(map(lambda object_place: object_place.serialize(), objects_list))
+    return jsonify(all_objects), 200
+
+# @api.route('/objects', methods=['GET'])
+# def get_objects():
+#     objects_list = Object.query.all()
+#     all_objects = list(map(lambda object: object.serialize(), objects_list))
+#     return jsonify(all_objects), 200
 
 @api.route('/objects/<int:id>', methods=['GET'])
 def get_object(id):
