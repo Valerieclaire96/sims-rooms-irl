@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Popover from "@material-ui/core/Popover";
@@ -13,35 +13,34 @@ const defaultRoomInfo = {
 };
 export default function InteractiveRoom({ id }) {
   const { store, actions } = useContext(Context);
-  console.log(store)
+  console.log(store);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [roomInfo, setRoomInfo] = useState(defaultRoomInfo);
-  const [ objectList, setObjectList] = useState([]);
+  const [objectList, setObjectList] = useState([]);
   // const roomInfo = store.roomArr.find((room) => room.id === id);
   // console.log(roomInfo)
   useEffect(() => {
     async function fetchData() {
-    const res = await fetch(
-      process.env.BACKEND_URL + "/api/rooms/" + id
-    )
-      const data = await res.json()
+      const res = await fetch(process.env.BACKEND_URL + "/api/rooms/" + id);
+      const data = await res.json();
 
-        setRoomInfo(data);
-  }; fetchData();
+      setRoomInfo(data);
+    }
+    fetchData();
   }, [id]);
 
   useEffect(() => {
     async function fetchData() {
-    const res = await fetch(
-      process.env.BACKEND_URL + "/api/room/" + id +"/objects/"
-    )
-      const data = await res.json()
-      console.log("//room objects by room id", data)
-        setObjectList(data);
-  }; fetchData();
+      const res = await fetch(
+        process.env.BACKEND_URL + "/api/room/" + id + "/objects/"
+      );
+      const data = await res.json();
+      console.log("//room objects by room id", data);
+      setObjectList(data);
+    }
+    fetchData();
   }, [id]);
-
 
   return (
     <div className="container">
@@ -53,37 +52,37 @@ export default function InteractiveRoom({ id }) {
       <h2 className="roomHeader">{roomInfo.name}</h2>
       <div className="roomBtnContainer">
         <img className="roomImg" src={roomInfo.pic_url} />
-     { objectList.map((objectPlacement) =>  
-     <div>
-        <Button
-          className="studyBtn"
-          style= {{left: objectPlacement.left, top: objectPlacement.top}}
-          onClick={(event) => {
-            setAnchorEl(event.currentTarget);
-          }}
-        >
-          <div className="fa-regular fa-circle-dot fa-2xl"></div>
-        </Button>
-        <Popover
-          anchorEl={anchorEl}
-          open={open}
-          id={open ? "simple-popover" : undefined}
-          onClose={() => {
-            setAnchorEl(null);
-          }}
-          transformOrigin={{
-            horizontal: "center",
-            vertical: "top",
-          }}
-          anchorOrigin={{
-            horizontal: "center",
-            vertical: "bottom",
-          }}
-        >
-
-         <RealCard id={objectPlacement.object.id}/>
-        </Popover>
-      </div>)}
+        {objectList.map((objectPlacement) => (
+          <div>
+            <Button
+              className="studyBtn"
+              style={{ left: objectPlacement.left, top: objectPlacement.top }}
+              onClick={(event) => {
+                setAnchorEl(event.currentTarget);
+              }}
+            >
+              <div className="fa-regular fa-circle-dot fa-2xl"></div>
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              open={open}
+              id={open ? "simple-popover" : undefined}
+              onClose={() => {
+                setAnchorEl(null);
+              }}
+              transformOrigin={{
+                horizontal: "center",
+                vertical: "top",
+              }}
+              anchorOrigin={{
+                horizontal: "center",
+                vertical: "bottom",
+              }}
+            >
+              <RealCard id={(objectPlacement.object.id)} />
+            </Popover>
+          </div>
+        ))}
         {/* <Button
           className="studyBtn studyTwo boxOverlay"
           onClick={(event) => {
@@ -278,4 +277,4 @@ export default function InteractiveRoom({ id }) {
       </div>
     </div>
   );
-} 
+}

@@ -659,7 +659,7 @@ def setup_commands(app):
             {
                 "roomName": "Zen Den",
                 "objects": ["cat planter","lotus candle","arc lamp","wicker basket","hanging planter","noodle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
-                "positions": [(20,40),      (70,40),      (70,40),      (70,40),         (70,40),          (70,40),      (70,40),      (70,40),       (70,40),           (70,40)],
+                "positions": [(842,336),    (250,359),    (375,95),    (355,455),       (209,65),        (635,435),      (1035,635),  (815,415),    (1005,380),       (425,490)],
             },
             {
                 "roomName": "Vroom Room",
