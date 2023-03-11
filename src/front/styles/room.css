@@ -19,12 +19,13 @@
     position: relative;
 }
 
-  .roomImg {
-    height: 675px;
-    border-radius: 15px;
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
-    display: block;
-  }
+.roomImg {
+  height: 675px;
+  width: 1075px;
+  border-radius: 15px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  display: block;
+}
 
 .fa-circle-dot{
     color: rgba(245, 245, 245, 0.897) !important;
@@ -35,3 +36,25 @@
 }
 
 
+.roomBtn{
+  background: none !important;
+  outline: none !important;
+  border: none !important;
+  min-width: 20px !important;
+  min-height: 20px;
+  border-radius:50% !important;
+  position: absolute !important;
+  color: black !important;
+  z-index: 8 !important;
+}
+
+.MuiPaper-root {
+  font-family: 'SimsSans';
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.MuiPaper-elevation8 {
+  font-family: ' SimsSans';
+  background:transparent !important;
+  
+}

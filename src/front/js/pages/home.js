@@ -1,31 +1,26 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../store/appContext";
+import React, { useState, useEffect} from "react";
 import Carousel from "../component/carousel";
 import SimsCard from "../component/simsCard";
 import { useParams } from "react-router-dom";
 
-  // store.roomArr then store.roomArr.map loop through it eto get each value
-// const { store, actions } = useContext(Context);
 const defaultRoomInfo = {id:null, name:"thisRoom", pic_url:"https://i.imgur.com/iaJefXz.png"};
-const defaultSimsObjectInfo = {id:null, name:"thisObject", sims_names:"thisCard", sims_pic_url:"https://i.imgur.com/ZDVzExF.png", buy_url: "https://a.co/d/8WBBavf", price:16}
 
 export const Home = ({}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const { id } = useParams();
-  const [ objectInfo, setObjectInfo] = useState(defaultSimsObjectInfo);
   const [roomInfoOne, setRoomInfoOne] = useState(defaultRoomInfo);
   const [roomInfoTwo, setRoomInfoTwo] = useState(defaultRoomInfo);
   const [roomInfoThree, setRoomInfoThree] = useState(defaultRoomInfo);
   const [roomInfoFour, setRoomInfoFour] = useState(defaultRoomInfo);
   const [roomInfoFive, setRoomInfoFive] = useState(defaultRoomInfo);
-  
+  const [ objectList, setObjectList] = useState([]);
 
 
 useEffect(() => {
     async function fetchData() {
     const res = await fetch(
-      process.env.BACKEND_URL + "/api/rooms/2" ,  
+      process.env.BACKEND_URL + "/api/rooms/" + id == 2 || 6 || 10 || 4 || 8 ,  
     )
       const data = await res.json()
         setRoomInfoOne(data);
@@ -77,17 +72,6 @@ useEffect(() => {
 }, [id]);
 
 
-useEffect(() => {
-  async function fetchData() {
-    const res = await fetch(
-      process.env.BACKEND_URL + "/api/objects"  
-    )
-    const data = await res.json()
-
-      setObjectsInfo(data);
-}; fetchData();
-}, [id]);
-
   return (
     <div className="text-center mt-5 container">
       <h1>
@@ -103,10 +87,11 @@ useEffect(() => {
         ]}
       />
       <div className="cardContainerMain">
-      <SimsCard id={5}/>
-      <SimsCard id={50}/>
-      <SimsCard id={14}/>
-      <SimsCard id={29}/>
+       {/* ask on how to make this better */}
+        <SimsCard id={Math.floor((Math.random() * 68) +1)} />
+        <SimsCard id={Math.floor((Math.random() * 68) +1)} />
+        <SimsCard id={Math.floor((Math.random() * 68) +1)} />
+        <SimsCard id={Math.floor((Math.random() * 68) +1)} />
       </div>
     </div>
   );

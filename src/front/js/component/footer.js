@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="footer">
-			<img className="logo" src="https://www.nicepng.com/png/detail/77-777209_the-sims-icon-triangle.png"/>
+			<img className="logo" src="https://i.imgur.com/4vATxe4.png"/>
 			<div>About Us</div>
 			<div>Contact Us</div>
 			<div>CopyRight C</div>

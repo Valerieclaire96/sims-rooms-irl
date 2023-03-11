@@ -16,8 +16,6 @@
 .logo {
   height: 75px;
   width: 75px;
-  margin: 10px;
-  border-radius: 50%;
 }
 
 .footer {
@@ -35,7 +33,7 @@
 }
 
 .card {
-  margin: 20px;
+  margin: 10px;
   width: 280px;
   border-radius: 15px;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);

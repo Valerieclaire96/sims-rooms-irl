@@ -19,16 +19,17 @@ export default function RealCard({id}) {
         setObjectList(data);
   }; fetchData();
   }, [id]);
+console.log()
 
   return (
-    <div>
+    <div className="col-4 justify-content-center">
       <div className="card">
         <img src={objectList.real_pic_url} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">{objectList.sims_names + " - $" + objectList.price}</h5>
-          <button href={objectList.buy_url} className="btn btn-primary">
+          <a href={objectList.buy_url} target="blank"><button className="btn btn-primary">
             Buy Now
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

@@ -11,13 +11,13 @@ export const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <img
             className="logo"
-            src="https://www.nicepng.com/png/detail/77-777209_the-sims-icon-triangle.png"
+            src="https://i.imgur.com/4vATxe4.png"
           />
         </Link>
           <ul className="navbar-nav ml-auto mb-2 mb-lg-0" >
             <li className="nav-item">
               <Link className="nav-link" to="/categories">
-                Categories
+                All Rooms
               </Link>
             </li>
             <li className="nav-item ml-auto">
