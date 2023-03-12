@@ -13,7 +13,7 @@ export default function Room({}) {
   return (
     <div className="container">
       <InteractiveRoom id={id} objectList={objectList} setObjectList={setObjectList} />
-      <div className="d-flex col-12 overflow-auto" >
+      <div className="d-flex col-10 overflow-auto" >
       {objectList.map((objectPlacement, objectIndex) => {
         return objectList.length && <RealCard id={(objectList[objectIndex].object.id)} />
       })}

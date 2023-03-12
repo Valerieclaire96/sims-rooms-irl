@@ -73,7 +73,7 @@ useEffect(() => {
 
 
   return (
-    <div className="text-center mt-5 container">
+    <div className="container">
       <h1>
         Recreate Your Sim's Spaces <i>IRL</i>
       </h1>
@@ -86,7 +86,7 @@ useEffect(() => {
           roomInfoFive.pic_url
         ]}
       />
-      <div className="cardContainerMain">
+      <div className="d-flex mx-1">
        {/* ask on how to make this better */}
         <SimsCard id={Math.floor((Math.random() * 68) +1)} />
         <SimsCard id={Math.floor((Math.random() * 68) +1)} />

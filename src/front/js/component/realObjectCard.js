@@ -28,8 +28,8 @@ console.log()
         <div className="card-body">
           <h5 className="card-title">{objectList.sims_names + " - $" + objectList.price}</h5>
           <a href={objectList.buy_url} target="blank"><button className="btn btn-primary">
-            Buy Now
-          </button></a>
+            Buy Now 
+          </button></a><i class="fa-sharp fa-regular fa-heart"></i>
         </div>
       </div>
     </div>

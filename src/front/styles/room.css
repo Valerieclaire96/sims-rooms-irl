@@ -20,11 +20,12 @@
 }
 
 .roomImg {
-  height: 675px;
-  width: 1075px;
+  height: 100%;
+  width: 100%;
   border-radius: 15px;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
   display: block;
+  
 }
 
 .fa-circle-dot{

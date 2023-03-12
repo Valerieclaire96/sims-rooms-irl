@@ -419,9 +419,9 @@ def setup_commands(app):
             {
                 "name": "rice paper lamp",
                 "sims_name": "You've Got The Light",
-                "buy_url": "https://a.co/d/dfaU8Nv",
+                "buy_url": "https://www.amazon.com/Diploma-Paper-Floor-Lamp-LIGHTACCENTS/dp/B09KM83F36/ref=sr_1_4?crid=2MNDTP151DJWC&keywords=rice+paper+lamp+standing&qid=1678582054&s=home-garden&sprefix=rice+paper+lamp+standing%2Cgarden%2C102&sr=1-4&ufe=app_do%3Aamzn1.fos.18ed3cb5-28d5-4975-8bc7-93deae8f9840",
                 "sims_pic_url": "https://i.imgur.com/6wtNhm3.png",
-                "real_pic_url": "https://m.media-amazon.com/images/I/71nP6CvGTAL._AC_SL1500_.jpg",
+                "real_pic_url": "https://m.media-amazon.com/images/I/51x2yCkQFBL._AC_SL1500_.jpg",
                 "price": 60,
             },
             {
