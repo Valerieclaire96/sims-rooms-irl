@@ -26,7 +26,7 @@ export default function SimsCard({ id }) {
 
   return (
     <div>
-      <div className="card">
+      <div className="card" style={{width:"18rem"}}>
         <img src={objectList.sims_pic_url} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">
