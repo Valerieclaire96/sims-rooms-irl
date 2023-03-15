@@ -25,6 +25,7 @@ export default function Carousel({ sourceList }) {
             className={index === currentIndex ? "active" : ""}
             aria-current="true"
             aria-label={"Slide " + (index + 1)}
+            key={currentIndex}
           ></button>
         ))}
       </div>
@@ -40,7 +41,8 @@ export default function Carousel({ sourceList }) {
                 <div
                   className={
                     "carousel-item " + (index === currentIndex ? "active" : "")
-                  }
+                  } 
+                  key={currentIndex}
                 >
                   <Link
                     to={

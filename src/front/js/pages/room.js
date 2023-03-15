@@ -11,11 +11,11 @@ export default function Room({}) {
 
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <InteractiveRoom id={id} objectList={objectList} setObjectList={setObjectList} />
-      <div className="d-flex col-10 overflow-auto" >
+      <div className="d-flex col-10 overflow-auto mt-5" >
       {objectList.map((objectPlacement, objectIndex) => {
-        return objectList.length && <RealCard id={(objectList[objectIndex].object.id)} />
+        return objectList.length && <RealCard id={(objectList[objectIndex].object.id)} key={objectIndex} />
       })}
       </div>
     </div>

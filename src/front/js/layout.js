@@ -6,8 +6,9 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Categories from "./pages/categories";
 import Room from "./pages/room";
-import List from "./pages/list";
+import AllObjects from "./pages/allObjects";
 import Demo from "./pages/demo";
+// import LoadingSpinner from "./component/loadingSpinnerjs";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -23,6 +24,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          {/* <LoadingSpinner /> */}
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
@@ -31,7 +33,7 @@ const Layout = () => {
             <Route element={<Demo />} path="/demo" />
             <Route element={<Categories />} path="/categories" />
             <Route element={<Room />} path="/room/:id" />
-            <Route element={<List />} path="/list" />
+            <Route element={<AllObjects />} path="/all-objects" />
             <Route element={<Categories />} path="/categories" /> 
             <Route
               element={
