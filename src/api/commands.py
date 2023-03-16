@@ -659,17 +659,17 @@ def setup_commands(app):
             {
                 "roomName": "Zen Den",
                 "objects": ["cat planter","lotus candle","arc lamp","wicker basket","hanging planter","noodle candle","moroccan rug","blue sofa","console table","industrial coffee table"],
-                "positions": [(842,336),    (250,359),    (375,95),    (355,455),       (209,65),        (635,435),      (1035,635),  (815,415),    (1005,380),       (425,490)],
+                "positions": [(842,336),    (217,364),      (375,95),    (335,455),       (209,65),        (580,440),    (1000,600),  (755,408),    (945,365),       (425,490)],
             },
             {
                 "roomName": "Vroom Room",
                 "objects": ["school bus toybox","blue rug",   "dragon",  "rolling cart blue",  "racecar bed",     "panda chair"],
-                "positions": [   (645,435),      (409,600),   (157,270),      (775,415),          (305,415),         (490,366),],
+                "positions": [   (775,535),      (409,700),   (157,325),      (955,500),          (335,490),         (600,445),],
             },
             {
                 "roomName": "Unicorn Dreams",
                 "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling cart pink"],
-                "positions": [(535,70),    (410,436), (190,536),   (990,375),          (285,375),        (1130,65),         (830,367)],
+                "positions": [(505,70),    (390,415),  (180,500),   (940,360),          (285,375),        (1089,175),         (830,350)],
             },
             {
                 "roomName": "Tweenage Dirtbag",
