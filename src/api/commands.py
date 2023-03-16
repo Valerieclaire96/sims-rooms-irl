@@ -664,47 +664,47 @@ def setup_commands(app):
             {
                 "roomName": "Vroom Room",
                 "objects": ["school bus toybox","blue rug",   "dragon",  "rolling cart blue",  "racecar bed",     "panda chair"],
-                "positions": [   (775,535),      (409,700),   (157,325),      (955,500),          (335,490),         (600,445),],
+                "positions": [   (775,535),      (409,700),   (157,325),      (955,500),          (335,490),         (600,445)],
             },
             {
                 "roomName": "Unicorn Dreams",
-                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling cart pink"],
-                "positions": [(505,70),    (390,415),  (180,500),   (940,360),          (285,375),        (1089,175),         (830,350)],
+                "objects": ["wall decal","teddy bear","unicorn","butterfly chair","house toddler bed","string lights","rolling cart pink", "fur rug" ],
+                "positions": [(505,70),    (390,415),  (180,500),   (940,360),          (285,375),        (1089,175),         (830,350),    (300,536)],
             },
             {
                 "roomName": "Tweenage Dirtbag",
                 "objects": ["pink floyd poster","naruto rug","desk lamp","rice paper lamp","bean bag","bunk bed"],
-                "positions": [   (375,165),      (509,600),   (665,325),     (200,245),     (305,515), (745,125)],
+                "positions": [   (375,165),      (350,515),   (540,260),     (200,245),     (250,415), (745,125)],
             },
             {
                 "roomName": "Straight As to Zzz",
                 "objects": ["leaf art", "mirror with lights", "directors chair", "white gold dresser", "salt lamp"],
-                "positions": [(635,95),      (305,415),           (157,470),          (645,435),        (835,345)],
+                "positions": [(605,85),      (305,315),           (100,440),          (645,325),        (790,350)],
             },
             {
                 "roomName": "The Fancy Man's Study",
                 "objects":  ["studded arm chair", "globe bar", "bankers lamp", "persian rug", "executive desk chair", "executive desk"],
-                "positions": [   (645,435),        (409,600),    (157,270),      (775,415),          (305,415),         (490,366),],
+                "positions": [   (157,470),        (1009,350),    (695,340),      (325,525),        (845,274),         (745,415)],
             },
             {
                 "roomName": "Quick Bites, Long Talks",
                 "objects": ["mc dining table", "mc console table", "floor lamp", "mc dining chair", "architecture art", "lotus candle"],
-                "positions": [  (645,435),         (409,600),        (157,270),      (775,415),         (305,415),         (490,366),],
+                "positions": [  (400,386),         (1015,415),        (200,220),      (720,380),         (895,140),         (895,340)],
             },
             {
                 "roomName": "Lazy Susan's Kitchen",
                 "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"],
-                "positions": [   (645,435),       (409,600),      (157,270),      (775,415),   (305,415),  (490,366),   (490,366)],
+                "positions": [   (775,315),       (390,520),      (365,320),     (1035,355),   (360,506),  (725,315),   (600,300)],
             },
             {
                 "roomName": "sleep4geeks",
                 "objects":  ["industrial lamp", "gaming chair", "gaming desk", "checkered rug", "record art", "round table", "wardrobe","bamboo","lava lamp"],
-                "positions": [   (645,435),        (409,600),     (157,270),      (775,415),      (305,415),     (490,366),   (490,366),(490,366),(490,366),],
+                "positions": [   (910,215),        (600,310),     (680,425),      (509,600),      (357,100),     (450,410),   (690,166),(870,315),(410,300)],
             },
             {
                 "roomName": "Dude, Where's my Closet?",
                 "objects": ["architecture art" , "lattice rug", "padded headboard", "salt lamp", "dog planter", "clothing rack", "wicker hamper"],
-                "positions": [   (645,435),         (409,600),      (157,270),       (775,415),    (305,415),       (490,366),       (490,366)],
+                "positions": [   (696,185),         (409,600),      (875,335),       (610,350),    (1040,385),       (290,255),     (200,441)],
             }
         ]
 
