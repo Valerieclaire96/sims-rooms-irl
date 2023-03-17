@@ -24,7 +24,7 @@ def create_account():
     request_body = request.get_json()
     email = request_body.get('email')
     password = request_body.get('password')
-    profile_pic = request_body.get('profile_pic')
+    name = request_body.get('name')
 
     if not request_body["name"]:
         return jsonify({"msg": "Name is required"}), 400
@@ -37,7 +37,7 @@ def create_account():
     if user is not None:
         return jsonify({'message': 'User already exists'}), 400
 
-    new_user = User(email=email, password=password, profile_pic=profile_pic, is_active=True)
+    new_user = User(email=email, password=password, name=name, is_active=True)
     db.session.add(new_user)
     db.session.commit()
     return jsonify({'message': 'User created'}), 201

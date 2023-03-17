@@ -18,9 +18,9 @@ fav_object = db.Table('fav_object',
 # user table with relationships to rooms and objects
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-    profile_pic = db.Column(db.String(120), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     # name to describe the relationship, then the name of the other table
@@ -43,8 +43,9 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            "user_room": [room.serialize() for room in self.user_rooms],
-            "user_objects": [r_object.serialize() for r_object in self.user_objects],
+            "name": self.name,
+            # "user_room": [room.serialize() for room in self.user_rooms],
+            # "user_objects": [r_object.serialize() for r_object in self.user_objects],
             # do not serialize the password, its a security breach
         }
 

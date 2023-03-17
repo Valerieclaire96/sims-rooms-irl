@@ -12,10 +12,12 @@ export const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <img className="logo" src="https://i.imgur.com/4vATxe4.png" />
         </Link>
-        <img
-          className="searchGif"
-          src="http://images6.fanpop.com/image/photos/42800000/Plumbob-sims-4-42897071-365-750.gif"
-        ></img>
+          <img
+            className="plumbobGif"
+            src="http://images6.fanpop.com/image/photos/42800000/Plumbob-sims-4-42897071-365-750.gif"
+          ></img>
+
+
         <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
           <li className="nav-item">
             <Link className="nav-link" to="/categories">
@@ -33,8 +35,6 @@ export const Navbar = () => {
             </Link>
           </li>
         </ul>
-
-       
       </div>
     </nav>
   );

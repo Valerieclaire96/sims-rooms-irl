@@ -74,6 +74,7 @@
 	},
 	"dependencies": {
 		"@material-ui/core": "^4.12.4",
+		"@typeform/embed-react": "^2.19.0",
 		"algoliasearch": "^4.15.0",
 		"bootstrap": "^5.2.3",
 		"instantsearch.js": "^4.52.0",
@@ -82,6 +83,7 @@
 		"react-bootstrap": "^2.7.2",
 		"react-dom": "^16.8.4",
 		"react-instantsearch-dom": "^6.39.0",
+		"react-leaf-polls": "^1.1.6",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0",
 		"react-toggle": "^4.1.3",
