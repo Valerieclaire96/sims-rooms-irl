@@ -3,6 +3,7 @@ import "/workspace/sims-rooms-irl/src/front/styles/signup.css";
 import { Context } from "../store/appContext";
 import { useNavigate, Link } from "react-router-dom";
 
+
 export default function Signup() {
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
