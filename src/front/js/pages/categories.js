@@ -23,7 +23,7 @@ export default function roomImages() {
           alt="geeks4sleep"
         />
         </Link>
-        <h4>geeks4sleep</h4>
+        <h4>sleep4geeks</h4>
       </div>
       <div className="room3">
         <Link to="/room/3">

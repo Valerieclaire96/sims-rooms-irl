@@ -6,6 +6,7 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Categories from "./pages/categories";
 import Room from "./pages/room";
+import Profile from "./pages/profile";
 import AllObjects from "./pages/allObjects";
 import Demo from "./pages/demo";
 // import LoadingSpinner from "./component/loadingSpinnerjs";
@@ -35,6 +36,7 @@ const Layout = () => {
             <Route element={<Room />} path="/room/:id" />
             <Route element={<AllObjects />} path="/all-objects" />
             <Route element={<Categories />} path="/categories" /> 
+            <Route element={<Profile />} path="/profile" />
             <Route
               element={
                 <img
