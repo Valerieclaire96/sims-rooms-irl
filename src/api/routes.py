@@ -7,7 +7,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
-
+from datetime import datetime, timedelta
 
 api = Blueprint('api', __name__)
 
@@ -40,26 +40,23 @@ def create_account():
     new_user = User(email=email, password=password, name=name, is_active=True)
     db.session.add(new_user)
     db.session.commit()
-    return jsonify({'message': 'User created'}), 201
+    return jsonify(new_user.serialize()), 201
 
 @api.route('/login', methods=['POST'])
 def login():
     request_body = request.get_json()
     email = request_body.get('email')
     password = request_body.get('password')
-
-    user = User.query.filter_by(email=email).first()
+    print(email, password)
+    user = User.query.filter_by(email=email, password=password).first()
     if user is not None:
-        token = create_access_token(identity=email)
-        return jsonify({'message': 'Successful Sign in', "token": str(token) }), 200
+        expiration = timedelta(days=1)
+        access_token = create_access_token(identity= user.email, expires_delta= expiration)
+        # favorites = getFavoritesByID(user.id)
+        user_email = user.email
+        return jsonify(access_token=access_token, user_email=user_email)
 
-        expiration = datetime.timedelta(days=1)
-        access_token = create_access_token(identity= user.id, expires_delta= expiration)
-        favorites = getFavoritesByID(user.id)
-        user_name = user.name
-        return jsonify(access_token=access_token, favorites=favorites, user_name=user_name)
-
-    return jsonify({"message': 'User doesn't exists"}), 400
+    return jsonify({"message": "User doesn't exists"}), 400
 
 @api.route('/user', methods=['GET'])
 @jwt_required()
@@ -165,3 +162,59 @@ def get_meta_tags():
 def get_meta_tag(id):
     meta_tags = Meta.query.filter_by(id=id).first()
     return jsonify(meta_tags.serialize()), 200
+
+@api.route('/favorites/objects/<string:name>', methods=['POST'])
+@jwt_required
+def add_fav_objects(name):
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+    r_object = Object.query.filter_by(name=name).first()
+
+@api.route('/favorites', methods=['POST'])
+@jwt_required()
+def addFavorite():
+  uid = get_jwt_identity()
+  request_body = request.get_json()
+  #print(request_body)
+  favorite = Favorites(
+    id = request_body['id'],
+    sims_name = request_body['sims_name'],
+    buy_url = request_body['buy_url'],
+    sims_pic_url = request_body['sims_pic_url'],
+    price = request_body['price'],
+  )
+  
+  db.session.add(favorite)   
+  db.session.commit()
+  # get favorites for logged user
+  favorites = getFavoritesByID(id)
+  #print(favorites)
+  # return those favs - same happens in the delete function
+  return jsonify(msg="ok")
+  
+# remove fav----------------------------------------------------------------------------------------------------
+@api.route('/deletefav', methods=['DELETE'])
+@jwt_required()
+def removeFav():
+  uid = get_jwt_identity()
+  request_body = request.get_json()
+  Favorites.query.filter_by(
+    index=request_body['id'], sims_name=request_body['sims_name'], id=id
+    ).delete()
+    
+  db.session.commit()
+  return jsonify(msg="ok")
+
+# get all fav----------------------------------------------------------------------------------------------------
+@api.route('/getfavorites', methods=['GET'])
+@jwt_required()
+def getFavorites():
+  uid = get_jwt_identity()
+  favs = getFavoritesByID(uid)
+  return jsonify(favorites=favs)
+
+def getFavoritesByID(id):
+  favorites = Favorites.query.filter_by(id=id)
+  favorites = [favorite.serialize() for favorite in favorites]
+  #print(favorites)
+  return favorites

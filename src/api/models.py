@@ -4,16 +4,7 @@ db = SQLAlchemy()
 
 # many to many relationship between user and rooms- used for identitifying favorited rooms
 # at the top because the user table calls on this is as secondary in its relationship with rooms
-fav_room = db.Table('fav_room',
-            db.Column("room_id", db.Integer, db.ForeignKey("room.id"), primary_key=True),
-            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True)
-            )
-# many to many relationship between user and objects- used for identitifying favorited objects
-# at the top because the user table calls on this is as secondary in its relationship with objects
-fav_object = db.Table('fav_object',
-            db.Column("object_id", db.Integer, db.ForeignKey("object.id"), primary_key=True),
-            db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True)
-            )
+
 
 # user table with relationships to rooms and objects
 class User(db.Model):
@@ -23,18 +14,6 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
-    # name to describe the relationship, then the name of the other table
-    # the secondary is the table that defines the many to many relationship between the two tables
-    # the back populations refers to the relationship to user created in the room table 
-    user_rooms = db.relationship("Room",
-                                secondary=fav_room,
-                                back_populates="faved_rooms",
-                                )
-    #same as above but for objects
-    user_objects = db.relationship("Object",
-                                secondary=fav_object,
-                                back_populates="faved_objects",
-                                )
     # This is how the artist will print in the console, just the name
     def __repr__(self):
         return f'<User {self.email}>'
@@ -81,10 +60,7 @@ class Room(db.Model):
     # describes the relationship between rooms and user
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from user to room in the defined in the user table
-    faved_rooms = db.relationship("User",
-            secondary=fav_room,
-            back_populates="user_rooms")
-    
+
     # This is how the artist will print in the console, just the name
     def __repr__(self):
         return self.id
@@ -118,9 +94,7 @@ class Object(db.Model):
     # describes the relationship between Objects and user
     # the secondary element is the table that defines the many to many relationship between the two tables
     # back populations refers to the relationship from Object to user in the defined in the user table
-    faved_objects = db.relationship("User",
-        secondary=fav_object,
-        back_populates="user_objects")
+
 
     # This is how the artist will print in the console, just the name
     def __repr__(self):
@@ -183,3 +157,23 @@ class Meta(db.Model):
             "tag": self.tag,
         }
 
+class Favorites(db.Model):
+    __tablename__ = 'Favorites'
+    id = db.Column(db.Integer, primary_key=True, unique=True)
+    sims_name = db.Column(db.String(80), unique=False, nullable=False)
+    buy_url = db.Column(db.String(2000), nullable=False)
+    sims_pic_url = db.Column(db.String(2000), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+
+
+    def __repr__(self):
+        return f'<Favorite {self.sims_name}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "sims_names": self.sims_name,
+            "buy_url": self.buy_url,
+            "sims_pic_url": self.sims_pic_url,
+            "price": self.price
+        }

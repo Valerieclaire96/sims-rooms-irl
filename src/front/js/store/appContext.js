@@ -24,6 +24,7 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
 			state.actions.getRooms();
 			state.actions.getObjects()
+			state.actions.getUser();
 		}, []);
 		// change getMessage to state.action.getRooms() each time the page loads it will run the fetch function 
 

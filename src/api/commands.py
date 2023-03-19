@@ -694,7 +694,7 @@ def setup_commands(app):
             {
                 "roomName": "Lazy Susan's Kitchen",
                 "objects":  ["stripped planter" ,"pet feeder", "popcorn maker", "dutch oven", "barstool", "tea rack", "knife rack"],
-                "positions": [   (775,315),       (390,520),      (365,320),     (1035,355),   (360,506),  (725,315),   (600,300)],
+                "positions": [   (775,315),       (390,520),      (365,320),     (1035,355),   (560,506),  (725,315),   (600,300)],
             },
             {
                 "roomName": "sleep4geeks",

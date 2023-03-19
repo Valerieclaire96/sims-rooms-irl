@@ -8,21 +8,22 @@ export default function Signup() {
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const token = sessionStorage.getItem("token");
   console.log(token);
   const handleClick = (e) => {
     e.preventDefault();
     console.log(e.target);
-    actions.createUser(name, email, password);
+    actions.createUser(name, email, password).then((res) => navigate("/profile")).catch((err) => setError(err));
   }
     return (
         <>
-      <div className="SignupForm">
         <form className="loginForm">
           <div className="loginFormContent">
-            <h1>Login</h1>
+            <h1>Create an Account</h1>
             <div className="input-field">
               <input
                 className="myInput"
@@ -54,17 +55,14 @@ export default function Signup() {
               <span>Go Back</span>
             </Link>
             <br />
-            <Link className="link" to="/">
-              <span>Continue without Loging in</span>
-            </Link>
           </div>
           <div className="loginFormAction">
+            {error && <div className="alert alert-danger">{error.msg || error.message || error}</div>}
             <button className="formBtn regBtn" onClick={(e) => handleClick(e)}>
               Register
             </button>
           </div>
         </form>
-      </div>
       </>
     );
   }

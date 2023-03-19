@@ -15,7 +15,8 @@ export default function Profile() {
         style={{
           height: "200px",
           width: "200px",
-          right: "42.55%",
+          right: "43.5%",
+          objectFit: "cover",
           top: "30%",
           position: "absolute",
         }}
@@ -26,15 +27,22 @@ export default function Profile() {
           top: "45%",
           position: "absolute",
         }}>Shelly Sims</h2>
-      <img className="favRoom" src="https://i.imgur.com/6aHMhet.png" style={{ height: "500px", width: "70%", marginTop:"100px"}}></img>
-      <h3>Favorite Rooms</h3>
-    <div className="d-flex mt-3 mb-3 favObjects">
+        <h3 style={{ marginTop:"100px"}}>Favorites</h3>
+    <div className="d-flex align-content-between flex-wrap mb-3 favObjects" style={{ marginTop:"50px", marginLeft:"200px"}}>
       {/* ask on how to make this better */}
+      
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
       <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
       <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
       <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
     </div>
-    <h3>Favorite Objects</h3>
   </div>
  )
 } 
