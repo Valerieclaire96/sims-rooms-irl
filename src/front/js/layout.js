@@ -9,6 +9,7 @@ import Room from "./pages/room";
 import Profile from "./pages/profile";
 import AllObjects from "./pages/allObjects";
 import Demo from "./pages/demo";
+import Forgot from "./pages/forgotPassword";
 // import LoadingSpinner from "./component/loadingSpinnerjs";
 import injectContext from "./store/appContext";
 
@@ -37,6 +38,7 @@ const Layout = () => {
             <Route element={<AllObjects />} path="/all-objects" />
             <Route element={<Categories />} path="/categories" /> 
             <Route element={<Profile />} path="/profile" />
+            <Route element={<Forgot />} path="/forgot"/>
             <Route
               element={
                 <img

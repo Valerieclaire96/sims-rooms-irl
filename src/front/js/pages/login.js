@@ -19,6 +19,7 @@ export default function Login() {
         // Submit email/password here
     }
 
+
     return (
         <form className="loginForm" onSubmit={handleSubmit}>
             <h1>Login</h1>
@@ -36,6 +37,7 @@ export default function Login() {
             />
             <button type="submit">Login</button>
             <button><Link to="/register">Register</Link></button>
+            <button><Link to="/forgot">Forgot Password</Link></button>
     </form>
     );
 };

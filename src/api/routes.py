@@ -69,7 +69,29 @@ def get_user():
 
     return jsonify({"message": "Uh-oh"}), 400
 
-
+@api.route('/forgot-password', method=['POST'])
+@jwt_required()
+def forgot_password():
+    email = request_body.get('email')
+    user = User.query.filter_by(email=email).first()
+    
+    if user is not None:
+        expiration = timedelta(days=1)
+        access_token = create_access_token(identity= user.email, expires_delta= expiration)
+        user_email = user.email
+        return jsonify(access_token=access_token, user_email=user_email)
+    
+@api.route('/recover-password', method=['GET'])
+@jwt_required()
+def recover_password():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+    password = request_body.get('password')
+    
+    if user is not None:
+        db.session.update(recover_password)
+        db.session.commit()
+        return jsonify(recover_password.serialize()), 201
 
 @api.route('/object', methods=['POST'])
 def add_object():
