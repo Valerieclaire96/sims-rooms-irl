@@ -1,7 +1,10 @@
-import React from "react";
+import React,  { useContext } from "react";
+import { Context } from "../store/appContext";
 import SimsCard from "../component/simsCard";
 
 export default function Profile() {
+  const { store, actions } = useContext(Context);
+    let favorites = store.favorites
   return(
   <div className="container">
     <div style={{ width: "100%", postion: "inline-block" }}>
@@ -26,22 +29,20 @@ export default function Profile() {
           right: "30%",
           top: "45%",
           position: "absolute",
-        }}>Shelly Sims</h2>
+        }}>{`${store.user_name}`}</h2>
         <h3 style={{ marginTop:"100px"}}>Favorites</h3>
-    <div className="d-flex align-content-between flex-wrap mb-3 favObjects" style={{ marginTop:"50px", marginLeft:"200px"}}>
-      {/* ask on how to make this better */}
-      
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-      <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+        
+        <div className='profileCardGrid'>
+                { favorites.length > 0 &&
+                    favorites.map((item, idx) => {
+                        console.log(item);
+                        return (
+                            <div  key={idx}>
+                                <SimsCard  id={item.id} />
+                            </div>                            
+                        )}
+                    )  
+                }
     </div>
   </div>
  )

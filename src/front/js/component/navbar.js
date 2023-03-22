@@ -35,7 +35,7 @@ export const Navbar = () => {
 
           <li className="nav-item ml-auto">
             {store.user ? (
-              <span className="nav-link" onClick={() => {
+              <span className="nav-link" to="/" onClick={() => {
                 actions.logout();
               }}>
                 Logout

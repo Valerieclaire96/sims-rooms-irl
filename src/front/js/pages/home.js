@@ -93,7 +93,7 @@ export const Home = ({}) => {
         <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
       </div>
       
-  <Widget id="https://fmx2klz7nhb.typeform.com/to/fBjrt8JT" scrolling="no" style={{ width: '90%', height: "400px"}} className="my-form" />
+  <Widget id="https://fmx2klz7nhb.typeform.com/to/fBjrt8JT" scrolling="no" style={{ width: '90%', height: "580px"}} className="my-form" />
 
     </div>
   );

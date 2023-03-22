@@ -16,7 +16,7 @@ class User(db.Model):
 
     # This is how the artist will print in the console, just the name
     def __repr__(self):
-        return f'<User {self.email}>'
+        return f'<User {self.id}>'
 
     def serialize(self):
         return {
@@ -158,22 +158,18 @@ class Meta(db.Model):
         }
 
 class Favorites(db.Model):
-    __tablename__ = 'Favorites'
+    # __tablename__ = 'Favorites'
     id = db.Column(db.Integer, primary_key=True, unique=True)
-    sims_name = db.Column(db.String(80), unique=False, nullable=False)
-    buy_url = db.Column(db.String(2000), nullable=False)
-    sims_pic_url = db.Column(db.String(2000), nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    uid = db.Column(db.String, nullable=False)
+    sims_card =db.Column(db.String(2000), nullable=False)
 
 
     def __repr__(self):
-        return f'<Favorite {self.sims_name}>'
+        return f'<Favorite {self.sims_card}>'
 
     def serialize(self):
         return {
             "id": self.id,
-            "sims_names": self.sims_name,
-            "buy_url": self.buy_url,
-            "sims_pic_url": self.sims_pic_url,
-            "price": self.price
+            "uid": self.uid,
+            "sims_card": self.sims_card
         }

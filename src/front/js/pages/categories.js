@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function roomImages() {
   return (
-    <div className="catContainer container">
-      <div className="room1">
+    <div className="container text-center">
+    <div className="catContainer row row-cols-auto">
+      <div className="room col">
         <Link to="/room/1">
         <img
         className="catImg"
@@ -15,7 +16,7 @@ export default function roomImages() {
         </Link>
         <h4>Dude, Where's my Closet?</h4>
       </div>
-      <div className="room2">
+      <div className="room col">
         <Link to="/room/2">
         <img
           className="catImg"
@@ -25,7 +26,7 @@ export default function roomImages() {
         </Link>
         <h4>sleep4geeks</h4>
       </div>
-      <div className="room3">
+      <div className="room col">
         <Link to="/room/3">
         <img
           className="catImg"
@@ -35,7 +36,7 @@ export default function roomImages() {
         </Link>
         <h4>Lazy Susan's Kitchen</h4>
       </div>
-      <div className="room4">
+      <div className="room col">
         <Link to="/room/4">
         <img
           className="catImg"
@@ -45,7 +46,7 @@ export default function roomImages() {
         </Link>
         <h4>Quick Bites, Long Talks</h4>
       </div>
-      <div className="room5">
+      <div className="room col">
         <Link to="/room/5">
         <img
           className="catImg"
@@ -55,7 +56,7 @@ export default function roomImages() {
         </Link>
         <h4>The Fancy Man's Study</h4>
       </div>
-      <div className="room6">
+      <div className="room col">
         <Link to="/room/6">
         <img
           className="catImg"
@@ -66,7 +67,7 @@ export default function roomImages() {
         <h4>Straight As to Zzz</h4>
       </div>
       
-      <div className="room7">
+      <div className="room col">
         <Link to="/room/7">
         <img
           className="catImg"
@@ -76,7 +77,7 @@ export default function roomImages() {
         </Link>
         <h4>Tweenage Dirtbag</h4>
       </div>
-      <div className="room8">
+      <div className="room col">
         <Link to="/room/8">
         <img
           className="catImg"
@@ -86,7 +87,7 @@ export default function roomImages() {
         </Link>
         <h4>Unicorn Dreams</h4>
       </div>
-      <div className="room9">
+      <div className="room col">
         <Link to="/room/9">
         <img
           className="catImg"
@@ -96,7 +97,7 @@ export default function roomImages() {
         </Link>
         <h4>Vroom Room</h4>
       </div>
-      <div className="room10">
+      <div className="room col">
         <Link to="/room/10">
         <img
           className="catImg"
@@ -106,6 +107,7 @@ export default function roomImages() {
         </Link>
         <h4>Zen Den</h4>
       </div>
+    </div>
     </div>
   );
 }

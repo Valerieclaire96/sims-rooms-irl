@@ -1,5 +1,7 @@
+import { CardActions } from "@material-ui/core";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import FavoriteBtn from "./favButton";
 
 const defaultRealObjectInfo = {
   id: null,
@@ -8,10 +10,13 @@ const defaultRealObjectInfo = {
   buy_url: "https://a.co/d/8WBBavf",
   price: 16,
 };
-export default function SimsCard({ id }) {
+export default function SimsCard({ id }, props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [objectList, setObjectList] = useState(defaultRealObjectInfo);
+  const {store, actions} = useContext(Context)
+  let objectInfo = {"name" : objectList.sims_names, "buy" :objectList.buy_url, "pic":objectList.sims_pic_url, "price":objectList.price}
+  // console.log("object list HERE", objectInfo)
 
   useEffect(() => {
     async function fetchData() {
@@ -22,21 +27,27 @@ export default function SimsCard({ id }) {
     }
     fetchData();
   }, [id]);
-  console.log();
+
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    actions.addFavorite(objectInfo)
+  }
 
   return (
     <div>
       <div className="card" style={{width:"18rem"}}>
         <img src={objectList.sims_pic_url} className="card-img-top" />
         <div className="card-body">
-          <h5 className="card-title">
+          <h5 style={{height:"60px"}} className="card-title mt-2">
             {objectList.sims_names + " - $" + objectList.price}
           </h5>
           <div className="cardBottom">
             <a href={objectList.buy_url} target="blank">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-info mb-2">Buy Now</button>
             </a>
-            <div className="fa-sharp fa-regular fa-heart"></div>
+            <button onClick={(e) => handleClick(e)} className="fa-sharp fa-regular fa-heart"></button>
+            {/* <FavoriteBtn  id={props.id} sims_card={props.sims_card}/> */}
           </div>
         </div>
       </div>

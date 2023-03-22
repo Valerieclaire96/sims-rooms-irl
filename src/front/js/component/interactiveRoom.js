@@ -51,6 +51,7 @@ export default function InteractiveRoom({ id, objectList, setObjectList }) {
             <div>
               <Button
                 className="roomBtn"
+                key={roomInfo.name}
                 style={{ left:objectPlacement.left, top: objectPlacement.top}}
                 onClick={(event) => {
                   setObjectIndex(index);

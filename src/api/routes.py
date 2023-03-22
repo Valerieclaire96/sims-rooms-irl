@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Object, Room, Meta, ObjectPlace
+from api.models import db, User, Object, Room, Meta, ObjectPlace, Favorites
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -52,9 +52,10 @@ def login():
     if user is not None:
         expiration = timedelta(days=1)
         access_token = create_access_token(identity= user.email, expires_delta= expiration)
-        # favorites = getFavoritesByID(user.id)
-        user_email = user.email
-        return jsonify(access_token=access_token, user_email=user_email)
+        favorites = getFavoritesByID(user.id)
+
+        user_name=user.name
+        return jsonify(access_token=access_token, user_name=user_name)
 
     return jsonify({"message": "User doesn't exists"}), 400
 
@@ -69,7 +70,7 @@ def get_user():
 
     return jsonify({"message": "Uh-oh"}), 400
 
-@api.route('/forgot-password', method=['POST'])
+@api.route('/forgot-password', methods=['POST'])
 @jwt_required()
 def forgot_password():
     email = request_body.get('email')
@@ -81,7 +82,7 @@ def forgot_password():
         user_email = user.email
         return jsonify(access_token=access_token, user_email=user_email)
     
-@api.route('/recover-password', method=['GET'])
+@api.route('/recover-password', methods=['GET'])
 @jwt_required()
 def recover_password():
     email = get_jwt_identity()
@@ -185,12 +186,7 @@ def get_meta_tag(id):
     meta_tags = Meta.query.filter_by(id=id).first()
     return jsonify(meta_tags.serialize()), 200
 
-@api.route('/favorites/objects/<string:name>', methods=['POST'])
-@jwt_required
-def add_fav_objects(name):
-    email = get_jwt_identity()
-    user = User.query.filter_by(email=email).first()
-    r_object = Object.query.filter_by(name=name).first()
+
 
 @api.route('/favorites', methods=['POST'])
 @jwt_required()
@@ -199,17 +195,14 @@ def addFavorite():
   request_body = request.get_json()
   #print(request_body)
   favorite = Favorites(
-    id = request_body['id'],
-    sims_name = request_body['sims_name'],
-    buy_url = request_body['buy_url'],
-    sims_pic_url = request_body['sims_pic_url'],
-    price = request_body['price'],
+    uid = uid,
+    sims_card = repr(request_body['sims_card']),
   )
   
   db.session.add(favorite)   
   db.session.commit()
   # get favorites for logged user
-  favorites = getFavoritesByID(id)
+  favorites = getFavoritesByID(uid)
   #print(favorites)
   # return those favs - same happens in the delete function
   return jsonify(msg="ok")
@@ -221,7 +214,7 @@ def removeFav():
   uid = get_jwt_identity()
   request_body = request.get_json()
   Favorites.query.filter_by(
-    index=request_body['id'], sims_name=request_body['sims_name'], id=id
+    index=request_body['id'], sims_name=request_body['sims_name'], uid=uid
     ).delete()
     
   db.session.commit()
@@ -235,8 +228,8 @@ def getFavorites():
   favs = getFavoritesByID(uid)
   return jsonify(favorites=favs)
 
-def getFavoritesByID(id):
-  favorites = Favorites.query.filter_by(id=id)
+def getFavoritesByID(uid):
+  favorites = Favorites.query.filter_by(uid=uid)
   favorites = [favorite.serialize() for favorite in favorites]
   #print(favorites)
   return favorites

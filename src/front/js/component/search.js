@@ -40,18 +40,18 @@ function Hit(props) {
         className="card-img-top"
       />
       <div className="card-body">
-        <div className="hit-name mt-2">
-          {" "}
-          {props.hit.sims_name}
-          <br></br>
-          {props.hit.price}
-          <div className="hit-price"></div>
-          <div className="cardBottom">
-            <a href={props.hit.buy_url} target="blank">
-              <button className="btn btn-primary mt-2">Buy Now</button>
-            </a>
-            <div className="fa-sharp fa-regular fa-heart"></div>
-          </div>
+        <h5 className="card-title mt-2" style={{ height: "60px" }}>
+          {props.hit.sims_name + "- " + props.hit.price}
+        </h5>
+        <div className="cardBottom">
+          <a href={props.hit.buy_url} target="blank">
+            <button className="btn btn-info mb-2">Buy Now</button>
+          </a>
+          <button
+            onClick={(e) => handleClick(e)}
+            className="fa-sharp fa-regular fa-heart"
+          ></button>
+          {/* <FavoriteBtn  id={props.id} sims_card={props.sims_card}/> */}
         </div>
       </div>
     </div>
