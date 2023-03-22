@@ -5,6 +5,7 @@ import SimsCard from "../component/simsCard";
 export default function Profile() {
   const { store, actions } = useContext(Context);
     let favorites = store.favorites
+    
   return(
   <div className="container">
     <div style={{ width: "100%", postion: "inline-block" }}>

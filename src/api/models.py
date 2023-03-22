@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, ForeignKey, Integer, String
 
 db = SQLAlchemy()
 
@@ -23,8 +24,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            # "user_room": [room.serialize() for room in self.user_rooms],
-            # "user_objects": [r_object.serialize() for r_object in self.user_objects],
+            
             # do not serialize the password, its a security breach
         }
 
@@ -158,9 +158,9 @@ class Meta(db.Model):
         }
 
 class Favorites(db.Model):
-    # __tablename__ = 'Favorites'
+    __tablename__ = "Favorites"
     id = db.Column(db.Integer, primary_key=True, unique=True)
-    uid = db.Column(db.String, nullable=False)
+    uid = db.Column(db.Integer, nullable=False)
     sims_card =db.Column(db.String(2000), nullable=False)
 
 

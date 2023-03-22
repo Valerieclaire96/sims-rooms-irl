@@ -1,7 +1,6 @@
 import { CardActions } from "@material-ui/core";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import FavoriteBtn from "./favButton";
 
 const defaultRealObjectInfo = {
   id: null,
@@ -46,8 +45,7 @@ export default function SimsCard({ id }, props) {
             <a href={objectList.buy_url} target="blank">
               <button className="btn btn-info mb-2">Buy Now</button>
             </a>
-            <button onClick={(e) => handleClick(e)} className="fa-sharp fa-regular fa-heart"></button>
-            {/* <FavoriteBtn  id={props.id} sims_card={props.sims_card}/> */}
+            <button onClick={(e) => handleClick(e)} className="fa-sharp fa-regular fa-heart" style={{background: "transparent", border: "none", outline:"none",}}></button>
           </div>
         </div>
       </div>

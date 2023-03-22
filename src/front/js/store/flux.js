@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       objectArr: [],
       roomArr: [],
       cf_url:
-        "https://3000-valerieclai-simsroomsir-iz3s95rq8c0.ws-us90.gitpod.io",
+        "https://3000-valerieclai-simsroomsir-v3rjfzlxvl9.ws-us90.gitpod.io/",
       cb_url: process.env.BACKEND_URL,
       user: null,
       favorites: [],
@@ -89,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const cf_url = getStore().cf_url
         const token = sessionStorage.removeItem("token");
         setStore({ token: null });
-        // window.location.href = cf_url + "/";
+        window.location.href = cf_url + "/";
       },
 
       login: async (email, password) => {
@@ -115,6 +115,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             f.item = f.item.replace(/'/g, '"')
             f.item = JSON.parse(f.item)
           })
+          console.log("USER INFO HERE",data)
           setStore({ token: data.access_token, favorites: data.favorites, user: data.user_email, user_name: data.user_name});
           return true;
       },

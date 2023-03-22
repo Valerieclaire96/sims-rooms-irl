@@ -64,6 +64,10 @@
   margin: 5px 9px;
 }
 
+.fa-heart:active{
+  color: red;
+}
+
 .bXBnMN {
   width: 100%;
   height: 100%;

@@ -87,10 +87,11 @@ export const Home = ({}) => {
       />
       <div className="d-flex mt-3 mb-3">
         {/* ask on how to make this better */}
-        <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-        <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-        <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
-        <SimsCard id={Math.floor(Math.random() * 68 + 1)} />
+        {/* <SimsCard id={Math.floor(Math.random() * 68 + 1)} /> */}
+        <SimsCard id={42} />
+        <SimsCard id={62} />
+        <SimsCard id={16} />
+        <SimsCard id={37} />
       </div>
       
   <Widget id="https://fmx2klz7nhb.typeform.com/to/fBjrt8JT" scrolling="no" style={{ width: '90%', height: "580px"}} className="my-form" />
