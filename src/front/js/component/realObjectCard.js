@@ -18,12 +18,12 @@ export default function RealCard({ id }) {
     async function fetchData() {
       const res = await fetch(process.env.BACKEND_URL + "/api/objects/" + id);
       const data = await res.json();
-      console.log("//room objects by id", data);
+      // console.log("//room objects by id", data);
       setObjectList(data);
     }
     fetchData();
   }, [id]);
-  console.log();
+  // console.log();
 
   return (
     <div className="col-4" style={{ width: "18rem" }}>

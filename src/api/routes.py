@@ -51,19 +51,18 @@ def login():
     user = User.query.filter_by(email=email, password=password).first()
     if user is not None:
         expiration = timedelta(days=1)
-        access_token = create_access_token(identity= user.email, expires_delta= expiration)
+        access_token = create_access_token(identity= user.id, expires_delta= expiration)
         favorites = getFavoritesByID(user.id)
-
         user_name=user.name
-        return jsonify(access_token=access_token, user_name=user_name)
+        return jsonify(access_token=access_token, favorites=favorites, user_name=user_name)
 
     return jsonify({"message": "User doesn't exists"}), 400
 
 @api.route('/user', methods=['GET'])
 @jwt_required()
 def get_user():
-    email = get_jwt_identity()
-    user = User.query.filter_by(email=email).first()
+    id = get_jwt_identity()
+    user = User.query.filter_by(id=id).first()
 
     if user is not None:
         return jsonify(user.serialize()), 200
@@ -78,7 +77,7 @@ def forgot_password():
     
     if user is not None:
         expiration = timedelta(days=1)
-        access_token = create_access_token(identity= user.email, expires_delta= expiration)
+        access_token = create_access_token(identity= user.id, expires_delta= expiration)
         user_email = user.email
         return jsonify(access_token=access_token, user_email=user_email)
     
@@ -164,27 +163,27 @@ def get_room(id):
     return jsonify(room.serialize()), 200
 
 
-@api.route('/meta', methods=['POST'])
-def add_meta():
-    request_body = request.get_json(force=True)
-    tag = request_body.get("tag")
+# @api.route('/meta', methods=['POST'])
+# def add_meta():
+#     request_body = request.get_json(force=True)
+#     tag = request_body.get("tag")
 
-    return jsonify(request_body), 200
+#     return jsonify(request_body), 200
 
-@api.route('/metatags', methods=['GET'])
-def get_meta_tags():
-    meta_tags_list = Meta.query
-    if "tag" in request.args:
-        meta_tags_list = meta_tags_list.filter(Meta.tag.ilike(f"%{request.args['tag']}%"))
-    meta_tags_list = meta_tags_list.all()
-    all_meta_tags = list(map(lambda meta_tags: meta_tags.serialize(), meta_tags_list))
-    return jsonify(all_meta_tags), 200
+# @api.route('/metatags', methods=['GET'])
+# def get_meta_tags():
+#     meta_tags_list = Meta.query
+#     if "tag" in request.args:
+#         meta_tags_list = meta_tags_list.filter(Meta.tag.ilike(f"%{request.args['tag']}%"))
+#     meta_tags_list = meta_tags_list.all()
+#     all_meta_tags = list(map(lambda meta_tags: meta_tags.serialize(), meta_tags_list))
+#     return jsonify(all_meta_tags), 200
 
 
-@api.route('/metatags/<int:id>', methods=['GET'])
-def get_meta_tag(id):
-    meta_tags = Meta.query.filter_by(id=id).first()
-    return jsonify(meta_tags.serialize()), 200
+# @api.route('/metatags/<int:id>', methods=['GET'])
+# def get_meta_tag(id):
+#     meta_tags = Meta.query.filter_by(id=id).first()
+#     return jsonify(meta_tags.serialize()), 200
 
 
 
@@ -213,8 +212,9 @@ def addFavorite():
 def removeFav():
   uid = get_jwt_identity()
   request_body = request.get_json()
+  favorites = getFavoritesByID(uid)
   Favorites.query.filter_by(
-    index=request_body['id'], sims_name=request_body['sims_name'], uid=uid
+    sims_card = sims_card
     ).delete()
     
   db.session.commit()

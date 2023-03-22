@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       objectArr: [],
       roomArr: [],
       cf_url:
-        "https://3000-valerieclai-simsroomsir-v3rjfzlxvl9.ws-us90.gitpod.io/",
+        "https://3000-valerieclai-simsroomsir-e3rn5q37h3v.ws-us92.gitpod.io",
       cb_url: process.env.BACKEND_URL,
       user: null,
       favorites: [],
@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             .then((data) => {
               if(data.msg == "ok") {
                 f.forEach((el, i) => {
-                  if (el.id === item.id && el.type === item.type) {
+                  if (el.id === item.id && el.sims_card === item.sims_card) {
                     f.splice(i, 1);
                   }
                 });
@@ -109,14 +109,15 @@ const getState = ({ getStore, getActions, setStore }) => {
             throw new Error("There was an error signing in");
           }
           const data = await res.json();
+          
           sessionStorage.setItem("token", data.access_token);
-          data.favorites.forEach(f => {
-            //was returning an error bc it didnt like the single quotes so the line below turns the single into double quotes 
-            f.item = f.item.replace(/'/g, '"')
-            f.item = JSON.parse(f.item)
-          })
-          console.log("USER INFO HERE",data)
-          setStore({ token: data.access_token, favorites: data.favorites, user: data.user_email, user_name: data.user_name});
+          // data.favorites.forEach(f => {
+          //   //was returning an error bc it didnt like the single quotes so the line below turns the single into double quotes 
+          //   f.item = f.item.replace(/'/g, '"')
+          //   f.item = JSON.parse(f.item)
+          // })
+           console.log("USER INFO HERE",data)
+          setStore({ token: data.access_token, favorites: data.favorites, user: data.id, user_name: data.user_name});
           return true;
       },
       

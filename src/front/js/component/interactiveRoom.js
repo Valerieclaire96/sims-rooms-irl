@@ -12,7 +12,7 @@ const defaultRoomInfo = {
 };
 export default function InteractiveRoom({ id, objectList, setObjectList }) {
   const { store, actions } = useContext(Context);
-  console.log(store);
+  // console.log(store);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [roomInfo, setRoomInfo] = useState(defaultRoomInfo);
@@ -35,7 +35,7 @@ export default function InteractiveRoom({ id, objectList, setObjectList }) {
         process.env.BACKEND_URL + "/api/room/" + id + "/objects/"
       );
       const data = await res.json();
-      console.log("//room objects by room id", data);
+      // console.log("//room objects by room id", data);
       setObjectList(data);
     }
     fetchData();
@@ -55,14 +55,14 @@ export default function InteractiveRoom({ id, objectList, setObjectList }) {
                 style={{ left:objectPlacement.left, top: objectPlacement.top}}
                 onClick={(event) => {
                   setObjectIndex(index);
-                  console.log(event.currentTarget);
+                  // console.log(event.currentTarget);
                   setAnchorEl(event.currentTarget);
                   setOpen(true);
                 }}
               >
                 <div className="fa-regular fa-circle-dot fa-2xl"></div>
               </Button>
-              {console.log("hello from html", objectPlacement)}
+              {/* {console.log("hello from html", objectPlacement)} */}
             </div>
           ))}
         <Popover

@@ -1,5 +1,6 @@
 import algoliasearch from "algoliasearch/lite";
-import React, { Component } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import {
   InstantSearch,
   Hits,
@@ -32,6 +33,22 @@ function Search() {
 }
 
 function Hit(props) {
+  const {store, actions} = useContext(Context)
+  let objectInfo = {"name" : props.hit.sims_names, "buy" :props.hit.buy_url, "pic":props.hit.sims_pic_url, "price":props.hit.price}
+  const [activeFav, setActiveFav] = useState(false);
+ 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (activeFav === true) {
+      // remove
+      console.log('here');
+      actions.removeFavorite(objectInfo)
+      setActiveFav(false)
+    }else{
+    actions.addFavorite(objectInfo)
+    setActiveFav(true);
+  }}
+
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img
@@ -48,10 +65,15 @@ function Hit(props) {
             <button className="btn btn-info mb-2">Buy Now</button>
           </a>
           <button
-            onClick={(e) => handleClick(e)}
-            className="fa-sharp fa-regular fa-heart"
-          ></button>
-          {/* <FavoriteBtn  id={props.id} sims_card={props.sims_card}/> */}
+              onClick={(e) => handleClick(e)}
+              className={activeFav ? "fas fa-heart" : "far fa-heart"}
+              style={{
+                background: "transparent",
+                border: "none",
+                outline: "none",
+              }}
+            ></button>
+   
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const [click, setClick] = React.useState(false);
-  console.log(click);
+  // console.log(click);
   const { store, actions } = useContext(Context);
 
   return (
@@ -31,7 +31,7 @@ export const Navbar = () => {
               All Objects
             </Link>
           </li>
-          {console.log("user", store.user)}
+          {/* {console.log("user", store.user)} */}
 
           <li className="nav-item ml-auto">
             {store.user ? (
