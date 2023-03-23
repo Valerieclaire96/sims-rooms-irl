@@ -10,11 +10,11 @@ const defaultRealObjectInfo = {
   buy_url: "https://a.co/d/8WBBavf",
   price: 16,
 };
-export default function SimsCard({ id }, props) {
+export default function SimsCard({ id, activeFavDF }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [objectList, setObjectList] = useState(defaultRealObjectInfo);
-  const [activeFav, setActiveFav] = useState(false);
+  const [activeFav, setActiveFav] = useState(activeFavDF);
   const { store, actions } = useContext(Context);
   let objectInfo = {
     name: objectList.sims_names,
@@ -36,7 +36,8 @@ export default function SimsCard({ id }, props) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (activeFav === true) {
+   
+    if  (activeFav === true) {
       // remove
       console.log("here");
       actions.removeFavorite(objectInfo);

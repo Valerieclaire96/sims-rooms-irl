@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import AllObjects from "./pages/allObjects";
 import Demo from "./pages/demo";
 import Forgot from "./pages/forgotPassword";
+import UpdatePassword from "./pages/updatePassword";
 // import LoadingSpinner from "./component/loadingSpinnerjs";
 import injectContext from "./store/appContext";
 
@@ -39,6 +40,7 @@ const Layout = () => {
             <Route element={<Categories />} path="/categories" /> 
             <Route element={<Profile />} path="/profile" />
             <Route element={<Forgot />} path="/forgot"/>
+            <Route element={<UpdatePassword />} path='/update-password' />
             <Route
               element={
                 <img

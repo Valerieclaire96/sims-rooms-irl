@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import SimsCard from "../component/simsCard";
 
 export default function Profile() {
   const { store, actions } = useContext(Context);
+  const [activeFav, setActiveFav] = useState(false);
+
   let favorites = store.favorites;
   let name = store.user_name;
-  
+
+  console.log("FAVORITES", favorites)
   return (
     <div className="container">
       <div style={{ width: "100%", postion: "inline-block" }}>
@@ -39,11 +42,11 @@ export default function Profile() {
 
       <div className="row row-cols-auto">
         {favorites.length > 0 &&
-          favorites.map((item, idx) => {
-            console.log("favorites", item);
+          ([...new Set(favorites)]).map((item, idx) => {
+            // console.log("favorites", item);
             return (
               <div className="col" key={idx}>
-                <SimsCard id={item.id} />
+                <SimsCard id={item.id} activeFavDF={true}/>
               </div>
             );
           })}

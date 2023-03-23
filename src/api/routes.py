@@ -8,6 +8,9 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from datetime import datetime, timedelta
+import requests
+import os 
+
 
 api = Blueprint('api', __name__)
 
@@ -52,9 +55,7 @@ def login():
     if user is not None:
         expiration = timedelta(days=1)
         access_token = create_access_token(identity= user.id, expires_delta= expiration)
-        favorites = getFavoritesByID(user.id)
-        user_name=user.name
-        return jsonify(access_token=access_token, favorites=favorites, user_name=user_name)
+        return jsonify(access_token=access_token, user=user.serialize())
 
     return jsonify({"message": "User doesn't exists"}), 400
 
@@ -70,8 +71,8 @@ def get_user():
     return jsonify({"message": "Uh-oh"}), 400
 
 @api.route('/forgot-password', methods=['POST'])
-@jwt_required()
 def forgot_password():
+    request_body = request.get_json()
     email = request_body.get('email')
     user = User.query.filter_by(email=email).first()
     
@@ -79,19 +80,29 @@ def forgot_password():
         expiration = timedelta(days=1)
         access_token = create_access_token(identity= user.id, expires_delta= expiration)
         user_email = user.email
-        return jsonify(access_token=access_token, user_email=user_email)
+        user_message = "Click this link to change your password: " + "https://3000-valerieclai-simsroomsir-e3rn5q37h3v.ws-us92.gitpod.io/update-password?token=" + str(access_token)
+        
+        response = requests.post(
+		"https://api.mailgun.net/v3/sandboxf995e309d6dc4e28a38a62b293909595.mailgun.org/messages",
+		auth=("api", os.getenv("MAILGUN_API_KEY")),
+		data={"from": "<sims.irl.pw.recovery@Ysandboxf995e309d6dc4e28a38a62b293909595.mailgun.org>",
+			"to": [user_email],
+			"subject": "Password recovery",
+			"text": user_message})
+        return jsonify(status_msg="email sent", user_email=user_email)
     
-@api.route('/recover-password', methods=['GET'])
+@api.route('/recover-password', methods=['POST'])
 @jwt_required()
 def recover_password():
-    email = get_jwt_identity()
-    user = User.query.filter_by(email=email).first()
+    request_body = request.get_json()
+    id = get_jwt_identity()
+    user = User.query.filter_by(id=id).first()
     password = request_body.get('password')
     
     if user is not None:
-        db.session.update(recover_password)
+        user.password = password
         db.session.commit()
-        return jsonify(recover_password.serialize()), 201
+        return jsonify(user.serialize()), 201
 
 @api.route('/object', methods=['POST'])
 def add_object():
@@ -201,7 +212,7 @@ def addFavorite():
   db.session.add(favorite)   
   db.session.commit()
   # get favorites for logged user
-  favorites = getFavoritesByID(uid)
+#   favorites = getFavoritesByID(uid)
   #print(favorites)
   # return those favs - same happens in the delete function
   return jsonify(msg="ok")
@@ -212,10 +223,13 @@ def addFavorite():
 def removeFav():
   uid = get_jwt_identity()
   request_body = request.get_json()
-  favorites = getFavoritesByID(uid)
+  sims_card=repr(request_body['sims_card'])
   Favorites.query.filter_by(
-    sims_card = sims_card
+    sims_card=sims_card
     ).delete()
+    
+  db.session.commit()
+  return jsonify(msg="ok")
     
   db.session.commit()
   return jsonify(msg="ok")
@@ -225,11 +239,7 @@ def removeFav():
 @jwt_required()
 def getFavorites():
   uid = get_jwt_identity()
-  favs = getFavoritesByID(uid)
-  return jsonify(favorites=favs)
+  user = User.query.filter_by(id=uid).first()
 
-def getFavoritesByID(uid):
-  favorites = Favorites.query.filter_by(uid=uid)
-  favorites = [favorite.serialize() for favorite in favorites]
-  #print(favorites)
-  return favorites
+  return jsonify(favorites=user.get_favorites())
+

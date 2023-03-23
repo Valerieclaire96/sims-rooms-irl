@@ -19,6 +19,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ token: token });
       },
 
+
+      
       addFavorite: (item) => {
         const cb_url = getStore().cb_url
         let f = getStore().favorites;
@@ -54,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			        'Content-Type': 'application/json'
             },
             method: "DELETE",
-            body: JSON.stringify(item),
+            body: JSON.stringify({sims_card: item}),
           };
           fetch(cb_url + "/api/deletefav", opts)
             .then((response) => response.json())
@@ -117,16 +119,39 @@ const getState = ({ getStore, getActions, setStore }) => {
           //   f.item = JSON.parse(f.item)
           // })
            console.log("USER INFO HERE",data)
-          setStore({ token: data.access_token, favorites: data.favorites, user: data.id, user_name: data.user_name});
+          setStore({ token: data.access_token, favorites: data.user.favorites, user: data.id, user_name: data.user.name});
           return true;
       },
       
+      changePassword: async (token, password) => {
+        console.log(token, password);
+        const opts = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+          },
+          body: JSON.stringify({
+            password: password,
+          }),
+        };
+          const res = await fetch(process.env.BACKEND_URL + "/api/recover-password", opts);
+          if (res.status < 200 || res.status >= 300) {
+            throw new Error("There was an error changing password");
+          }
+          const data = await res.json();
+          
+           console.log("USER INFO HERE",data)
+          return true;
+      },
+
       getUser: async () => {
+        const token = sessionStorage.getItem("token");
         const opts = {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            'Authorization': "Bearer " + getStore().token,
+            'Authorization': "Bearer " + token,
           },
         };
           const res = await fetch(process.env.BACKEND_URL + "/api/user", opts);
@@ -134,8 +159,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             throw new Error("There was an error signing in");
           }
           const data = await res.json();
-          
-          setStore({ user: data});
+          console.log("DATA", data)
+          setStore({ user: data, favorites: data.favorites, user_name:data.name});
           return true;
       },
 

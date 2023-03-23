@@ -18,13 +18,17 @@ class User(db.Model):
     # This is how the artist will print in the console, just the name
     def __repr__(self):
         return f'<User {self.email}>'
-
+    def get_favorites(self):
+        favorites = Favorites.query.filter_by(uid=self.id)
+        favorites = [favorite.serialize() for favorite in favorites]
+        return favorites
+    
     def serialize(self):
         return {
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            
+            "favorites": self.get_favorites(),
             # do not serialize the password, its a security breach
         }
 
@@ -173,3 +177,4 @@ class Favorites(db.Model):
             "uid": self.uid,
             "sims_card": self.sims_card
         }
+        

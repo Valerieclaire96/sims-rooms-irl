@@ -3,11 +3,11 @@ import "/workspace/sims-rooms-irl/src/front/styles/loginform.css";
 import { Context } from "../store/appContext";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login() {  
+  const { store, actions } = useContext(Context);
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
   const token = sessionStorage.getItem("token");
