@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SimsSans';
-  src:url('/workspace/sims-rooms-irl/src/front/styles/fonts/SimsSans.otf');
+  src:url('/src/front/styles/fonts/SimsSans.otf');
 }
 .listBtn {
     background: none;
