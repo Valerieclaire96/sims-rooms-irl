@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SimsSans';
-  src:url('/front/styles/fonts/SimsSans.otf');
+  src:url('/src/front/styles/fonts/SimsSans.otf');
 }
 /*
     home.css: This website contains selectors only used in home.css
