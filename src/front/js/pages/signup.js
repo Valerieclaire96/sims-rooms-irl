@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "/workspace/sims-rooms-irl/src/front/styles/signup.css";
+import "/styles/signup.css";
 import { Context } from "../store/appContext";
 import { useNavigate, Link } from "react-router-dom";
 
