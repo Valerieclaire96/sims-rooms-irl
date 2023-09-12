@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "/workspace/sims-rooms-irl/src/front/styles/loginform.css";
+import "../../styles/loginform.css";
 import { Context } from "../store/appContext";
 import { useNavigate, Link } from "react-router-dom";
 
