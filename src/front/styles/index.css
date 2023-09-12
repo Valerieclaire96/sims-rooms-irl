@@ -5,9 +5,10 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
-
-.container {
+*{
   font-family: "SimsSans";
+}
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
