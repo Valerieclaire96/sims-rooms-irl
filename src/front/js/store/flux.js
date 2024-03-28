@@ -99,6 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const opts = {
           method: "POST",
           headers: {
+		Authorization: "Bearer " + t,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
