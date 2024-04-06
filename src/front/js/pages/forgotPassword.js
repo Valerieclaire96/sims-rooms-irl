@@ -32,7 +32,7 @@ export default function Forgot() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Recover Password</button>
       </form>
     </div>
   );
