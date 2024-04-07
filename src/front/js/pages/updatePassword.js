@@ -8,7 +8,6 @@ export default function UpdatePassword() {
   const [searchParams, setSearchParams] = useSearchParams();
   
   let token = searchParams.get("token")
-  console.log("TOKEN HERE", token)
 
   const handleClick = (e) => {
     e.preventDefault();
